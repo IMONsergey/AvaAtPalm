@@ -1,0 +1,11 @@
+---
+// Arrow and plus contours from public/assets/nav-2.svg and hero-preview-left-2.svg.
+interface Props { name: 'arrow-left' | 'arrow-right' | 'arrow-up-right' | 'close' | 'plus' | 'minus'; size?: number; class?: string; }
+const {name,size=20,class:className=''}=Astro.props;
+const arrow=name.startsWith('arrow-');
+const rotation=name==='arrow-left'?180:name==='arrow-up-right'?-45:0;
+---
+<svg class:list={['ui-icon',className]} xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox={arrow?'-1.5 -1.1415 12 12':name==='plus'?'12 12.37 14 14':'0 0 24 24'} fill="none" aria-hidden="true" focusable="false">
+ {arrow ? <g transform={`rotate(${rotation} 4.5 4.8585)`}><path d="M0 4.8585H9M4.37143 9.3585L9 4.8585L4.37143 .358497" stroke="currentColor" stroke-width=".8"/></g> : name==='plus' ? <path d="M18.6297 19.7451V24.9608H19.3748V19.7451H24.5905V19H19.3748V13.7843H18.6297V19H13.4141V19.7451H18.6297Z" fill="currentColor"/> : <path d={name==='close'?'M6 6l12 12M18 6 6 18':'M5 12h14'} stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>}
+</svg>
+<style>.ui-icon{display:inline-block;flex:none;vertical-align:middle;pointer-events:none}</style>

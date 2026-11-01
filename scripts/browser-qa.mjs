@@ -307,14 +307,26 @@ try {
       assert.equal(await form.locator('[name="phone"]').isDisabled(), true);
       assert.equal(await form.locator('[name="context"]').inputValue(), 'Residence 1601 / 4 bedroom');
       assert.equal(requests.length, 3, 'Pending request cannot be duplicated by submit or reopen');
+      if (width === 1440) {
+        await page.setViewportSize({ width: 844, height: 390 });
+        await page.mouse.move(600, 240);
+        await page.mouse.wheel(0, 2000);
+        await page.waitForTimeout(150);
+      }
     } finally {
       releasePending();
     }
     await enquiry.locator('.enquiry-success').waitFor({ state: 'visible' });
     assert.equal(await enquiry.locator('[data-enquiry-reference]').innerText(), requests[2].submissionId);
     await expectFocus(enquiry.locator('.enquiry-success'), 'Confirmed success receives focus');
+    const successView = await enquiry.locator('.enquiry-success').evaluate(element => {
+      const scroller = element.closest('[data-dialog-scroll]');
+      return { scrollTop: scroller.scrollTop, scrollTopEdge: scroller.getBoundingClientRect().top, headingTop: element.querySelector('h2').getBoundingClientRect().top };
+    });
+    assert.ok(successView.scrollTop === 0 && successView.headingTop >= successView.scrollTopEdge, `Success heading is clipped after a scrolled form: ${JSON.stringify(successView)}`);
     assert.equal(await enquiry.evaluate(element => element.scrollWidth <= element.clientWidth + 1), true, 'Success reference fits the dialog');
     await page.keyboard.press('Escape');
+    if (width === 1440) await page.setViewportSize({ width: 1440, height: 1000 });
     await enquiryTrigger.click();
     assert.equal(await form.locator('[name="name"]').inputValue(), '', 'New enquiry clears the completed form');
     assert.equal(await enquiry.locator('.enquiry-success').isVisible(), false);
@@ -356,12 +368,18 @@ try {
   await motion.waitForFunction(() => Number(getComputedStyle(document.querySelector('.location-title')).opacity) > .98);
   await motion.screenshot({ path: `${output}/ava-motion-mobile-location.png` });
   await motion.setViewportSize({ width: 1440, height: 900 });
+  await motion.locator('#interiors [data-next]').click();
+  await galleryCount(motion, '2 / 4');
+  const readingTop = await motion.locator('#interiors').evaluate(element => element.getBoundingClientRect().top);
   await motion.emulateMedia({ reducedMotion: 'reduce' });
   await motion.waitForFunction(() => [...document.querySelectorAll('[data-reveal]')].every(element => Number(getComputedStyle(element).opacity) > .98));
+  await motion.waitForTimeout(600);
+  const reducedTop = await motion.locator('#interiors').evaluate(element => element.getBoundingClientRect().top);
+  assert.ok(Math.abs(reducedTop - readingTop) < 2, `Motion change moved the gallery out of the reading viewport: ${readingTop} -> ${reducedTop}`);
   await motion.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
   await motion.waitForFunction(() => { const transform = getComputedStyle(document.querySelector('.hero-title')).transform; return transform === 'none' || Math.abs(new DOMMatrixReadOnly(transform).m42) < .5; });
   assert.deepEqual(motionErrors, [], 'Normal-motion resize and preference changes must not throw');
-  report.push({ mode: 'normal-motion', desktopToMobileResize: 'pass', featureDisclosureGeometry: 'pass', revealedLocation: 'pass', liveReducedMotion: 'pass', scriptErrors: motionErrors });
+  report.push({ mode: 'normal-motion', desktopToMobileResize: 'pass', featureDisclosureGeometry: 'pass', revealedLocation: 'pass', liveReducedMotion: 'pass', readingPosition: 'pass', scriptErrors: motionErrors });
   await motion.close(); activePage = null;
 
   await writeFile(`${output}/report.json`, JSON.stringify({ ok: true, testedAt: new Date().toISOString(), base, report }, null, 2));

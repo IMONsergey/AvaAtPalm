@@ -1,7 +1,66 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// ScrollTrigger clears its recorded scroll when the last trigger is removed.
+// Preserve a reading anchor around its matchMedia transaction, including pin cleanup.
+// These runtime hooks are used by ScrollTrigger but omitted from GSAP's bundled types.
+const motionLifecycle = gsap as typeof gsap & {
+  addEventListener(type: 'matchMediaInit' | 'matchMedia', listener: () => void): void;
+};
+type MotionPosition = { anchor: HTMLElement | null; top: number; y: number; width: number; height: number };
+function readMotionPosition(): MotionPosition {
+  const readingLine = window.innerHeight * .35;
+  const sections = [...document.querySelectorAll<HTMLElement>('main section')];
+  const anchor = sections.findLast(element => {
+    const rect = element.getBoundingClientRect();
+    return rect.top <= readingLine && rect.bottom > readingLine;
+  }) || null;
+  return { anchor, top: anchor?.getBoundingClientRect().top || 0, y: window.scrollY, width: innerWidth, height: innerHeight };
+}
+let stableMotionPosition = readMotionPosition();
+let motionPosition: MotionPosition | null = null;
+let positionFrame = 0;
+window.addEventListener('scroll', () => {
+  if (positionFrame || motionPosition) return;
+  positionFrame = requestAnimationFrame(() => {
+    positionFrame = 0;
+    // Resize can clamp scroll before its media-query event. Keep the old anchor.
+    if (!motionPosition && stableMotionPosition.width === innerWidth && stableMotionPosition.height === innerHeight) {
+      stableMotionPosition = readMotionPosition();
+    }
+  });
+}, { passive: true });
+window.addEventListener('resize', () => {
+  cancelAnimationFrame(positionFrame);
+  positionFrame = requestAnimationFrame(() => {
+    positionFrame = 0;
+    if (!motionPosition) stableMotionPosition = readMotionPosition();
+  });
+}, { passive: true });
+motionLifecycle.addEventListener('matchMediaInit', () => {
+  cancelAnimationFrame(positionFrame); positionFrame = 0;
+  motionPosition = stableMotionPosition.width !== innerWidth || stableMotionPosition.height !== innerHeight
+    ? stableMotionPosition : readMotionPosition();
+});
 gsap.registerPlugin(ScrollTrigger);
+// This listener follows ScrollTrigger's refresh. No delayed correction or smooth scroll.
+motionLifecycle.addEventListener('matchMedia', () => {
+  if (!motionPosition) return;
+  const { anchor, top, y, width, height } = motionPosition;
+  const resized = width !== innerWidth || height !== innerHeight;
+  let next = y;
+  if (y < 1) next = 0;
+  else if (anchor?.isConnected) {
+    const rect = anchor.getBoundingClientRect();
+    // Keep the reading probe inside this section after subpixel scroll rounding.
+    const readingTop = resized ? Math.max(top, Math.min(0, innerHeight * .35 + 2 - rect.height)) : top;
+    next = window.scrollY + rect.top - readingTop;
+  }
+  window.scrollTo({ top: Math.max(0, next), behavior: 'instant' });
+  ScrollTrigger.update();
+  motionPosition = null;
+  stableMotionPosition = readMotionPosition();
+});
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 const menu = document.querySelector<HTMLDialogElement>('#menu-dialog');
 const enquiry = document.querySelector<HTMLDialogElement>('#enquiry-dialog');
@@ -21,6 +80,10 @@ function syncDialogState() {
   menuToggle?.setAttribute('aria-expanded', String(Boolean(menu?.open)));
 }
 
+function resetDialogScroll(dialog: HTMLDialogElement) {
+  dialog.querySelectorAll<HTMLElement>('[data-dialog-scroll]').forEach(scroller => { scroller.scrollTop = 0; });
+}
+
 function openDialog(dialog: HTMLDialogElement | null, trigger?: HTMLElement) {
   if (!dialog || dialog.open) return;
   const origin = trigger ?? document.activeElement;
@@ -28,6 +91,8 @@ function openDialog(dialog: HTMLDialogElement | null, trigger?: HTMLElement) {
   if (origin instanceof HTMLElement && !origin.closest('dialog[open]')) dialogOrigin = origin;
   document.querySelectorAll<HTMLDialogElement>('dialog[open]').forEach(other => other.close());
   dialog.showModal();
+  // Begin a new dialog view at its heading without changing form or request state.
+  resetDialogScroll(dialog);
   syncDialogState();
   const first = dialog.querySelector<HTMLElement>('h2[tabindex="-1"],button[data-close],button');
   first?.focus({ preventScroll: true });
@@ -168,7 +233,8 @@ form?.addEventListener('submit', async event => {
     enquiry.querySelector<HTMLElement>('[data-enquiry-content]')!.hidden = true;
     const success = enquiry.querySelector<HTMLElement>('.enquiry-success')!;
     success.hidden = false;
-    success.focus();
+    success.focus({ preventScroll: true });
+    resetDialogScroll(enquiry);
   } catch (error) {
     const message = error instanceof Error && error.name !== 'AbortError' ? error.message : 'The connection took too long. Your details are still here. Please try again.';
     showFormError(navigator.onLine ? message : 'You appear to be offline. Reconnect and try again. Your details are still here.');
@@ -198,13 +264,18 @@ document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
     current = next;
     const id = ++requestId;
     // Keep the previous frame visible until the destination image is decoded.
-    const image = slides[next].querySelector<HTMLImageElement>('img');
+    const originalImage = slides[next].querySelector<HTMLImageElement>('img');
+    // Retry a failed source with the same responsive attributes. Keep its replacement
+    // detached until the latest requested frame is decoded and ready to display.
+    const image = originalImage?.complete && !originalImage.naturalWidth && originalImage.currentSrc
+      ? originalImage.cloneNode(false) as HTMLImageElement : originalImage;
     if (image) {
       image.loading = 'eager';
       await image.decode().catch(() => undefined);
     }
     if (id !== requestId) return;
-    if (image && !image.naturalWidth) { current = displayed; return; }
+    if (image && !image.naturalWidth) return;
+    if (image && originalImage && image !== originalImage) originalImage.replaceWith(image);
     displayed = next;
     gsap.to(track, { xPercent: -next * 100, duration: reduced.matches ? 0 : .55, ease: 'power2.inOut', overwrite: true });
     slides.forEach((slide, i) => {

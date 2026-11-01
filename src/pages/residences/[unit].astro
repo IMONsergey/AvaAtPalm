@@ -1,4 +1,5 @@
 ---
+import Icon from '../../components/Icon.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Action from '../../components/Action.astro';
@@ -12,13 +13,13 @@ const {residence:r}=Astro.props;
  <div class="inner-page site-width">
   <div class="inner-header"><Header/></div>
   <main id="main" class="residence-detail">
-   <a class="back-link text-link" href="/#residences">← Back to residences</a>
+   <a class="back-link text-link" href="/#residences"><Icon name="arrow-left" size={14}/> Back to residences</a>
    <p class="unit-label">Unit {r.unit} / AVA at Palm Jumeirah</p>
    <h1 class="display">{r.bedrooms} bedroom<br/>Residences</h1>
    <div class="plan-and-details">
     <div class="plan-preview">
      <a href={`/assets/${r.plan}.webp`} class="plan-image-link" aria-label={`Open the original floor plan for residence ${r.unit}`}><Photo name={r.plan} alt={`Floor plan of the ${r.bedrooms} bedroom residence ${r.unit}`} sizes="(max-width:767px) 85vw,50vw" eager/></a>
-     <button type="button" class="view-plan text-link" data-plan={`/assets/${r.plan}.webp`} data-plan-title={`Unit ${r.unit} / ${r.bedrooms} bedroom residence`} data-unit={r.unit}>View floor plan <span aria-hidden="true">↗</span></button>
+     <button type="button" class="view-plan text-link" data-plan={`/assets/${r.plan}.webp`} data-plan-title={`Unit ${r.unit} / ${r.bedrooms} bedroom residence`} data-unit={r.unit}>View floor plan <span aria-hidden="true"><Icon name="arrow-up-right" size={14}/></span></button>
     </div>
     <section class="residence-details" aria-label="Residence specifications">
      <p class="parking">{r.parking} Parking Spaces</p>
@@ -28,7 +29,7 @@ const {residence:r}=Astro.props;
      <div class="orientation-details"><div><Photo name={r.orientation} alt={`Orientation diagram for residence ${r.unit}`} sizes="144px"/><p>Residence orientation</p></div><div><Photo name={r.floor} alt={`Floor position of residence ${r.unit}`} sizes="42px"/><p>Floor position</p></div></div>
     </section>
    </div>
-   <div class="detail-bottom"><a class="text-link" href={`/residences/${r.unit==='801'?'1601':'801'}/`}>Explore the {r.unit==='801'?'4':'3'} bedroom residence →</a><a class="text-link" href="/privacy/">Privacy information</a></div>
+   <div class="detail-bottom"><a class="text-link" href={`/residences/${r.unit==='801'?'1601':'801'}/`}>Explore the {r.unit==='801'?'4':'3'} bedroom residence <Icon name="arrow-right" size={14}/></a><a class="text-link" href="/privacy/">Privacy information</a></div>
   </main>
  </div>
  <PlanDialog/>

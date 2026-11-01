@@ -1,0 +1,5665 @@
+{
+  "project": "AVA at Palm Jumeirah",
+  "audit": "2026-11-01 v2",
+  "generatedAt": "2026-11-01T16:49:48.599206+00:00",
+  "result": "PASS",
+  "errors": [],
+  "baseHead": "e0bf9bca060e63bc698eb14a6a89f968dc8421c0",
+  "sourceFingerprint": {
+    "algorithm": "sha256 of sorted path + NUL + file sha256 + newline; src/** and package manifests",
+    "sha256": "91f0873dd3939a2e5a38f64e0f23af1d0f51b53745e322b5cc0d57e3bd1cdac8",
+    "files": {
+      "package-lock.json": "e8e4fbcdab28db5702467f258f486036b97c14d3ec8899367178930ea112beda",
+      "package.json": "32d07bc173f0b437a4fb25f1a115116b43618416b49265aa30c7e5e37119cc34",
+      "src/components/Action.astro": "731c4f6bae8ec9db58013e3fd59bb991553407821992088945583838d420390a",
+      "src/components/Enquiry.astro": "d33c01d27627612b5163aabb897a4554a4225f5f4d21630d3971cc5f69345273",
+      "src/components/Header.astro": "1191727044eca22126602d4903271db3d765f3b28e146d7e634ee5285dc51dcb",
+      "src/components/Icon.astro": "1a4b25ed506e6e25a8852dcf11a51ef9bbce990ec359482142b9000cbff4173f",
+      "src/components/Menu.astro": "bbaf758babb10e06a33dd0ff5ce727bb8c24673edd63a1734bc9f0691630952c",
+      "src/components/Photo.astro": "089701c8b146fe12dc7755222489f29b05495b5dcccae71ceff72c4b30de1913",
+      "src/components/PlanDialog.astro": "a9d9f4d5dd54cafc50ae7c4708033b8e1cf64a50669f031187a71408b0cb8a73",
+      "src/components/ResidenceCard.astro": "df84b3c22df82bf9e2fc54f372617f2e0f15dcae1f44ae10608d28a0b5c6cd0a",
+      "src/data/assets.json": "948a9dadd2caed0ef81c0e5e0832dd226937f616d3ed6605ae2d1474c17ed9bb",
+      "src/data/residences.ts": "d501e8e5d823c774f83d6237a865b2ef7de69fab23e8f2f67c0ee93f3b61324e",
+      "src/layouts/BaseLayout.astro": "7ba6eff3cb367768da51e4cca00f911fe905935267b1384c80a6278721370f54",
+      "src/pages/404.astro": "f20244544ff38e1e467f84acfe9266f24513fe919880b9bc8d174ff99a2dc6cf",
+      "src/pages/api/enquiry.ts": "1a0a851007c7d547c48a21c5f764c18b2fa496e0a5a2acb41ae1db357d989a69",
+      "src/pages/index.astro": "d45ed84b567e74c9801796efab6617ccef18e6206a51950c8978fbea58c14a91",
+      "src/pages/location.astro": "6da7126a7ab316ad94fa4480c41aa1be7469677bf3a387ef5f34c7d54f3a5dc5",
+      "src/pages/privacy.astro": "cee19f8707e8417c9a6bbb31f4028e5a1a4598ed4b276daca8fe885848ebe164",
+      "src/pages/residences/[unit].astro": "0979a761c319eec75866e9661c57e2c235aaf639fe94180269605232a6cc142e",
+      "src/scripts/app.ts": "e8c90f72fca20c8de9727089c5e1d05913e8357faf6930bdf82adb5515e6be1c",
+      "src/server/enquiry.ts": "8efd0161e0449716997f711b21d4091070dc6daf887028ad64859268d82bfc41",
+      "src/styles/global.css": "96f63c98c69345a9a1c14f03eb59a9ff27d814c6ad9842b2175b4e1bac4ac87b",
+      "src/styles/home.css": "24acc3e18450a0fad5745dc54eeeec27a509472cbd07dabe2942b1b29c45d314"
+    }
+  },
+  "runtime": {
+    "node": "24.22.1",
+    "playwrightUsed": "1.58.2",
+    "chromium": "145.0.7632.6",
+    "webkit": "26.0",
+    "astro": "7.4.4",
+    "gsap": "3.15.0",
+    "typescript": "6.0.3",
+    "environment": "Linux local clean Vercel static output, genuine custom404 status; no remote desktop or physical Safari"
+  },
+  "checks": {
+    "sourceIcons": {
+      "passed": true,
+      "scannedFiles": 20,
+      "matches": [],
+      "syntax": [
+        {
+          "command": [
+            "node",
+            "--check",
+            "scripts/browser-qa.mjs"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "scripts/gallery-qa.mjs"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "scripts/dialog-qa.mjs"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "scripts/image-quality-qa.mjs"
+          ],
+          "exitCode": 0
+        },
+        {
+          "command": [
+            "node",
+            "--check",
+            "scripts/text-layout-qa.mjs"
+          ],
+          "exitCode": 0
+        }
+      ],
+      "gitDiffCheck": 0,
+      "checkedAt": "2026-11-01T16:47:28.003912+00:00",
+      "scope": "All source Astro/TS/CSS: Unicode arrows/chevrons and named/numeric arrow entities; runtime visible text/pseudo-elements separately covered by broad matrix."
+    },
+    "checkBuild": {
+      "passed": true,
+      "sourceFingerprint": "91f0873dd3939a2e5a38f64e0f23af1d0f51b53745e322b5cc0d57e3bd1cdac8",
+      "check": {
+        "name": "check",
+        "command": [
+          "npm",
+          "run",
+          "check"
+        ],
+        "exitCode": 0,
+        "log": "final-check.log"
+      },
+      "checkDiagnostics": {
+        "errors": 0,
+        "warnings": 0,
+        "existingHints": 1
+      },
+      "build": {
+        "command": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "exitCode": 0,
+        "session": "42736",
+        "cleanGeneratedOutput": true,
+        "log": "final-build.log",
+        "logSha256": "cf3a207989734e913b665537e72e72945688d439fe6da30c405d2a0bfc04f965",
+        "finishedAt": "2026-11-01T16:45:20.000770+00:00",
+        "artifactProvenance": {
+          "checkedAt": "2026-11-01T16:45:51.300739+00:00",
+          "htmlSha256": "e93f937b9e5bdeba78669e33d0f2b2be83f1451fdea10e0335cc943176e57d06",
+          "css": [
+            {
+              "file": "/_astro/Header.Dcs0zDLM.css",
+              "sha256": "0d955524aa5a9ecb8282a0b4e3912ae30abc0c77bea89d3e856fd98b074c74fc",
+              "newShadowPresent": false,
+              "copyFlowPresent": false,
+              "minimumSkyWidthPresent": false
+            },
+            {
+              "file": "/_astro/index.BVXdDibw.css",
+              "sha256": "56a1297712698a0196c8d4af634eb56cd5c842a648f1f327de66d1e8f049ded8",
+              "newShadowPresent": true,
+              "copyFlowPresent": true,
+              "minimumSkyWidthPresent": true
+            }
+          ],
+          "currentSizesPresent": true,
+          "copyWrappersPresent": true,
+          "passed": true
+        }
+      }
+    },
+    "finalVerificationChain": {
+      "startedAt": "2026-11-01T16:45:51.301334+00:00",
+      "sourceFingerprint": "91f0873dd3939a2e5a38f64e0f23af1d0f51b53745e322b5cc0d57e3bd1cdac8",
+      "commands": [
+        {
+          "name": "check",
+          "command": [
+            "npm",
+            "run",
+            "check"
+          ],
+          "exitCode": 0,
+          "log": "final-check.log"
+        },
+        {
+          "name": "build",
+          "command": [
+            "npm",
+            "run",
+            "build"
+          ],
+          "exitCode": 0,
+          "log": "final-build.log"
+        },
+        {
+          "name": "text-pairs-final",
+          "command": [
+            "node",
+            "scripts/text-layout-qa.mjs"
+          ],
+          "exitCode": 0,
+          "startedAt": "2026-11-01T16:45:51.301376+00:00",
+          "finishedAt": "2026-11-01T16:46:46.554047+00:00",
+          "log": "text-pairs-final.log"
+        },
+        {
+          "name": "reading-final",
+          "command": [
+            "node",
+            "/tmp/check-motion-reading.mjs"
+          ],
+          "exitCode": 0,
+          "startedAt": "2026-11-01T16:46:46.554417+00:00",
+          "finishedAt": "2026-11-01T16:47:05.855872+00:00",
+          "log": "reading-final.log"
+        },
+        {
+          "name": "existing-browser-final",
+          "command": [
+            "node",
+            "scripts/browser-qa.mjs"
+          ],
+          "exitCode": 0,
+          "startedAt": "2026-11-01T16:47:05.856360+00:00",
+          "finishedAt": "2026-11-01T16:47:43.747064+00:00",
+          "log": "existing-browser-final.log"
+        },
+        {
+          "name": "selected-final",
+          "command": [
+            "node",
+            "/tmp/capture-dual-selected.mjs",
+            "ava"
+          ],
+          "exitCode": 0,
+          "startedAt": "2026-11-01T16:49:11.515640+00:00",
+          "finishedAt": "2026-11-01T16:49:31.877768+00:00",
+          "log": "selected-final.log",
+          "note": "Final presentation capture re-anchors gallery after unchanged successful normal/reduced continuity measurements, showing the whole current frame and its controls."
+        }
+      ],
+      "previousFullChain": "pre-sky-width-final-verification-chain.json",
+      "unchangedPriorChecks": [
+        "image-quality-final/report.json",
+        "dialogs-final/report.json",
+        "gallery/report.json",
+        "text-layout-final/report.json"
+      ],
+      "scope": "Latest change only tablet sky-information min-width300; final copy/CTA, reading, existing flow and selected captures run below.",
+      "passed": true,
+      "finishedAt": "2026-11-01T16:49:31.877768+00:00"
+    },
+    "existingBrowser": {
+      "ok": true,
+      "testedAt": "2026-11-01T16:47:38.703Z",
+      "base": "http://127.0.0.1:14325",
+      "report": [
+        {
+          "width": 1440,
+          "pages": [
+            {
+              "page": "/",
+              "width": 1440,
+              "clientWidth": 1440,
+              "scrollWidth": 1425,
+              "bodyScrollWidth": 1425,
+              "imageCount": 38,
+              "brokenImages": []
+            },
+            {
+              "page": "/residences/801/",
+              "width": 1440,
+              "clientWidth": 1440,
+              "scrollWidth": 1425,
+              "bodyScrollWidth": 1425,
+              "imageCount": 5,
+              "brokenImages": []
+            },
+            {
+              "page": "/residences/1601/",
+              "width": 1440,
+              "clientWidth": 1440,
+              "scrollWidth": 1425,
+              "bodyScrollWidth": 1425,
+              "imageCount": 5,
+              "brokenImages": []
+            },
+            {
+              "page": "/location/",
+              "width": 1440,
+              "clientWidth": 1440,
+              "scrollWidth": 1425,
+              "bodyScrollWidth": 1425,
+              "imageCount": 3,
+              "brokenImages": []
+            },
+            {
+              "page": "/privacy/",
+              "width": 1440,
+              "clientWidth": 1440,
+              "scrollWidth": 1425,
+              "bodyScrollWidth": 1425,
+              "imageCount": 1,
+              "brokenImages": []
+            }
+          ],
+          "menu": "desktop navigation",
+          "hotspots": "pass",
+          "gallery": "pass",
+          "features": "pass",
+          "plans801And1601": "pass",
+          "validation": "pass",
+          "retryIdentity": "pass",
+          "pendingGuard": "pass",
+          "confirmedReference": "pass",
+          "mockedRequests": 3,
+          "scriptErrors": [],
+          "assetFailures": []
+        },
+        {
+          "width": 768,
+          "pages": [
+            {
+              "page": "/",
+              "width": 768,
+              "clientWidth": 768,
+              "scrollWidth": 753,
+              "bodyScrollWidth": 753,
+              "imageCount": 38,
+              "brokenImages": []
+            },
+            {
+              "page": "/residences/801/",
+              "width": 768,
+              "clientWidth": 768,
+              "scrollWidth": 753,
+              "bodyScrollWidth": 753,
+              "imageCount": 5,
+              "brokenImages": []
+            },
+            {
+              "page": "/residences/1601/",
+              "width": 768,
+              "clientWidth": 768,
+              "scrollWidth": 753,
+              "bodyScrollWidth": 753,
+              "imageCount": 5,
+              "brokenImages": []
+            },
+            {
+              "page": "/location/",
+              "width": 768,
+              "clientWidth": 768,
+              "scrollWidth": 753,
+              "bodyScrollWidth": 753,
+              "imageCount": 3,
+              "brokenImages": []
+            },
+            {
+              "page": "/privacy/",
+              "width": 768,
+              "clientWidth": 768,
+              "scrollWidth": 753,
+              "bodyScrollWidth": 753,
+              "imageCount": 1,
+              "brokenImages": []
+            }
+          ],
+          "menu": "desktop navigation",
+          "hotspots": "pass",
+          "gallery": "pass",
+          "features": "pass",
+          "plans801And1601": "pass",
+          "validation": "pass",
+          "retryIdentity": "pass",
+          "pendingGuard": "pass",
+          "confirmedReference": "pass",
+          "mockedRequests": 3,
+          "scriptErrors": [],
+          "assetFailures": []
+        },
+        {
+          "width": 390,
+          "pages": [
+            {
+              "page": "/",
+              "width": 390,
+              "clientWidth": 390,
+              "scrollWidth": 375,
+              "bodyScrollWidth": 375,
+              "imageCount": 38,
+              "brokenImages": []
+            },
+            {
+              "page": "/residences/801/",
+              "width": 390,
+              "clientWidth": 390,
+              "scrollWidth": 375,
+              "bodyScrollWidth": 375,
+              "imageCount": 5,
+              "brokenImages": []
+            },
+            {
+              "page": "/residences/1601/",
+              "width": 390,
+              "clientWidth": 390,
+              "scrollWidth": 375,
+              "bodyScrollWidth": 375,
+              "imageCount": 5,
+              "brokenImages": []
+            },
+            {
+              "page": "/location/",
+              "width": 390,
+              "clientWidth": 390,
+              "scrollWidth": 375,
+              "bodyScrollWidth": 375,
+              "imageCount": 3,
+              "brokenImages": []
+            },
+            {
+              "page": "/privacy/",
+              "width": 390,
+              "clientWidth": 390,
+              "scrollWidth": 375,
+              "bodyScrollWidth": 375,
+              "imageCount": 1,
+              "brokenImages": []
+            }
+          ],
+          "menu": "pass",
+          "hotspots": "pass",
+          "gallery": "pass",
+          "features": "pass",
+          "plans801And1601": "pass",
+          "validation": "pass",
+          "retryIdentity": "pass",
+          "pendingGuard": "pass",
+          "confirmedReference": "pass",
+          "mockedRequests": 3,
+          "scriptErrors": [],
+          "assetFailures": []
+        },
+        {
+          "width": 320,
+          "pages": [
+            {
+              "page": "/",
+              "width": 320,
+              "clientWidth": 320,
+              "scrollWidth": 305,
+              "bodyScrollWidth": 305,
+              "imageCount": 38,
+              "brokenImages": []
+            },
+            {
+              "page": "/residences/801/",
+              "width": 320,
+              "clientWidth": 320,
+              "scrollWidth": 305,
+              "bodyScrollWidth": 305,
+              "imageCount": 5,
+              "brokenImages": []
+            },
+            {
+              "page": "/residences/1601/",
+              "width": 320,
+              "clientWidth": 320,
+              "scrollWidth": 305,
+              "bodyScrollWidth": 305,
+              "imageCount": 5,
+              "brokenImages": []
+            },
+            {
+              "page": "/location/",
+              "width": 320,
+              "clientWidth": 320,
+              "scrollWidth": 305,
+              "bodyScrollWidth": 305,
+              "imageCount": 3,
+              "brokenImages": []
+            },
+            {
+              "page": "/privacy/",
+              "width": 320,
+              "clientWidth": 320,
+              "scrollWidth": 305,
+              "bodyScrollWidth": 305,
+              "imageCount": 1,
+              "brokenImages": []
+            }
+          ],
+          "menu": "pass",
+          "hotspots": "pass",
+          "gallery": "pass",
+          "features": "pass",
+          "plans801And1601": "pass",
+          "validation": "pass",
+          "retryIdentity": "pass",
+          "pendingGuard": "pass",
+          "confirmedReference": "pass",
+          "mockedRequests": 3,
+          "scriptErrors": [],
+          "assetFailures": []
+        },
+        {
+          "mode": "normal-motion",
+          "desktopToMobileResize": "pass",
+          "featureDisclosureGeometry": "pass",
+          "revealedLocation": "pass",
+          "liveReducedMotion": "pass",
+          "readingPosition": "pass",
+          "scriptErrors": []
+        }
+      ]
+    },
+    "routeMatrix": {
+      "passed": true,
+      "cases": 42,
+      "viewportCaptures": 207,
+      "casesDetail": [
+        {
+          "size": "desktop1440",
+          "route": "/",
+          "status": 200,
+          "captures": 19,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1440",
+          "route": "/residences/801/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1440",
+          "route": "/residences/1601/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1440",
+          "route": "/location/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1440",
+          "route": "/privacy/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1440",
+          "route": "/audit-missing-route/",
+          "status": 404,
+          "captures": 1,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1920",
+          "route": "/",
+          "status": 200,
+          "captures": 19,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1920",
+          "route": "/residences/801/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1920",
+          "route": "/residences/1601/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1920",
+          "route": "/location/",
+          "status": 200,
+          "captures": 1,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1920",
+          "route": "/privacy/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1920",
+          "route": "/audit-missing-route/",
+          "status": 404,
+          "captures": 1,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet1024",
+          "route": "/",
+          "status": 200,
+          "captures": 18,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet1024",
+          "route": "/residences/801/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet1024",
+          "route": "/residences/1601/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet1024",
+          "route": "/location/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet1024",
+          "route": "/privacy/",
+          "status": 200,
+          "captures": 3,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet1024",
+          "route": "/audit-missing-route/",
+          "status": 404,
+          "captures": 1,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet768",
+          "route": "/",
+          "status": 200,
+          "captures": 18,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet768",
+          "route": "/residences/801/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet768",
+          "route": "/residences/1601/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet768",
+          "route": "/location/",
+          "status": 200,
+          "captures": 1,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet768",
+          "route": "/privacy/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet768",
+          "route": "/audit-missing-route/",
+          "status": 404,
+          "captures": 1,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile390",
+          "route": "/",
+          "status": 200,
+          "captures": 18,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile390",
+          "route": "/residences/801/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile390",
+          "route": "/residences/1601/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile390",
+          "route": "/location/",
+          "status": 200,
+          "captures": 2,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile390",
+          "route": "/privacy/",
+          "status": 200,
+          "captures": 4,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile390",
+          "route": "/audit-missing-route/",
+          "status": 404,
+          "captures": 1,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile320",
+          "route": "/",
+          "status": 200,
+          "captures": 18,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile320",
+          "route": "/residences/801/",
+          "status": 200,
+          "captures": 3,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile320",
+          "route": "/residences/1601/",
+          "status": 200,
+          "captures": 3,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile320",
+          "route": "/location/",
+          "status": 200,
+          "captures": 3,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile320",
+          "route": "/privacy/",
+          "status": 200,
+          "captures": 4,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile320",
+          "route": "/audit-missing-route/",
+          "status": 404,
+          "captures": 1,
+          "textArrows": 0
+        },
+        {
+          "size": "landscape",
+          "route": "/",
+          "status": 200,
+          "captures": 18,
+          "textArrows": 0
+        },
+        {
+          "size": "landscape",
+          "route": "/residences/801/",
+          "status": 200,
+          "captures": 4,
+          "textArrows": 0
+        },
+        {
+          "size": "landscape",
+          "route": "/residences/1601/",
+          "status": 200,
+          "captures": 4,
+          "textArrows": 0
+        },
+        {
+          "size": "landscape",
+          "route": "/location/",
+          "status": 200,
+          "captures": 4,
+          "textArrows": 0
+        },
+        {
+          "size": "landscape",
+          "route": "/privacy/",
+          "status": 200,
+          "captures": 5,
+          "textArrows": 0
+        },
+        {
+          "size": "landscape",
+          "route": "/audit-missing-route/",
+          "status": 404,
+          "captures": 2,
+          "textArrows": 0
+        }
+      ],
+      "errors": [],
+      "violations": [],
+      "apiRequests": 0,
+      "rawReport": "after/report.json",
+      "sourceStage": "Before final image sizes, enquiry editorial font clamp and tablet/overlay typography changes"
+    },
+    "supplementalPhotoMatrix": {
+      "passed": true,
+      "cases": 7,
+      "viewportCaptures": 77,
+      "casesDetail": [
+        {
+          "size": "desktop1440",
+          "route": "/",
+          "status": 200,
+          "captures": 11,
+          "textArrows": 0
+        },
+        {
+          "size": "desktop1920",
+          "route": "/",
+          "status": 200,
+          "captures": 11,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet1024",
+          "route": "/",
+          "status": 200,
+          "captures": 11,
+          "textArrows": 0
+        },
+        {
+          "size": "tablet768",
+          "route": "/",
+          "status": 200,
+          "captures": 11,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile390",
+          "route": "/",
+          "status": 200,
+          "captures": 11,
+          "textArrows": 0
+        },
+        {
+          "size": "mobile320",
+          "route": "/",
+          "status": 200,
+          "captures": 11,
+          "textArrows": 0
+        },
+        {
+          "size": "landscape",
+          "route": "/",
+          "status": 200,
+          "captures": 11,
+          "textArrows": 0
+        }
+      ],
+      "errors": [],
+      "violations": [],
+      "apiRequests": 0,
+      "rawReport": "after-extra/report.json",
+      "sourceStage": "After image sizes and tablet/overlay typography changes; before final Architecture/Sky copy and CTA flow. The two confirmed overlaps are superseded by final text-pairs and selected captures."
+    },
+    "interactionMatrix": {
+      "passed": true,
+      "stateGroups": 54,
+      "captures": 177,
+      "groups": [
+        {
+          "engine": "chromium",
+          "size": "desktop1440",
+          "name": "menu and anchor landings",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1440",
+          "name": "enquiry invalid pending error success",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1440",
+          "name": "gallery states and controls",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1440",
+          "name": "detail plan zoom resize cancellation and focus",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1440",
+          "name": "privacy enquiry state",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1440",
+          "name": "feature disclosure and film action",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1920",
+          "name": "menu and anchor landings",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1920",
+          "name": "enquiry invalid pending error success",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1920",
+          "name": "gallery states and controls",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1920",
+          "name": "detail plan zoom resize cancellation and focus",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1920",
+          "name": "privacy enquiry state",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "desktop1920",
+          "name": "feature disclosure and film action",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet1024",
+          "name": "menu and anchor landings",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet1024",
+          "name": "enquiry invalid pending error success",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet1024",
+          "name": "gallery states and controls",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet1024",
+          "name": "detail plan zoom resize cancellation and focus",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet1024",
+          "name": "privacy enquiry state",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet1024",
+          "name": "feature disclosure and film action",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet768",
+          "name": "menu and anchor landings",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet768",
+          "name": "enquiry invalid pending error success",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet768",
+          "name": "gallery states and controls",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet768",
+          "name": "detail plan zoom resize cancellation and focus",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet768",
+          "name": "privacy enquiry state",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "tablet768",
+          "name": "feature disclosure and film action",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile390",
+          "name": "menu and anchor landings",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile390",
+          "name": "enquiry invalid pending error success",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile390",
+          "name": "gallery states and controls",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile390",
+          "name": "detail plan zoom resize cancellation and focus",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile390",
+          "name": "privacy enquiry state",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile390",
+          "name": "feature disclosure and film action",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile320",
+          "name": "menu and anchor landings",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile320",
+          "name": "enquiry invalid pending error success",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile320",
+          "name": "gallery states and controls",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile320",
+          "name": "detail plan zoom resize cancellation and focus",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile320",
+          "name": "privacy enquiry state",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "mobile320",
+          "name": "feature disclosure and film action",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "landscape",
+          "name": "menu and anchor landings",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "landscape",
+          "name": "enquiry invalid pending error success",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "landscape",
+          "name": "gallery states and controls",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "landscape",
+          "name": "detail plan zoom resize cancellation and focus",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "landscape",
+          "name": "privacy enquiry state",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "chromium",
+          "size": "landscape",
+          "name": "feature disclosure and film action",
+          "passed": true,
+          "sourceReport": "after-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "mobile390",
+          "name": "menu and anchor landings",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "mobile390",
+          "name": "enquiry invalid pending error success",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "mobile390",
+          "name": "gallery states and controls",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "mobile390",
+          "name": "detail plan zoom resize cancellation and focus",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "mobile390",
+          "name": "privacy enquiry state",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "mobile390",
+          "name": "feature disclosure and film action",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "landscape",
+          "name": "menu and anchor landings",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "landscape",
+          "name": "enquiry invalid pending error success",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "landscape",
+          "name": "gallery states and controls",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "landscape",
+          "name": "detail plan zoom resize cancellation and focus",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "landscape",
+          "name": "privacy enquiry state",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        },
+        {
+          "engine": "webkit",
+          "size": "landscape",
+          "name": "feature disclosure and film action",
+          "passed": true,
+          "sourceReport": "after-webkit-states/report.json"
+        }
+      ],
+      "rawReports": [
+        "after-states/report.json",
+        "after-webkit-states/report.json"
+      ],
+      "sourceStage": "Before final sizes and narrow typography changes; affected states subsequently retested"
+    },
+    "gallery": {
+      "passed": true,
+      "engines": [
+        {
+          "engine": "chromium",
+          "browserVersion": "145.0.7632.6",
+          "checks": [
+            {
+              "name": "delayed-last-request",
+              "passed": true
+            },
+            {
+              "name": "failed-image-skip-and-retry",
+              "passed": true
+            },
+            {
+              "name": "motion-switch-and-pointer-cancel",
+              "passed": true
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "browserVersion": "26.0",
+          "checks": [
+            {
+              "name": "delayed-last-request",
+              "passed": true
+            },
+            {
+              "name": "failed-image-skip-and-retry",
+              "passed": true
+            },
+            {
+              "name": "motion-switch-and-pointer-cancel",
+              "passed": true
+            }
+          ]
+        }
+      ],
+      "apiRequests": 0,
+      "pageErrors": [],
+      "rawReport": "gallery/report.json",
+      "sourceStage": "Final gallery JavaScript; before later image/typography-only changes"
+    },
+    "nativeDialogs": {
+      "passed": true,
+      "cases": [
+        {
+          "engine": "chromium",
+          "kind": "enquiry",
+          "viewport": {
+            "width": 320,
+            "height": 740
+          },
+          "beforeCloseTop": 30,
+          "afterCloseTop": 30,
+          "closeHit": true,
+          "focusRestored": true,
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": null,
+          "passed": true
+        },
+        {
+          "engine": "chromium",
+          "kind": "menu",
+          "viewport": {
+            "width": 320,
+            "height": 740
+          },
+          "beforeCloseTop": 24,
+          "afterCloseTop": 24,
+          "closeHit": true,
+          "focusRestored": true,
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": null,
+          "passed": true
+        },
+        {
+          "engine": "chromium",
+          "kind": "enquiry",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "beforeCloseTop": 114.140625,
+          "afterCloseTop": 114.140625,
+          "closeHit": true,
+          "focusRestored": true,
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": {
+            "right": 338.265625,
+            "fontSize": "48px",
+            "lines": [
+              {
+                "text": "A place",
+                "rects": [
+                  {
+                    "right": 250.5,
+                    "width": 178
+                  }
+                ]
+              },
+              {
+                "text": "beyond",
+                "rects": [
+                  {
+                    "right": 248.5,
+                    "width": 176
+                  }
+                ]
+              },
+              {
+                "text": "compare.",
+                "rects": [
+                  {
+                    "right": 293.5,
+                    "width": 221
+                  }
+                ]
+              }
+            ]
+          },
+          "passed": true
+        },
+        {
+          "engine": "chromium",
+          "kind": "menu",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "beforeCloseTop": 24,
+          "afterCloseTop": 24,
+          "closeHit": true,
+          "focusRestored": "Original mobile trigger is hidden after rotation",
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": null,
+          "passed": true
+        },
+        {
+          "engine": "chromium",
+          "kind": "enquiry",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "beforeCloseTop": 46,
+          "afterCloseTop": 46,
+          "closeHit": true,
+          "focusRestored": true,
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": {
+            "right": 372.046875,
+            "fontSize": "55.4px",
+            "lines": [
+              {
+                "text": "A place",
+                "rects": [
+                  {
+                    "right": 276.5,
+                    "width": 204
+                  }
+                ]
+              },
+              {
+                "text": "beyond",
+                "rects": [
+                  {
+                    "right": 271.5,
+                    "width": 199
+                  }
+                ]
+              },
+              {
+                "text": "compare.",
+                "rects": [
+                  {
+                    "right": 324.5,
+                    "width": 252
+                  }
+                ]
+              }
+            ]
+          },
+          "passed": true
+        },
+        {
+          "engine": "chromium",
+          "kind": "menu",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "beforeCloseTop": 24,
+          "afterCloseTop": 24,
+          "closeHit": true,
+          "focusRestored": "Original mobile trigger is hidden after rotation",
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": null,
+          "passed": true
+        },
+        {
+          "engine": "webkit",
+          "kind": "enquiry",
+          "viewport": {
+            "width": 320,
+            "height": 740
+          },
+          "beforeCloseTop": 30,
+          "afterCloseTop": 30,
+          "closeHit": true,
+          "focusRestored": true,
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": null,
+          "passed": true
+        },
+        {
+          "engine": "webkit",
+          "kind": "menu",
+          "viewport": {
+            "width": 320,
+            "height": 740
+          },
+          "beforeCloseTop": 24,
+          "afterCloseTop": 24,
+          "closeHit": true,
+          "focusRestored": true,
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": null,
+          "passed": true
+        },
+        {
+          "engine": "webkit",
+          "kind": "enquiry",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "beforeCloseTop": 115,
+          "afterCloseTop": 115,
+          "closeHit": true,
+          "focusRestored": true,
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": {
+            "right": 345.765625,
+            "fontSize": "48px",
+            "lines": [
+              {
+                "text": "A place",
+                "rects": [
+                  {
+                    "right": 258.51239013671875,
+                    "width": 178.51239013671875
+                  }
+                ]
+              },
+              {
+                "text": "beyond",
+                "rects": [
+                  {
+                    "right": 254.33636474609375,
+                    "width": 174.33636474609375
+                  }
+                ]
+              },
+              {
+                "text": "compare.",
+                "rects": [
+                  {
+                    "right": 299.79248046875,
+                    "width": 219.79248046875
+                  }
+                ]
+              }
+            ]
+          },
+          "passed": true
+        },
+        {
+          "engine": "webkit",
+          "kind": "menu",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "beforeCloseTop": 24,
+          "afterCloseTop": 24,
+          "closeHit": true,
+          "focusRestored": "Original mobile trigger is hidden after rotation",
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": null,
+          "passed": true
+        },
+        {
+          "engine": "webkit",
+          "kind": "enquiry",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "beforeCloseTop": 46,
+          "afterCloseTop": 46,
+          "closeHit": true,
+          "focusRestored": true,
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": {
+            "right": 379.546875,
+            "fontSize": "55.399994px",
+            "lines": [
+              {
+                "text": "A place",
+                "rects": [
+                  {
+                    "right": 285.99658203125,
+                    "width": 205.99658203125
+                  }
+                ]
+              },
+              {
+                "text": "beyond",
+                "rects": [
+                  {
+                    "right": 281.1773681640625,
+                    "width": 201.1773681640625
+                  }
+                ]
+              },
+              {
+                "text": "compare.",
+                "rects": [
+                  {
+                    "right": 333.6318054199219,
+                    "width": 253.63180541992188
+                  }
+                ]
+              }
+            ]
+          },
+          "passed": true
+        },
+        {
+          "engine": "webkit",
+          "kind": "menu",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "beforeCloseTop": 24,
+          "afterCloseTop": 24,
+          "closeHit": true,
+          "focusRestored": "Original mobile trigger is hidden after rotation",
+          "reopenedScroll": [
+            0
+          ],
+          "locksAfterClose": {
+            "open": 0,
+            "bodyClass": false,
+            "body": "visible",
+            "html": "visible"
+          },
+          "editorial": null,
+          "passed": true
+        }
+      ],
+      "apiRequests": 0,
+      "pageErrors": [],
+      "rawReport": "dialogs-final/report.json",
+      "sourceStage": "Before final copy/CTA flow only; dialog source unchanged afterward. Existing browser suite including form success repeated on frozen source."
+    },
+    "readingContinuity": [
+      {
+        "engine": "chromium",
+        "passed": true,
+        "cases": [
+          {
+            "name": "normal-to-reduced",
+            "beforeTop": -384,
+            "afterTop": -384,
+            "beforeY": 10804,
+            "afterY": 10804,
+            "passed": true,
+            "dialogDuring": null,
+            "dialogReturned": null,
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          },
+          {
+            "name": "reduced-to-normal",
+            "beforeTop": -384,
+            "afterTop": -384,
+            "beforeY": 10804,
+            "afterY": 10804,
+            "passed": true,
+            "dialogDuring": null,
+            "dialogReturned": null,
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          },
+          {
+            "name": "desktop-to-mobile-before-pinned-section",
+            "beforeTop": -384,
+            "afterTop": -369.609375,
+            "beforeY": 10804,
+            "afterY": 6599,
+            "passed": true,
+            "dialogDuring": null,
+            "dialogReturned": null,
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          },
+          {
+            "name": "mobile-to-desktop",
+            "beforeTop": -369.609375,
+            "afterTop": -370,
+            "beforeY": 6599,
+            "afterY": 10790,
+            "passed": true,
+            "dialogDuring": null,
+            "dialogReturned": null,
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          },
+          {
+            "name": "motion-change-with-dialog-and-close",
+            "beforeTop": 4432,
+            "afterTop": 4432,
+            "beforeY": 5988,
+            "afterY": 5988,
+            "passed": true,
+            "dialogDuring": {
+              "y": 5988,
+              "top": 4432,
+              "bottom": 5372,
+              "height": 940,
+              "viewport": 900,
+              "pins": 0,
+              "dialogs": 1,
+              "locked": true,
+              "bodyOverflow": "hidden",
+              "htmlOverflow": "hidden"
+            },
+            "dialogReturned": {
+              "y": 5988,
+              "top": 4432,
+              "bottom": 5372,
+              "height": 940,
+              "viewport": 900,
+              "pins": 0,
+              "dialogs": 1,
+              "locked": true,
+              "bodyOverflow": "hidden",
+              "htmlOverflow": "hidden"
+            },
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          }
+        ]
+      },
+      {
+        "engine": "webkit",
+        "passed": true,
+        "cases": [
+          {
+            "name": "normal-to-reduced",
+            "beforeTop": -384,
+            "afterTop": -384,
+            "beforeY": 10804,
+            "afterY": 10804,
+            "passed": true,
+            "dialogDuring": null,
+            "dialogReturned": null,
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          },
+          {
+            "name": "reduced-to-normal",
+            "beforeTop": -384,
+            "afterTop": -384,
+            "beforeY": 10804,
+            "afterY": 10804,
+            "passed": true,
+            "dialogDuring": null,
+            "dialogReturned": null,
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          },
+          {
+            "name": "desktop-to-mobile-before-pinned-section",
+            "beforeTop": -384,
+            "afterTop": -369.125,
+            "beforeY": 10804,
+            "afterY": 6574,
+            "passed": true,
+            "dialogDuring": null,
+            "dialogReturned": null,
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          },
+          {
+            "name": "mobile-to-desktop",
+            "beforeTop": -369.125,
+            "afterTop": -369,
+            "beforeY": 6574,
+            "afterY": 10789,
+            "passed": true,
+            "dialogDuring": null,
+            "dialogReturned": null,
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          },
+          {
+            "name": "motion-change-with-dialog-and-close",
+            "beforeTop": 4432,
+            "afterTop": 4432,
+            "beforeY": 5988,
+            "afterY": 5988,
+            "passed": true,
+            "dialogDuring": {
+              "y": 5988,
+              "top": 4432,
+              "bottom": 5372,
+              "height": 940,
+              "viewport": 900,
+              "pins": 0,
+              "dialogs": 1,
+              "locked": true,
+              "bodyOverflow": "hidden",
+              "htmlOverflow": "hidden"
+            },
+            "dialogReturned": {
+              "y": 5988,
+              "top": 4432,
+              "bottom": 5372,
+              "height": 940,
+              "viewport": 900,
+              "pins": 0,
+              "dialogs": 1,
+              "locked": true,
+              "bodyOverflow": "hidden",
+              "htmlOverflow": "hidden"
+            },
+            "afterBodyOverflow": "visible",
+            "afterHtmlOverflow": "visible"
+          }
+        ]
+      }
+    ],
+    "textLayout": {
+      "passed": true,
+      "cases": [
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 16,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 24,
+              "right": 351,
+              "top": 468.390625,
+              "bottom": 568.390625,
+              "width": 327,
+              "height": 100
+            },
+            "controls": {
+              "left": 0,
+              "right": 375,
+              "top": 592.390625,
+              "bottom": 643.390625,
+              "width": 375,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 375,
+              "top": 0.390625,
+              "bottom": 667.390625,
+              "width": 375,
+              "height": 667
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          }
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 14,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 384,
+              "right": 556.796875,
+              "top": 334.65625,
+              "bottom": 469,
+              "width": 172.796875,
+              "height": 134.34375
+            },
+            "controls": {
+              "left": 593,
+              "right": 713,
+              "top": 437,
+              "bottom": 488,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 753,
+              "top": -0.328125,
+              "bottom": 501,
+              "width": 753,
+              "height": 501.328125
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          },
+          "location": {
+            "bodyFontSize": 14,
+            "title": {
+              "left": 509.328125,
+              "right": 727.984375,
+              "top": 229.421875,
+              "bottom": 281.15625,
+              "width": 218.65625,
+              "height": 51.734375
+            },
+            "body": {
+              "left": 509.328125,
+              "right": 727.984375,
+              "top": 295.015625,
+              "bottom": 496.53125,
+              "width": 218.65625,
+              "height": 201.515625
+            },
+            "cta": {
+              "left": 509.328125,
+              "right": 727.984375,
+              "top": 520.53125,
+              "bottom": 572.03125,
+              "width": 218.65625,
+              "height": 51.5
+            },
+            "section": {
+              "left": 0,
+              "right": 753,
+              "top": -0.4375,
+              "bottom": 612.5625,
+              "width": 753,
+              "height": 613
+            },
+            "scrollWidth": 753,
+            "clientWidth": 768
+          },
+          "partners": [
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 57.0625,
+                "right": 241.59375,
+                "top": 730.234375,
+                "bottom": 909.359375,
+                "width": 184.53125,
+                "height": 179.125
+              },
+              "card": {
+                "left": 40,
+                "right": 258.65625,
+                "top": 642.484375,
+                "bottom": 924.28125,
+                "width": 218.65625,
+                "height": 281.796875
+              }
+            },
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 511.40625,
+                "right": 695.9375,
+                "top": 730.234375,
+                "bottom": 909.359375,
+                "width": 184.53125,
+                "height": 179.125
+              },
+              "card": {
+                "left": 494.34375,
+                "right": 713,
+                "top": 642.484375,
+                "bottom": 924.28125,
+                "width": 218.65625,
+                "height": 281.796875
+              }
+            }
+          ],
+          "footer": {
+            "left": 40,
+            "right": 713,
+            "top": 924.28125,
+            "bottom": 1000.28125,
+            "width": 673,
+            "height": 76
+          }
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 14,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 422,
+              "right": 611.890625,
+              "top": 384.390625,
+              "bottom": 518.734375,
+              "width": 189.890625,
+              "height": 134.34375
+            },
+            "controls": {
+              "left": 665.046875,
+              "right": 785.046875,
+              "top": 480.40625,
+              "bottom": 531.40625,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 829,
+              "top": -0.203125,
+              "bottom": 550.734375,
+              "width": 829,
+              "height": 550.9375
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          },
+          "location": {
+            "bodyFontSize": 14,
+            "title": {
+              "left": 559.71875,
+              "right": 800.015625,
+              "top": 253.9375,
+              "bottom": 310.8125,
+              "width": 240.296875,
+              "height": 56.875
+            },
+            "body": {
+              "left": 559.71875,
+              "right": 800.015625,
+              "top": 327.328125,
+              "bottom": 484.0625,
+              "width": 240.296875,
+              "height": 156.734375
+            },
+            "cta": {
+              "left": 559.71875,
+              "right": 800.015625,
+              "top": 509.34375,
+              "bottom": 560.84375,
+              "width": 240.296875,
+              "height": 51.5
+            },
+            "section": {
+              "left": 0,
+              "right": 829,
+              "top": 0.0625,
+              "bottom": 606.6875,
+              "width": 829,
+              "height": 606.625
+            },
+            "scrollWidth": 829,
+            "clientWidth": 844
+          },
+          "partners": [
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 62.703125,
+                "right": 265.5,
+                "top": 95.09375,
+                "bottom": 274.21875,
+                "width": 202.796875,
+                "height": 179.125
+              },
+              "card": {
+                "left": 43.953125,
+                "right": 284.25,
+                "top": 0.46875,
+                "bottom": 290.625,
+                "width": 240.296875,
+                "height": 290.15625
+              }
+            },
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 563.5,
+                "right": 766.296875,
+                "top": 95.09375,
+                "bottom": 251.828125,
+                "width": 202.796875,
+                "height": 156.734375
+              },
+              "card": {
+                "left": 544.75,
+                "right": 785.046875,
+                "top": 0.46875,
+                "bottom": 290.625,
+                "width": 240.296875,
+                "height": 290.15625
+              }
+            }
+          ],
+          "footer": {
+            "left": 43.953125,
+            "right": 785.046875,
+            "top": 290.625,
+            "bottom": 371.375,
+            "width": 741.09375,
+            "height": 80.75
+          }
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 14,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 512,
+              "right": 742.390625,
+              "top": 524.078125,
+              "bottom": 636.03125,
+              "width": 230.390625,
+              "height": 111.953125
+            },
+            "controls": {
+              "left": 835.671875,
+              "right": 955.671875,
+              "top": 582.703125,
+              "bottom": 633.703125,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 1009,
+              "top": -0.40625,
+              "bottom": 668.03125,
+              "width": 1009,
+              "height": 668.4375
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          },
+          "location": {
+            "bodyFontSize": 14,
+            "title": {
+              "left": 679.09375,
+              "right": 970.640625,
+              "top": 326.109375,
+              "bottom": 395.109375,
+              "width": 291.546875,
+              "height": 69
+            },
+            "body": {
+              "left": 679.09375,
+              "right": 970.640625,
+              "top": 433.125,
+              "bottom": 567.46875,
+              "width": 291.546875,
+              "height": 134.34375
+            },
+            "cta": {
+              "left": 679.09375,
+              "right": 970.640625,
+              "top": 611.015625,
+              "bottom": 662.515625,
+              "width": 291.546875,
+              "height": 51.5
+            },
+            "section": {
+              "left": 0,
+              "right": 1009,
+              "top": 0.109375,
+              "bottom": 736.109375,
+              "width": 1009,
+              "height": 736
+            },
+            "scrollWidth": 1009,
+            "clientWidth": 1024
+          },
+          "partners": [
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 76.078125,
+                "right": 322.125,
+                "top": 410.984375,
+                "bottom": 545.328125,
+                "width": 246.046875,
+                "height": 134.34375
+              },
+              "card": {
+                "left": 53.328125,
+                "right": 344.875,
+                "top": 300.015625,
+                "bottom": 565.234375,
+                "width": 291.546875,
+                "height": 265.21875
+              }
+            },
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 686.875,
+                "right": 932.921875,
+                "top": 410.984375,
+                "bottom": 545.328125,
+                "width": 246.046875,
+                "height": 134.34375
+              },
+              "card": {
+                "left": 664.125,
+                "right": 955.671875,
+                "top": 300.015625,
+                "bottom": 565.234375,
+                "width": 291.546875,
+                "height": 265.21875
+              }
+            }
+          ],
+          "footer": {
+            "left": 53.328125,
+            "right": 955.671875,
+            "top": 643.921875,
+            "bottom": 735.921875,
+            "width": 902.34375,
+            "height": 92
+          }
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 1100,
+            "height": 900
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 14,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 550,
+              "right": 797.5,
+              "top": 574.421875,
+              "bottom": 686.375,
+              "width": 247.5,
+              "height": 111.953125
+            },
+            "controls": {
+              "left": 907.71875,
+              "right": 1027.71875,
+              "top": 626.703125,
+              "bottom": 677.703125,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 1085,
+              "top": 0.328125,
+              "bottom": 718.375,
+              "width": 1085,
+              "height": 718.046875
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          },
+          "location": {
+            "bodyFontSize": 14,
+            "title": {
+              "left": 729.5,
+              "right": 1042.6875,
+              "top": 354.328125,
+              "bottom": 428.453125,
+              "width": 313.1875,
+              "height": 74.125
+            },
+            "body": {
+              "left": 729.5,
+              "right": 1042.6875,
+              "top": 473.1875,
+              "bottom": 607.53125,
+              "width": 313.1875,
+              "height": 134.34375
+            },
+            "cta": {
+              "left": 729.5,
+              "right": 1042.6875,
+              "top": 656.40625,
+              "bottom": 707.90625,
+              "width": 313.1875,
+              "height": 51.5
+            },
+            "section": {
+              "left": 0,
+              "right": 1085,
+              "top": 0.234375,
+              "bottom": 790.859375,
+              "width": 1085,
+              "height": 790.625
+            },
+            "scrollWidth": 1085,
+            "clientWidth": 1100
+          },
+          "partners": [
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 81.71875,
+                "right": 346.03125,
+                "top": 515.484375,
+                "bottom": 649.828125,
+                "width": 264.3125,
+                "height": 134.34375
+              },
+              "card": {
+                "left": 57.28125,
+                "right": 370.46875,
+                "top": 397.609375,
+                "bottom": 671.203125,
+                "width": 313.1875,
+                "height": 273.59375
+              }
+            },
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 738.96875,
+                "right": 1003.28125,
+                "top": 515.484375,
+                "bottom": 627.4375,
+                "width": 264.3125,
+                "height": 111.953125
+              },
+              "card": {
+                "left": 714.53125,
+                "right": 1027.71875,
+                "top": 397.609375,
+                "bottom": 671.203125,
+                "width": 313.1875,
+                "height": 273.59375
+              }
+            }
+          ],
+          "footer": {
+            "left": 57.28125,
+            "right": 1027.71875,
+            "top": 769.125,
+            "bottom": 865.875,
+            "width": 970.4375,
+            "height": 96.75
+          }
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 1101,
+            "height": 900
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 12.2333,
+            "counterFontSize": 12.2333,
+            "copy": {
+              "left": 550.5,
+              "right": 798.21875,
+              "top": 587.890625,
+              "bottom": 667.390625,
+              "width": 247.71875,
+              "height": 79.5
+            },
+            "controls": {
+              "left": 908.65625,
+              "right": 1028.65625,
+              "top": 626.890625,
+              "bottom": 677.890625,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 1086,
+              "top": -0.0625,
+              "bottom": 718.640625,
+              "width": 1086,
+              "height": 718.703125
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          }
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 16,
+            "counterFontSize": 16,
+            "copy": {
+              "left": 720,
+              "right": 1044,
+              "top": 769,
+              "bottom": 873,
+              "width": 324,
+              "height": 104
+            },
+            "controls": {
+              "left": 1230,
+              "right": 1350,
+              "top": 820,
+              "bottom": 871,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 1425,
+              "top": 0,
+              "bottom": 940,
+              "width": 1425,
+              "height": 940
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          }
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 16,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 24,
+              "right": 366,
+              "top": 1007.875,
+              "bottom": 1107.875,
+              "width": 342,
+              "height": 100
+            },
+            "controls": {
+              "left": 0,
+              "right": 390,
+              "top": 1131.875,
+              "bottom": 1182.875,
+              "width": 390,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 390,
+              "top": 539.875,
+              "bottom": 1206.875,
+              "width": 390,
+              "height": 667
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          }
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 14,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 384,
+              "right": 556.796875,
+              "top": 337.34375,
+              "bottom": 469.34375,
+              "width": 172.796875,
+              "height": 132
+            },
+            "controls": {
+              "left": 608,
+              "right": 728,
+              "top": 437.34375,
+              "bottom": 488.34375,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 768,
+              "top": 0.015625,
+              "bottom": 501.34375,
+              "width": 768,
+              "height": 501.328125
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          },
+          "location": {
+            "bodyFontSize": 14,
+            "title": {
+              "left": 509.328125,
+              "right": 727.984375,
+              "top": 230.453125,
+              "bottom": 281.453125,
+              "width": 218.65625,
+              "height": 51
+            },
+            "body": {
+              "left": 509.328125,
+              "right": 727.984375,
+              "top": 295.3125,
+              "bottom": 471.3125,
+              "width": 218.65625,
+              "height": 176
+            },
+            "cta": {
+              "left": 509.328125,
+              "right": 727.984375,
+              "top": 495.3125,
+              "bottom": 546.3125,
+              "width": 218.65625,
+              "height": 51
+            },
+            "section": {
+              "left": 0,
+              "right": 768,
+              "top": 0.59375,
+              "bottom": 586.84375,
+              "width": 768,
+              "height": 586.25
+            },
+            "scrollWidth": 768,
+            "clientWidth": 768
+          },
+          "partners": [
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 57.0625,
+                "right": 241.59375,
+                "top": 732.609375,
+                "bottom": 908.609375,
+                "width": 184.53125,
+                "height": 176
+              },
+              "card": {
+                "left": 40,
+                "right": 258.65625,
+                "top": 646.765625,
+                "bottom": 923.53125,
+                "width": 218.65625,
+                "height": 276.765625
+              }
+            },
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 526.40625,
+                "right": 710.9375,
+                "top": 732.609375,
+                "bottom": 908.609375,
+                "width": 184.53125,
+                "height": 176
+              },
+              "card": {
+                "left": 509.34375,
+                "right": 728,
+                "top": 646.765625,
+                "bottom": 923.53125,
+                "width": 218.65625,
+                "height": 276.765625
+              }
+            }
+          ],
+          "footer": {
+            "left": 40,
+            "right": 728,
+            "top": 923.53125,
+            "bottom": 999.53125,
+            "width": 688,
+            "height": 76
+          }
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 14,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 421.984375,
+              "right": 611.875,
+              "top": 387.078125,
+              "bottom": 519.078125,
+              "width": 189.890625,
+              "height": 132
+            },
+            "controls": {
+              "left": 680.046875,
+              "right": 800.046875,
+              "top": 480.75,
+              "bottom": 531.75,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 844,
+              "top": 0.140625,
+              "bottom": 551.078125,
+              "width": 844,
+              "height": 550.9375
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          },
+          "location": {
+            "bodyFontSize": 14,
+            "title": {
+              "left": 559.71875,
+              "right": 800.015625,
+              "top": 255.5625,
+              "bottom": 311.5625,
+              "width": 240.296875,
+              "height": 56
+            },
+            "body": {
+              "left": 559.71875,
+              "right": 800.015625,
+              "top": 329.109375,
+              "bottom": 483.109375,
+              "width": 240.296875,
+              "height": 154
+            },
+            "cta": {
+              "left": 559.71875,
+              "right": 800.015625,
+              "top": 509.421875,
+              "bottom": 560.421875,
+              "width": 240.296875,
+              "height": 51
+            },
+            "section": {
+              "left": 0,
+              "right": 844,
+              "top": 0.65625,
+              "bottom": 607.28125,
+              "width": 844,
+              "height": 606.625
+            },
+            "scrollWidth": 844,
+            "clientWidth": 844
+          },
+          "partners": [
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 62.703125,
+                "right": 265.5,
+                "top": 92.875,
+                "bottom": 268.875,
+                "width": 202.796875,
+                "height": 176
+              },
+              "card": {
+                "left": 43.953125,
+                "right": 284.25,
+                "top": 0.0625,
+                "bottom": 285.28125,
+                "width": 240.296875,
+                "height": 285.21875
+              }
+            },
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 578.5,
+                "right": 781.296875,
+                "top": 92.875,
+                "bottom": 246.875,
+                "width": 202.796875,
+                "height": 154
+              },
+              "card": {
+                "left": 559.75,
+                "right": 800.046875,
+                "top": 0.0625,
+                "bottom": 285.28125,
+                "width": 240.296875,
+                "height": 285.21875
+              }
+            }
+          ],
+          "footer": {
+            "left": 43.953125,
+            "right": 800.046875,
+            "top": 285.28125,
+            "bottom": 366.015625,
+            "width": 756.09375,
+            "height": 80.734375
+          }
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 14,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 512,
+              "right": 742.390625,
+              "top": 548.765625,
+              "bottom": 636.765625,
+              "width": 230.390625,
+              "height": 88
+            },
+            "controls": {
+              "left": 850.671875,
+              "right": 970.671875,
+              "top": 583.4375,
+              "bottom": 634.4375,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 1024,
+              "top": 0.328125,
+              "bottom": 668.765625,
+              "width": 1024,
+              "height": 668.4375
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          },
+          "location": {
+            "bodyFontSize": 14,
+            "title": {
+              "left": 679.09375,
+              "right": 970.640625,
+              "top": 327.0625,
+              "bottom": 395.0625,
+              "width": 291.546875,
+              "height": 68
+            },
+            "body": {
+              "left": 679.09375,
+              "right": 970.640625,
+              "top": 434.046875,
+              "bottom": 566.046875,
+              "width": 291.546875,
+              "height": 132
+            },
+            "cta": {
+              "left": 679.09375,
+              "right": 970.640625,
+              "top": 610.546875,
+              "bottom": 661.546875,
+              "width": 291.546875,
+              "height": 51
+            },
+            "section": {
+              "left": 0,
+              "right": 1024,
+              "top": 0.09375,
+              "bottom": 736.09375,
+              "width": 1024,
+              "height": 736
+            },
+            "scrollWidth": 1024,
+            "clientWidth": 1024
+          },
+          "partners": [
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 76.078125,
+                "right": 322.125,
+                "top": 409.8125,
+                "bottom": 541.8125,
+                "width": 246.046875,
+                "height": 132
+              },
+              "card": {
+                "left": 53.328125,
+                "right": 344.875,
+                "top": 300,
+                "bottom": 561.71875,
+                "width": 291.546875,
+                "height": 261.71875
+              }
+            },
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 701.875,
+                "right": 947.921875,
+                "top": 409.8125,
+                "bottom": 519.8125,
+                "width": 246.046875,
+                "height": 110
+              },
+              "card": {
+                "left": 679.125,
+                "right": 970.671875,
+                "top": 300,
+                "bottom": 561.71875,
+                "width": 291.546875,
+                "height": 261.71875
+              }
+            }
+          ],
+          "footer": {
+            "left": 53.328125,
+            "right": 970.671875,
+            "top": 643.90625,
+            "bottom": 735.90625,
+            "width": 917.34375,
+            "height": 92
+          }
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 1100,
+            "height": 900
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 14,
+            "counterFontSize": 14,
+            "copy": {
+              "left": 550,
+              "right": 797.5,
+              "top": 598.5,
+              "bottom": 686.5,
+              "width": 247.5,
+              "height": 88
+            },
+            "controls": {
+              "left": 922.71875,
+              "right": 1042.71875,
+              "top": 626.828125,
+              "bottom": 677.828125,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 1100,
+              "top": 0.453125,
+              "bottom": 718.5,
+              "width": 1100,
+              "height": 718.046875
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          },
+          "location": {
+            "bodyFontSize": 14,
+            "title": {
+              "left": 729.5,
+              "right": 1042.6875,
+              "top": 355,
+              "bottom": 429,
+              "width": 313.1875,
+              "height": 74
+            },
+            "body": {
+              "left": 729.5,
+              "right": 1042.6875,
+              "top": 474.484375,
+              "bottom": 606.484375,
+              "width": 313.1875,
+              "height": 132
+            },
+            "cta": {
+              "left": 729.5,
+              "right": 1042.6875,
+              "top": 656.109375,
+              "bottom": 707.109375,
+              "width": 313.1875,
+              "height": 51
+            },
+            "section": {
+              "left": 0,
+              "right": 1100,
+              "top": 0.171875,
+              "bottom": 790.796875,
+              "width": 1100,
+              "height": 790.625
+            },
+            "scrollWidth": 1100,
+            "clientWidth": 1100
+          },
+          "partners": [
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 81.71875,
+                "right": 346.03125,
+                "top": 514.296875,
+                "bottom": 646.296875,
+                "width": 264.3125,
+                "height": 132
+              },
+              "card": {
+                "left": 57.28125,
+                "right": 370.46875,
+                "top": 397.546875,
+                "bottom": 667.671875,
+                "width": 313.1875,
+                "height": 270.125
+              }
+            },
+            {
+              "fontSize": 14,
+              "body": {
+                "left": 753.96875,
+                "right": 1018.28125,
+                "top": 514.296875,
+                "bottom": 624.296875,
+                "width": 264.3125,
+                "height": 110
+              },
+              "card": {
+                "left": 729.53125,
+                "right": 1042.71875,
+                "top": 397.546875,
+                "bottom": 667.671875,
+                "width": 313.1875,
+                "height": 270.125
+              }
+            }
+          ],
+          "footer": {
+            "left": 57.28125,
+            "right": 1042.71875,
+            "top": 769.0625,
+            "bottom": 865.8125,
+            "width": 985.4375,
+            "height": 96.75
+          }
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 1101,
+            "height": 900
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 12.233334,
+            "counterFontSize": 12.233334,
+            "copy": {
+              "left": 550.5,
+              "right": 798.21875,
+              "top": 588.890625,
+              "bottom": 664.890625,
+              "width": 247.71875,
+              "height": 76
+            },
+            "controls": {
+              "left": 923.65625,
+              "right": 1043.65625,
+              "top": 627.890625,
+              "bottom": 678.890625,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 1101,
+              "top": 0.9375,
+              "bottom": 719.640625,
+              "width": 1101,
+              "height": 718.703125
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          }
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "passed": true,
+          "gallery": {
+            "copyFontSize": 16,
+            "counterFontSize": 16,
+            "copy": {
+              "left": 720,
+              "right": 1044,
+              "top": 769,
+              "bottom": 873,
+              "width": 324,
+              "height": 104
+            },
+            "controls": {
+              "left": 1245,
+              "right": 1365,
+              "top": 820,
+              "bottom": 871,
+              "width": 120,
+              "height": 51
+            },
+            "frame": {
+              "left": 0,
+              "right": 1440,
+              "top": 0,
+              "bottom": 940,
+              "width": 1440,
+              "height": 940
+            },
+            "titleShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px",
+            "counterShadow": "rgba(7, 24, 41, 0.7) 0px 1px 2px, rgba(7, 24, 41, 0.4) 0px 0px 8px"
+          }
+        }
+      ],
+      "rawReport": "text-layout-final/report.json",
+      "errors": [],
+      "apiRequests": 0,
+      "sourceStage": "Final tablet body, Location, Partners, gallery shadow and copy flow; before last Sky min-width300. Unchanged gallery/Location/Partners rules; final copy cases below verify the last change."
+    },
+    "finalCopyActions": {
+      "passed": true,
+      "cases": [
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 24,
+                "right": 351,
+                "top": 20,
+                "bottom": 202,
+                "width": 327,
+                "height": 182
+              },
+              "cta": {
+                "left": 24,
+                "right": 351,
+                "top": 234,
+                "bottom": 289,
+                "width": 327,
+                "height": 55
+              },
+              "fontSize": 16,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 24,
+                "right": 351,
+                "top": 20,
+                "bottom": 195,
+                "width": 327,
+                "height": 175
+              },
+              "cta": {
+                "left": 24,
+                "right": 351,
+                "top": 227,
+                "bottom": 282,
+                "width": 327,
+                "height": 55
+              },
+              "fontSize": 16,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 509.3125,
+                "right": 727.96875,
+                "top": 20.328125,
+                "bottom": 198.5,
+                "width": 218.65625,
+                "height": 178.171875
+              },
+              "cta": {
+                "left": 389.859375,
+                "right": 582.859375,
+                "top": 222.5,
+                "bottom": 274,
+                "width": 193,
+                "height": 51.5
+              },
+              "fontSize": 12,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 389.328125,
+                "right": 689.328125,
+                "top": 19.515625,
+                "bottom": 206.4375,
+                "width": 300,
+                "height": 186.921875
+              },
+              "cta": {
+                "left": 389.328125,
+                "right": 614.328125,
+                "top": 230.4375,
+                "bottom": 281.9375,
+                "width": 225,
+                "height": 51.5
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 559.71875,
+                "right": 800.015625,
+                "top": 20.421875,
+                "bottom": 178.796875,
+                "width": 240.296875,
+                "height": 158.375
+              },
+              "cta": {
+                "left": 428.4375,
+                "right": 621.4375,
+                "top": 202.796875,
+                "bottom": 254.296875,
+                "width": 193,
+                "height": 51.5
+              },
+              "fontSize": 12,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 427.859375,
+                "right": 727.859375,
+                "top": 20.1875,
+                "bottom": 207.109375,
+                "width": 300,
+                "height": 186.921875
+              },
+              "cta": {
+                "left": 427.859375,
+                "right": 652.859375,
+                "top": 231.109375,
+                "bottom": 282.609375,
+                "width": 225,
+                "height": 51.5
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 679.09375,
+                "right": 970.640625,
+                "top": 20.421875,
+                "bottom": 139.203125,
+                "width": 291.546875,
+                "height": 118.78125
+              },
+              "cta": {
+                "left": 519.8125,
+                "right": 712.8125,
+                "top": 163.203125,
+                "bottom": 214.703125,
+                "width": 193,
+                "height": 51.5
+              },
+              "fontSize": 12,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 519.109375,
+                "right": 819.109375,
+                "top": 19.6875,
+                "bottom": 206.609375,
+                "width": 300,
+                "height": 186.921875
+              },
+              "cta": {
+                "left": 519.109375,
+                "right": 744.109375,
+                "top": 230.609375,
+                "bottom": 282.109375,
+                "width": 225,
+                "height": 51.5
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 1100,
+            "height": 900
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 729.5,
+                "right": 1042.6875,
+                "top": 19.546875,
+                "bottom": 138.328125,
+                "width": 313.1875,
+                "height": 118.78125
+              },
+              "cta": {
+                "left": 558.390625,
+                "right": 751.390625,
+                "top": 162.328125,
+                "bottom": 213.828125,
+                "width": 193,
+                "height": 51.5
+              },
+              "fontSize": 12,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 557.625,
+                "right": 857.625,
+                "top": 20.359375,
+                "bottom": 207.28125,
+                "width": 300,
+                "height": 186.921875
+              },
+              "cta": {
+                "left": 557.625,
+                "right": 782.625,
+                "top": 231.28125,
+                "bottom": 282.78125,
+                "width": 225,
+                "height": 51.5
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 1101,
+            "height": 900
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 730.171875,
+                "right": 996.234375,
+                "top": 19.828125,
+                "bottom": 193.40625,
+                "width": 266.0625,
+                "height": 173.578125
+              },
+              "cta": {
+                "left": 558.90625,
+                "right": 793.90625,
+                "top": 212.5,
+                "bottom": 267.5,
+                "width": 235,
+                "height": 55
+              },
+              "fontSize": 13,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 558.140625,
+                "right": 854.796875,
+                "top": 19.59375,
+                "bottom": 206.515625,
+                "width": 296.65625,
+                "height": 186.921875
+              },
+              "cta": {
+                "left": 558.140625,
+                "right": 836.140625,
+                "top": 285.671875,
+                "bottom": 340.671875,
+                "width": 278,
+                "height": 55
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 955,
+                "right": 1303,
+                "top": 20,
+                "bottom": 233.609375,
+                "width": 348,
+                "height": 213.609375
+              },
+              "cta": {
+                "left": 731,
+                "right": 966,
+                "top": 272,
+                "bottom": 327,
+                "width": 235,
+                "height": 55
+              },
+              "fontSize": 16,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 730,
+                "right": 1118,
+                "top": 20,
+                "bottom": 203.09375,
+                "width": 388,
+                "height": 183.09375
+              },
+              "cta": {
+                "left": 730,
+                "right": 1008,
+                "top": 368,
+                "bottom": 423,
+                "width": 278,
+                "height": 55
+              },
+              "fontSize": 16,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 24,
+                "right": 366,
+                "top": 20,
+                "bottom": 176,
+                "width": 342,
+                "height": 156
+              },
+              "cta": {
+                "left": 24,
+                "right": 366,
+                "top": 208,
+                "bottom": 263,
+                "width": 342,
+                "height": 55
+              },
+              "fontSize": 16,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 24,
+                "right": 366,
+                "top": 20,
+                "bottom": 195,
+                "width": 342,
+                "height": 175
+              },
+              "cta": {
+                "left": 24,
+                "right": 366,
+                "top": 227,
+                "bottom": 282,
+                "width": 342,
+                "height": 55
+              },
+              "fontSize": 16,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 768,
+            "height": 1024
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 509.3125,
+                "right": 727.96875,
+                "top": 20.328125,
+                "bottom": 153.328125,
+                "width": 218.65625,
+                "height": 133
+              },
+              "cta": {
+                "left": 389.859375,
+                "right": 573.421875,
+                "top": 177.328125,
+                "bottom": 228.328125,
+                "width": 183.5625,
+                "height": 51
+              },
+              "fontSize": 12,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 389.328125,
+                "right": 689.328125,
+                "top": 20.515625,
+                "bottom": 202.515625,
+                "width": 300,
+                "height": 182
+              },
+              "cta": {
+                "left": 389.328125,
+                "right": 604.140625,
+                "top": 226.515625,
+                "bottom": 277.515625,
+                "width": 214.8125,
+                "height": 51
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 559.71875,
+                "right": 800.015625,
+                "top": 20.421875,
+                "bottom": 153.421875,
+                "width": 240.296875,
+                "height": 133
+              },
+              "cta": {
+                "left": 428.4375,
+                "right": 612,
+                "top": 177.421875,
+                "bottom": 228.421875,
+                "width": 183.5625,
+                "height": 51
+              },
+              "fontSize": 12,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 427.859375,
+                "right": 727.859375,
+                "top": 20.1875,
+                "bottom": 202.1875,
+                "width": 300,
+                "height": 182
+              },
+              "cta": {
+                "left": 427.859375,
+                "right": 642.671875,
+                "top": 226.1875,
+                "bottom": 277.1875,
+                "width": 214.8125,
+                "height": 51
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 1024,
+            "height": 768
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 679.09375,
+                "right": 970.640625,
+                "top": 20.421875,
+                "bottom": 134.421875,
+                "width": 291.546875,
+                "height": 114
+              },
+              "cta": {
+                "left": 519.8125,
+                "right": 703.375,
+                "top": 158.421875,
+                "bottom": 209.421875,
+                "width": 183.5625,
+                "height": 51
+              },
+              "fontSize": 12,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 519.109375,
+                "right": 819.109375,
+                "top": 20.6875,
+                "bottom": 202.6875,
+                "width": 300,
+                "height": 182
+              },
+              "cta": {
+                "left": 519.109375,
+                "right": 733.921875,
+                "top": 226.6875,
+                "bottom": 277.6875,
+                "width": 214.8125,
+                "height": 51
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 1100,
+            "height": 900
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 729.5,
+                "right": 1042.6875,
+                "top": 20.546875,
+                "bottom": 115.546875,
+                "width": 313.1875,
+                "height": 95
+              },
+              "cta": {
+                "left": 558.390625,
+                "right": 741.953125,
+                "top": 139.546875,
+                "bottom": 190.546875,
+                "width": 183.5625,
+                "height": 51
+              },
+              "fontSize": 12,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 557.625,
+                "right": 857.625,
+                "top": 20.359375,
+                "bottom": 202.359375,
+                "width": 300,
+                "height": 182
+              },
+              "cta": {
+                "left": 557.625,
+                "right": 772.4375,
+                "top": 226.359375,
+                "bottom": 277.359375,
+                "width": 214.8125,
+                "height": 51
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 1101,
+            "height": 900
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 730.171875,
+                "right": 996.234375,
+                "top": 20.828125,
+                "bottom": 188.828125,
+                "width": 266.0625,
+                "height": 168
+              },
+              "cta": {
+                "left": 558.90625,
+                "right": 789.3125,
+                "top": 213.5,
+                "bottom": 268.5,
+                "width": 230.40625,
+                "height": 55
+              },
+              "fontSize": 13,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 558.140625,
+                "right": 854.796875,
+                "top": 20.59375,
+                "bottom": 202.59375,
+                "width": 296.65625,
+                "height": 182
+              },
+              "cta": {
+                "left": 558.140625,
+                "right": 830.21875,
+                "top": 286.671875,
+                "bottom": 341.671875,
+                "width": 272.078125,
+                "height": 55
+              },
+              "fontSize": 14,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "passed": true,
+          "actions": [
+            {
+              "name": "architecture",
+              "copy": {
+                "left": 955,
+                "right": 1303,
+                "top": 20,
+                "bottom": 200,
+                "width": 348,
+                "height": 180
+              },
+              "cta": {
+                "left": 731,
+                "right": 961.40625,
+                "top": 272,
+                "bottom": 327,
+                "width": 230.40625,
+                "height": 55
+              },
+              "fontSize": 16,
+              "hit": true
+            },
+            {
+              "name": "sky",
+              "copy": {
+                "left": 730,
+                "right": 1118,
+                "top": 20,
+                "bottom": 200,
+                "width": 388,
+                "height": 180
+              },
+              "cta": {
+                "left": 730,
+                "right": 1002.078125,
+                "top": 368,
+                "bottom": 423,
+                "width": 272.078125,
+                "height": 55
+              },
+              "fontSize": 16,
+              "hit": true
+            }
+          ]
+        }
+      ],
+      "rawReport": "text-pairs-final/report.json",
+      "errors": [],
+      "apiRequests": 0,
+      "sourceStage": "Frozen source; settled whole-paragraph screenshots, CTA separation and hit testing on 7 widths in both engines."
+    },
+    "imageQuality": {
+      "passed": true,
+      "deviceScaleFactor": 1,
+      "method": "Decode each selected resource separately; compare actual bitmap width with cover/fill/contain requirement, capped at supplied source width. 1px rounding tolerance. Authored CSS blur background classified separately.",
+      "cases": [
+        {
+          "engine": "chromium",
+          "width": 320,
+          "route": "/",
+          "checkedImages": 26,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 520
+              },
+              "requiredWidth": 508,
+              "availableRequirement": 508
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 288
+              },
+              "requiredWidth": 300,
+              "availableRequirement": 300
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 270
+              },
+              "requiredWidth": 320,
+              "availableRequirement": 320
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 270
+              },
+              "requiredWidth": 472,
+              "availableRequirement": 472
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 270
+              },
+              "requiredWidth": 267,
+              "availableRequirement": 267
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 460
+              },
+              "requiredWidth": 765,
+              "availableRequirement": 765
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 783,
+              "availableRequirement": 783
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 783,
+              "availableRequirement": 783
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 783,
+              "availableRequirement": 783
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 532
+              },
+              "requiredWidth": 706,
+              "availableRequirement": 706
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 561
+              },
+              "requiredWidth": 359,
+              "availableRequirement": 359
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "width": 320,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 532
+              },
+              "requiredWidth": 606,
+              "availableRequirement": 606
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 324,
+              "availableRequirement": 324
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "width": 768,
+          "route": "/",
+          "checkedImages": 31,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 520
+              },
+              "requiredWidth": 623,
+              "availableRequirement": 623
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 480
+              },
+              "requiredWidth": 512,
+              "availableRequirement": 512
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 270
+              },
+              "requiredWidth": 431,
+              "availableRequirement": 431
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 929,
+              "availableRequirement": 929
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 525,
+              "availableRequirement": 525
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 589
+              },
+              "requiredWidth": 872,
+              "availableRequirement": 872
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 892,
+              "availableRequirement": 892
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 892,
+              "availableRequirement": 892
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 892,
+              "availableRequirement": 892
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 860,
+              "availableRequirement": 860
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 276,
+              "availableRequirement": 276
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 1403
+              },
+              "requiredWidth": 930,
+              "availableRequirement": 930
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "width": 768,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1177,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 415,
+              "availableRequirement": 415
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "width": 1024,
+          "route": "/",
+          "checkedImages": 31,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 781
+              },
+              "requiredWidth": 830,
+              "availableRequirement": 830
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 480
+              },
+              "requiredWidth": 682,
+              "availableRequirement": 682
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 574,
+              "availableRequirement": 574
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1238,
+              "availableRequirement": 1238
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 700,
+              "availableRequirement": 700
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 589
+              },
+              "requiredWidth": 1163,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 1189,
+              "availableRequirement": 1189
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 1189,
+              "availableRequirement": 1189
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 1189,
+              "availableRequirement": 1189
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1147,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 367,
+              "availableRequirement": 367
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 1403
+              },
+              "requiredWidth": 1192,
+              "availableRequirement": 1192
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "width": 1024,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1177,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 415,
+              "availableRequirement": 415
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "route": "/",
+          "checkedImages": 31,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 781
+              },
+              "requiredWidth": 1167,
+              "availableRequirement": 1167
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 720
+              },
+              "requiredWidth": 959,
+              "availableRequirement": 959
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 576
+              },
+              "requiredWidth": 808,
+              "availableRequirement": 808
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1741,
+              "availableRequirement": 1741
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 984,
+              "availableRequirement": 984
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 589
+              },
+              "requiredWidth": 1635,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1672,
+              "availableRequirement": 1672
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1672,
+              "availableRequirement": 1672
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1672,
+              "availableRequirement": 1672
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1613,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 395
+              },
+              "requiredWidth": 517,
+              "availableRequirement": 517
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 2245
+              },
+              "requiredWidth": 1676,
+              "availableRequirement": 1676
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "width": 1440,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1370,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 395
+              },
+              "requiredWidth": 548,
+              "availableRequirement": 548
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "width": 1920,
+          "route": "/",
+          "checkedImages": 31,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom.webp",
+              "bitmap": {
+                "width": 1680,
+                "height": 1093
+              },
+              "requiredWidth": 1556,
+              "availableRequirement": 1556
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1152
+              },
+              "requiredWidth": 1278,
+              "availableRequirement": 1278
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 576
+              },
+              "requiredWidth": 1077,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 2321,
+              "availableRequirement": 1920
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1311,
+              "availableRequirement": 1311
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 589
+              },
+              "requiredWidth": 2179,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 2229,
+              "availableRequirement": 1920
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 2229,
+              "availableRequirement": 1920
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 2229,
+              "availableRequirement": 1920
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 2150,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 395
+              },
+              "requiredWidth": 689,
+              "availableRequirement": 689
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 2245
+              },
+              "requiredWidth": 2235,
+              "availableRequirement": 1920
+            }
+          ]
+        },
+        {
+          "engine": "chromium",
+          "width": 1920,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1896,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 506
+              },
+              "requiredWidth": 758,
+              "availableRequirement": 758
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 320,
+          "route": "/",
+          "checkedImages": 26,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 520
+              },
+              "requiredWidth": 508,
+              "availableRequirement": 508
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 288
+              },
+              "requiredWidth": 300,
+              "availableRequirement": 300
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 270
+              },
+              "requiredWidth": 320,
+              "availableRequirement": 320
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 270
+              },
+              "requiredWidth": 472,
+              "availableRequirement": 472
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 270
+              },
+              "requiredWidth": 267,
+              "availableRequirement": 267
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 460
+              },
+              "requiredWidth": 765,
+              "availableRequirement": 765
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 783,
+              "availableRequirement": 783
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 783,
+              "availableRequirement": 783
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 783,
+              "availableRequirement": 783
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 532
+              },
+              "requiredWidth": 706,
+              "availableRequirement": 706
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 561
+              },
+              "requiredWidth": 359,
+              "availableRequirement": 359
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 320,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 532
+              },
+              "requiredWidth": 606,
+              "availableRequirement": 606
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 324,
+              "availableRequirement": 324
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 768,
+          "route": "/",
+          "checkedImages": 31,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 520
+              },
+              "requiredWidth": 623,
+              "availableRequirement": 623
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 480
+              },
+              "requiredWidth": 512,
+              "availableRequirement": 512
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 270
+              },
+              "requiredWidth": 431,
+              "availableRequirement": 431
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 929,
+              "availableRequirement": 929
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 525,
+              "availableRequirement": 525
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 589
+              },
+              "requiredWidth": 872,
+              "availableRequirement": 872
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 892,
+              "availableRequirement": 892
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 892,
+              "availableRequirement": 892
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 892,
+              "availableRequirement": 892
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 860,
+              "availableRequirement": 860
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 276,
+              "availableRequirement": 276
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 1403
+              },
+              "requiredWidth": 924,
+              "availableRequirement": 924
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 768,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1177,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 415,
+              "availableRequirement": 415
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 1024,
+          "route": "/",
+          "checkedImages": 31,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 781
+              },
+              "requiredWidth": 830,
+              "availableRequirement": 830
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 480
+              },
+              "requiredWidth": 682,
+              "availableRequirement": 682
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 574,
+              "availableRequirement": 574
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1238,
+              "availableRequirement": 1238
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 450
+              },
+              "requiredWidth": 700,
+              "availableRequirement": 700
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 589
+              },
+              "requiredWidth": 1163,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 1189,
+              "availableRequirement": 1189
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 1189,
+              "availableRequirement": 1189
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 1189,
+              "availableRequirement": 1189
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1147,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 367,
+              "availableRequirement": 367
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 1403
+              },
+              "requiredWidth": 1192,
+              "availableRequirement": 1192
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 1024,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1177,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-480.webp",
+              "bitmap": {
+                "width": 480,
+                "height": 237
+              },
+              "requiredWidth": 415,
+              "availableRequirement": 415
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "route": "/",
+          "checkedImages": 31,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 781
+              },
+              "requiredWidth": 1167,
+              "availableRequirement": 1167
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 720
+              },
+              "requiredWidth": 959,
+              "availableRequirement": 959
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 576
+              },
+              "requiredWidth": 808,
+              "availableRequirement": 808
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1741,
+              "availableRequirement": 1741
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2-1200.webp",
+              "bitmap": {
+                "width": 1200,
+                "height": 675
+              },
+              "requiredWidth": 984,
+              "availableRequirement": 984
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 589
+              },
+              "requiredWidth": 1635,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1672,
+              "availableRequirement": 1672
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1672,
+              "availableRequirement": 1672
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1672,
+              "availableRequirement": 1672
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1613,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 395
+              },
+              "requiredWidth": 517,
+              "availableRequirement": 517
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 2245
+              },
+              "requiredWidth": 1676,
+              "availableRequirement": 1676
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 1440,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1386,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 395
+              },
+              "requiredWidth": 554,
+              "availableRequirement": 554
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 1920,
+          "route": "/",
+          "checkedImages": 31,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "haven-bedroom",
+              "currentSrc": "haven-bedroom.webp",
+              "bitmap": {
+                "width": 1680,
+                "height": 1093
+              },
+              "requiredWidth": 1556,
+              "availableRequirement": 1556
+            },
+            {
+              "asset": "haven-city",
+              "currentSrc": "haven-city.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1152
+              },
+              "requiredWidth": 1278,
+              "availableRequirement": 1278
+            },
+            {
+              "asset": "haven-water",
+              "currentSrc": "haven-water.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 576
+              },
+              "requiredWidth": 1077,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "video-poster",
+              "currentSrc": "video-poster.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 2321,
+              "availableRequirement": 1920
+            },
+            {
+              "asset": "sky-above-2",
+              "currentSrc": "sky-above-2.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 1311,
+              "availableRequirement": 1311
+            },
+            {
+              "asset": "interior-1-4",
+              "currentSrc": "interior-1-4.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 589
+              },
+              "requiredWidth": 2179,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "interior-2",
+              "currentSrc": "interior-2.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 2229,
+              "availableRequirement": 1920
+            },
+            {
+              "asset": "interior-3",
+              "currentSrc": "interior-3.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 2229,
+              "availableRequirement": 1920
+            },
+            {
+              "asset": "interior-4",
+              "currentSrc": "interior-4.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 1080
+              },
+              "requiredWidth": 2229,
+              "availableRequirement": 1920
+            },
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 2150,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront-800.webp",
+              "bitmap": {
+                "width": 800,
+                "height": 395
+              },
+              "requiredWidth": 689,
+              "availableRequirement": 689
+            },
+            {
+              "asset": "evening",
+              "currentSrc": "evening.webp",
+              "bitmap": {
+                "width": 1920,
+                "height": 2245
+              },
+              "requiredWidth": 2235,
+              "availableRequirement": 1920
+            }
+          ]
+        },
+        {
+          "engine": "webkit",
+          "width": 1920,
+          "route": "/location/",
+          "checkedImages": 2,
+          "underCandidates": 0,
+          "changedImages": [
+            {
+              "asset": "aerial-2",
+              "currentSrc": "aerial-2.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 681
+              },
+              "requiredWidth": 1912,
+              "availableRequirement": 1024
+            },
+            {
+              "asset": "waterfront",
+              "currentSrc": "waterfront.webp",
+              "bitmap": {
+                "width": 1024,
+                "height": 506
+              },
+              "requiredWidth": 765,
+              "availableRequirement": 765
+            }
+          ]
+        }
+      ],
+      "rawReport": "image-quality-final/report.json",
+      "pageErrors": [],
+      "apiRequests": 0,
+      "sourceStage": "Before final copy/CTA flow only; image attributes, sizes and image geometry unchanged afterward."
+    },
+    "selectedCapture": {
+      "passed": true,
+      "apiRequests": 0,
+      "pageErrors": [],
+      "startedAt": "2026-11-01T16:49:12.063Z",
+      "finishedAt": "2026-11-01T16:49:31.863Z"
+    }
+  },
+  "adjudications": [
+    "THE PEAK on mobile320 is intentionally placed across the poster/blue seam. Settled element capture, ancestor clipping checks and actual Catalina Village font metrics found no CSS clipping. Composition retained.",
+    "A first film-form screenshot captured entrance timing. It was replaced with settled opacity1/context-confirmed captures; the transient frame is not proof of form-open.",
+    "The second gallery image is authored at115.68% width and negative left inset. Geometry regression compares the selected slide to the viewport and checks image coverage; it does not reject the original crop.",
+    "Late screenshot review found enquiry success retaining inner scroll, tablet enquiry editorial clipping COMPARE, tiny tablet body text and low-contrast gallery overlay. Each has targeted runtime and fresh screenshot evidence; affected final source passed the existing browser suite.",
+    "The first late text-layout check detected stale generated HTML referencing the previous CSS although a new CSS file was emitted. Generated output/cache was preserved separately and a clean build performed. Served HTML/CSS hashes and current size attributes were verified before final tests. No test failure was relabeled as a new-source pass.",
+    "Broad42route/207capture and54state-group reports precede the late sizes/typography fixes. The77 supplementary photo frames include final image sizes/body typography but exposed two tablet copy/CTA overlaps. They are superseded in those areas by14 final copy-action cases.20image cases,12native dialog cases and14text-layout cases retain explicit earlier stage labels. Final check/build,14copy cases,10reading cases, existing browser suite and six selected images refer to the frozen source.",
+    "The first copy-flow fix removed overlap but placed the Sky CTA on the skyline. Independent review caught the contrast regression. A tablet-only min-width300 shortens the paragraph without moving its origin or changing type/colors/photos; final settled768/844 shots verify the CTA against the light sky."
+  ],
+  "forms": "All current enquiries mocked or blocked. No real submission, storage receipt, CRM or email test; historical private Blob evidence belongs to previous releases.",
+  "visualReview": {
+    "method": "Fresh contact sheets followed by original-size inspection of suspect frames and all six selected JPEGs. Motion states, route captures and supplementary photo captures retain their own source-stage labels.",
+    "independentPeerAccepted": [
+      "Tablet768 Location and Partners readability/layout",
+      "Gallery1440 dark and light title/counter shadow",
+      "Architecture768 copy/CTA separation",
+      "Final Sky768 Chromium and Sky844 WebKit CTA on light sky, without overlap or wrapped main label"
+    ],
+    "finalSkyPeerReview": "After min-width300 and final clean build, before freeze"
+  },
+  "limitations": [
+    "Headless Linux Chromium/WebKit, not physical Safari/iOS certification",
+    "No FPS, INP or physical pinch claims",
+    "No assertion of exact pixel equality for every motion frame",
+    "Provided original resolutions are the quality ceiling; gallery first photo1024w, architecture background540w and aerial1024w remain supplied limits",
+    "Original inventory and unavailable full film/PDF boundaries retained",
+    "Production publication/live acceptance belongs to the central release owner"
+  ],
+  "screenshots": [
+    {
+      "name": "hero-desktop1440",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/",
+      "browserVersion": "145.0.7632.6",
+      "file": "hero-desktop1440.jpg",
+      "geometry": {
+        "width": 1440,
+        "height": 900,
+        "scrollY": 0,
+        "documentWidth": 1425,
+        "clientWidth": 1440
+      },
+      "sha256": "5ed88bbd56314fcb762774069d48652d6a4e2a9be4240c8d55f440b917231b98",
+      "rawArtifact": "artifacts/pixel-audit-20261101-v2/selected-final/hero-desktop1440.png"
+    },
+    {
+      "name": "sky-cta-tablet768",
+      "engine": "chromium",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/",
+      "selector": ".sky-copy",
+      "browserVersion": "145.0.7632.6",
+      "file": "sky-cta-tablet768.jpg",
+      "geometry": {
+        "width": 768,
+        "height": 1024,
+        "scrollY": 3221,
+        "documentWidth": 753,
+        "clientWidth": 768
+      },
+      "sha256": "f21e0b610d260f671aa5ff40d6134c096c95f7cd11be00c2b9ed5549ae68fe44",
+      "rawArtifact": "artifacts/pixel-audit-20261101-v2/selected-final/sky-cta-tablet768.png"
+    },
+    {
+      "name": "location-tablet768",
+      "engine": "chromium",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "route": "/",
+      "selector": ".location",
+      "browserVersion": "145.0.7632.6",
+      "file": "location-tablet768.jpg",
+      "geometry": {
+        "width": 768,
+        "height": 1024,
+        "scrollY": 8061,
+        "documentWidth": 753,
+        "clientWidth": 768
+      },
+      "sha256": "6256f60bcb8e5306da44bed3d8292db6f5a2bf057d0ab46f2b20a69678e238aa",
+      "rawArtifact": "artifacts/pixel-audit-20261101-v2/selected-final/location-tablet768.png"
+    },
+    {
+      "name": "plan1601-desktop1440",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "route": "/residences/1601/",
+      "plan": true,
+      "browserVersion": "145.0.7632.6",
+      "file": "plan1601-desktop1440.jpg",
+      "geometry": {
+        "width": 1440,
+        "height": 900,
+        "scrollY": 499,
+        "documentWidth": 1425,
+        "clientWidth": 1440
+      },
+      "sha256": "df229614bd436739827e63ade124c3dcf4d235deab6686e7e691224d64132b5c",
+      "rawArtifact": "artifacts/pixel-audit-20261101-v2/selected-final/plan1601-desktop1440.png"
+    },
+    {
+      "name": "gallery-motion-mobile390",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "route": "/",
+      "gallery": true,
+      "browserVersion": "26.0",
+      "before": {
+        "top": -189.125,
+        "imageOpacity": 1,
+        "currentSrc": "http://127.0.0.1:14325/assets/interior-2-800.webp",
+        "naturalWidth": 783,
+        "naturalHeight": 440,
+        "selected": "false",
+        "counter": "2 / 4",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible"
+      },
+      "reduced": {
+        "top": -189.125,
+        "imageOpacity": 1,
+        "currentSrc": "http://127.0.0.1:14325/assets/interior-2-800.webp",
+        "naturalWidth": 783,
+        "naturalHeight": 440,
+        "selected": "false",
+        "counter": "2 / 4",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible"
+      },
+      "after": {
+        "top": -189.125,
+        "imageOpacity": 1,
+        "currentSrc": "http://127.0.0.1:14325/assets/interior-2-800.webp",
+        "naturalWidth": 783,
+        "naturalHeight": 440,
+        "selected": "false",
+        "counter": "2 / 4",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible"
+      },
+      "captureState": {
+        "top": 0.875,
+        "imageOpacity": 1,
+        "currentSrc": "http://127.0.0.1:14325/assets/interior-2-800.webp",
+        "naturalWidth": 783,
+        "naturalHeight": 440,
+        "selected": "false",
+        "counter": "2 / 4",
+        "bodyOverflow": "visible",
+        "htmlOverflow": "visible"
+      },
+      "file": "gallery-motion-mobile390.jpg",
+      "geometry": {
+        "width": 390,
+        "height": 844,
+        "scrollY": 6204,
+        "documentWidth": 390,
+        "clientWidth": 390
+      },
+      "sha256": "a7ce0829cff3d8f2ba4f81376a2ed9b31c965f9ad78fab099757029a3127b9a8",
+      "rawArtifact": "artifacts/pixel-audit-20261101-v2/selected-final/gallery-motion-mobile390.png"
+    },
+    {
+      "name": "film-request-mobile320",
+      "engine": "webkit",
+      "viewport": {
+        "width": 320,
+        "height": 740
+      },
+      "route": "/",
+      "form": {
+        "context": "The Sky Palace / Film request",
+        "scroll": [
+          0
+        ],
+        "opacity": "1",
+        "close": {
+          "x": 252,
+          "y": 30,
+          "width": 44,
+          "height": 44,
+          "top": 30,
+          "right": 296,
+          "bottom": 74,
+          "left": 252
+        }
+      },
+      "browserVersion": "26.0",
+      "file": "film-request-mobile320.jpg",
+      "geometry": {
+        "width": 320,
+        "height": 740,
+        "scrollY": 2362,
+        "documentWidth": 320,
+        "clientWidth": 320
+      },
+      "sha256": "e1b0be72a7afa9f7f34011049278751b2d4a3b9770a1fb8576c12ebbc71427b4",
+      "rawArtifact": "artifacts/pixel-audit-20261101-v2/selected-final/film-request-mobile320.png"
+    }
+  ],
+  "rawReportHashes": {
+    "after/report.json": "1514cd42f8087ac7ff6541a54ce57c4f0128dc366dde79df380fbf239452cfd0",
+    "after-states/report.json": "109fa8342f4974ee93d90a5b10d1b3f66bd5586d67c6ac15251cc663faa44b85",
+    "after-webkit-states/report.json": "e46aa493f7acac6dcf1b3138621923e530558758d0ed590e04934cae52a8bc23",
+    "after-extra/report.json": "2c55542c739039efc8cfa80277d9fc3a529396d4d5de5384f4da9b1ef0f47255",
+    "gallery/report.json": "0cad34c16bf0661a08b1f5e531949c425ed3834889bb9bd135692ffd273a2d67",
+    "dialogs-final/report.json": "9c45635cc46a1aff8a934973e332750f875dae66a52bfc67ce4295b69cce8651",
+    "text-layout-final/report.json": "7b51b2d44a7785dc91faa439eedd1dc780550bd8d26abdc4e16a378dd57888d5",
+    "text-pairs-final/report.json": "4536f7f3b21f3e7771ec78807615b09ca1bf03807a1d0c28fa6566cf9ef32cd9",
+    "image-quality-final/report.json": "3347e913e57812432ebbde546e7ee99e53adcd6379f00e1d34cb140491a32fa5",
+    "selected-final/report.json": "87e03b68c38cba87003c6acbfa050179c751becdb338793a4a66c91b16a3a498",
+    "final-verification-chain.json": "9ea1e7eb771a969f4fa95ccc289810434cdc97d3b3ee8b4981e894e84fd7f1b0",
+    "reading-final-chromium.json": "f81c727347181e4463333994be2b50145bf2b88026f6df9843e6bc69732518af",
+    "reading-final-webkit.json": "360b4001e7fde2f3f4b8195f5a370135f613a999e5497ea21c7b70dbeaddd1d7",
+    "build-provenance.json": "50a32f2661368253bbd72add9f1593c46e186403d1d54f364ac3cfd4a748dff0",
+    "latest-clean-build.json": "fb0d7bc0ccf4c67ea3c256071acb0fe66e429447655b5601074e73bef0cc69cb",
+    "existing-browser-final/report.json": "2418e5ef2938e61355a9079b50e54d5dc8bb1c2d95a281b7bb8dfc06d1a699c4",
+    "final-check-build.json": "0ec9f37325d78fbc62b9359002d605a2fae33b9523dfe45a833fb7681aca241d",
+    "source-icons.json": "6687b788cadd31a3f6dd94a22800ff8d21bf7fbffd7c8ad0e6e2c362ab1a7592"
+  },
+  "releaseReport": "https://github.com/IMONsergey/LuxuryRealty/blob/main/docs/MOTION-RELEASE-2026-11-01.md"
+}

@@ -1,4 +1,5 @@
 ---
+import Icon from '../components/Icon.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Action from '../components/Action.astro';
@@ -8,9 +9,9 @@ import Photo from '../components/Photo.astro';
  <div class="location-page site-width">
   <div class="inner-header"><Header/></div>
   <main id="main">
-   <a class="text-link back" href="/#location">← Back to AVA</a>
+   <a class="text-link back" href="/#location"><Icon name="arrow-left" size={14}/> Back to AVA</a>
    <div class="location-content">
-    <div class="aerial photo"><Photo name="aerial-2" alt="Palm Jumeirah and its waterfront setting, viewed from above" sizes="(max-width:767px) 90vw,55vw" eager/></div>
+    <div class="aerial photo"><Photo name="aerial-2" alt="Palm Jumeirah and its waterfront setting, viewed from above" sizes="(max-width:767px) max(calc(195.161vw - 93.677px),606px),max(110vw,1177px)" eager/></div>
     <div class="location-detail">
      <h1 class="display">Your oasis at<br/>Palm Jumeirah</h1>
      <p>Situated on the shores of the Gulf, from the very first moment, it is clear that AVA at Palm Jumeirah is beyond compare. Be it an expansive apartment or the palatial Sky Palace covering numerous floors, each residence in AVA at Palm Jumeirah is completely individual, your own oasis.</p>
@@ -18,7 +19,7 @@ import Photo from '../components/Photo.astro';
      <Action label="Enquire about AVA" caption="Palm Jumeirah" action="enquire" context="Palm Jumeirah / Location" tone="dark"/>
     </div>
    </div>
-   <footer><a class="text-link" href="/#residences">Discover the residences →</a><a class="text-link" href="/privacy/">Privacy information</a></footer>
+   <footer><a class="text-link" href="/#residences">Discover the residences <Icon name="arrow-right" size={14}/></a><a class="text-link" href="/privacy/">Privacy information</a></footer>
   </main>
  </div>
 </BaseLayout>

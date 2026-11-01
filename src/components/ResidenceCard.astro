@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 import Photo from './Photo.astro';
 import type { Residence } from '../data/residences';
 interface Props {residence:Residence;}
@@ -6,7 +7,7 @@ const {residence:r}=Astro.props;
 ---
 <article class="residence-card" aria-labelledby={`unit-${r.unit}-title`} data-reveal>
  <div class="residence-info">
-  <div class="residence-top"><div class="residence-identifiers"><div class="pills"><span>Unit {r.unit}</span><span>{r.bedrooms} Bedroom</span></div><p class="parking">{r.parking} Parking Spaces</p></div><a class="open-residence" href={`/residences/${r.unit}/`} aria-label={`Explore Unit ${r.unit}, ${r.bedrooms} bedroom residence`}><span aria-hidden="true">+</span></a></div>
+  <div class="residence-top"><div class="residence-identifiers"><div class="pills"><span>Unit {r.unit}</span><span>{r.bedrooms} Bedroom</span></div><p class="parking">{r.parking} Parking Spaces</p></div><a class="open-residence" href={`/residences/${r.unit}/`} aria-label={`Explore Unit ${r.unit}, ${r.bedrooms} bedroom residence`}><Icon name="plus" size={22}/></a></div>
   <h3 class="display" id={`unit-${r.unit}-title`}>{r.bedrooms} Bedroom<span>Residences</span></h3>
   <dl><div><dt>Internal Area</dt><dd>{r.internal} <span>sq. ft.</span></dd></div><div><dt>External Area</dt><dd>{r.external} <span>sq. ft.</span></dd></div><div class="total"><dt>Total Area</dt><dd>{r.total} <span>sq. ft.</span></dd></div></dl>
  </div>

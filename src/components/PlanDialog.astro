@@ -1,7 +1,10 @@
+---
+import Icon from './Icon.astro';
+---
 <dialog id="plan-dialog" class="plan-dialog" aria-labelledby="plan-title">
- <div class="plan-top"><h2 id="plan-title">Residence floor plan</h2><button type="button" data-close aria-label="Close floor plan">×</button></div>
+ <div class="plan-top"><h2 id="plan-title">Residence floor plan</h2><button type="button" data-close aria-label="Close floor plan"><Icon name="close" size={22}/></button></div>
  <div class="plan-stage" data-plan-stage tabindex="0" role="region" aria-label="Floor plan. Use plus and minus to zoom, arrow keys to move when zoomed."><img data-plan-image src="/assets/plan-801.webp" alt="Residence floor plan" draggable="false"/></div>
- <div class="plan-toolbar"><div class="zoom-tools"><button type="button" data-zoom-fit>Fit</button><button type="button" data-zoom-out aria-label="Zoom out">−</button><output aria-live="polite" data-zoom-value>100%</output><button type="button" data-zoom-in aria-label="Zoom in">+</button></div><a data-plan-download href="/assets/plan-801.webp" download>Download image</a></div>
+ <div class="plan-toolbar"><div class="zoom-tools"><button type="button" data-zoom-fit>Fit</button><button type="button" data-zoom-out aria-label="Zoom out"><Icon name="minus" size={20}/></button><output aria-live="polite" data-zoom-value>100%</output><button type="button" data-zoom-in aria-label="Zoom in"><Icon name="plus" size={20}/></button></div><a data-plan-download href="/assets/plan-801.webp" download>Download image</a></div>
  <p class="plan-hint">Drag to explore when zoomed. For detailed drawings, enquire about this residence.</p>
 </dialog>
 <style>
