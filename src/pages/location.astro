@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Action from '../components/Action.astro';
+import Photo from '../components/Photo.astro';
+---
+<BaseLayout title="Palm Jumeirah | AVA at Palm Jumeirah" description="Discover AVA's setting on the shores of the Gulf at Palm Jumeirah, Dubai.">
+ <div class="location-page site-width">
+  <div class="inner-header"><Header/></div>
+  <main id="main">
+   <a class="text-link back" href="/#location">← Back to AVA</a>
+   <div class="location-content">
+    <div class="aerial photo"><Photo name="aerial-2" alt="Palm Jumeirah and its waterfront setting, viewed from above" sizes="(max-width:767px) 90vw,55vw" eager/></div>
+    <div class="location-detail">
+     <h1 class="display">Your oasis at<br/>Palm Jumeirah</h1>
+     <p>Situated on the shores of the Gulf, from the very first moment, it is clear that AVA at Palm Jumeirah is beyond compare. Be it an expansive apartment or the palatial Sky Palace covering numerous floors, each residence in AVA at Palm Jumeirah is completely individual, your own oasis.</p>
+     <div class="waterfront photo"><Photo name="waterfront" alt="The skyline and waterfront of Dubai" sizes="(max-width:767px) 90vw,42vw"/></div>
+     <Action label="Enquire about AVA" caption="Palm Jumeirah" action="enquire" context="Palm Jumeirah / Location" tone="dark"/>
+    </div>
+   </div>
+   <footer><a class="text-link" href="/#residences">Discover the residences →</a><a class="text-link" href="/privacy/">Privacy information</a></footer>
+  </main>
+ </div>
+</BaseLayout>
+<style>
+ .location-page{background:var(--ocean);min-height:100vh}.location-page .inner-header{background:var(--ocean)}main{padding:24px 64px 48px}.back{font-size:14px;text-decoration:none;margin-bottom:32px}.location-content{display:grid;grid-template-columns:minmax(0,710fr) minmax(0,554fr);gap:48px}.aerial{height:805px}.aerial :global(img){position:absolute;left:-49.538%;top:0;width:195.161%;height:111.783%;max-width:none;object-fit:fill}.location-detail{display:flex;flex-direction:column;align-items:start;gap:24px}.location-detail h1{font-size:62px;line-height:68px;color:var(--peach)}.location-detail>p{font-size:18px;line-height:29px}.waterfront{height:205px;width:100%}footer{margin-top:48px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:14px}
+ @media(max-width:1100px) and (min-width:768px){main{padding-inline:40px}.location-content{gap:32px}.location-detail h1{font-size:48px;line-height:54px}.aerial{height:700px}.location-detail>p{font-size:16px;line-height:26px}}
+ @media(max-width:767px){main{padding:20px 24px 40px}.back{margin-bottom:24px}.location-content{display:flex;flex-direction:column;gap:28px}.aerial{height:360px;width:100%}.location-detail h1{font-size:43px;line-height:49px}.location-detail>p{font-size:18px;line-height:29px}.waterfront{height:160px}footer{margin-top:40px;gap:8px;flex-direction:column;align-items:start}}
+</style>

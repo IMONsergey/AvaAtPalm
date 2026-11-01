@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Action from '../components/Action.astro';
+import Photo from '../components/Photo.astro';
+import ResidenceCard from '../components/ResidenceCard.astro';
+import { residences } from '../data/residences';
+import '../styles/home.css';
+const features=['Life above 100 metres','Private garage','Personal panoramic lift','Private internal lifts','Arrival experiences','Indoor garden','Grand terrace'];
+const gallery=[{asset:'interior-1-4',alt:'A sculptural living room with panoramic waterfront views',mirror:true},{asset:'interior-2',alt:'Refined interior detailing at AVA at Palm Jumeirah',mirror:false},{asset:'interior-3',alt:'A considered palette of natural materials and architectural details',mirror:false},{asset:'interior-4',alt:'A private interior shaped around comfort and light',mirror:false}];
+const film=import.meta.env.PUBLIC_AVA_FILM_URL;
+const skyCopy='The Sky Palace at AVA at Palm Jumeirah, Dorchester Collection, Dubai, affords its own private amenities, alongside exclusive access to the amenities of AVA at Palm Jumeirah, plus working in harmony with its neighbouring tower, One at Palm Jumeirah, also managed by Dorchester Collection.';
+const locationCopy='Situated on the shores of the Gulf, from the very first moment, it is clear that AVA at Palm Jumeirah is beyond compare. Be it an expansive apartment or the palatial Sky Palace covering numerous floors, each residence in AVA at Palm Jumeirah is completely individual, your own oasis.';
+---
+<BaseLayout>
+ <main id="main" class="site-width">
+  <section class="hero scene" id="home" aria-labelledby="hero-title">
+   <Header home/>
+   <div class="hero-photo photo"><Photo name="tower" alt="The curving AVA tower on the waterfront of Palm Jumeirah" eager/></div>
+   <h1 class="hero-title display" id="hero-title"><span class="alternate">T</span>h<span class="alternate">e</span> Sky Palac<span class="alternate">e</span></h1>
+   <p class="hero-tagline"><span>Inhabit the</span><img src="/assets/hero-tagline.svg" alt=""/><span>Infinite</span></p>
+   <div class="hero-points" aria-label="Explore the AVA experience">
+    <a class="hotspot" href="#sky-palace" style="--hx:728;--hy:599" aria-label="Discover the Sky Palace"><span aria-hidden="true">+</span></a>
+    <a class="hotspot" href="#residences" style="--hx:954;--hy:1011" aria-label="Discover the residences"><span aria-hidden="true">+</span></a>
+    <a class="hotspot" href="#location" style="--hx:903;--hy:2062" aria-label="Explore the location"><span aria-hidden="true">+</span></a>
+    <a class="hotspot" href="#features" style="--hx:536;--hy:1361" aria-label="Explore the Sky Palace features"><span aria-hidden="true">+</span></a>
+   </div>
+   <aside class="hero-preview hero-preview--left" data-depth><a href="#features" aria-label="Explore the Sky Palace features"><Photo name="hero-preview-left-1" alt="Dining with a view over Dubai" sizes="15vw"/><span class="preview-plus" aria-hidden="true">+</span><span class="preview-caption">Penthouse features</span></a><p>AVA at PALM JUMEIRAH<br/>Dorchester Collection, DUBAI</p></aside>
+   <aside class="hero-preview hero-preview--right" data-depth><a href="#features" aria-label="Explore the Sky Palace terrace"><Photo name="preview-right" alt="The Sky Palace terrace overlooking the waterfront" sizes="15vw"/><span class="preview-plus" aria-hidden="true">+</span><span class="preview-caption">Penthouse features</span></a></aside>
+  </section>
+  <section class="architecture scene" id="about" aria-labelledby="architecture-title">
+   <h2 id="architecture-title" class="architecture-title display" data-reveal>AVA at Palm<br/>Jumeirah's<br/>gracious curves</h2>
+   <div class="architecture-photo photo"><Photo name="architecture" alt="" sizes="45vw"/></div>
+   <div class="architecture-cutout"><Photo name="architecture-cutout-1" alt="Sweeping balconies and architectural curves at AVA" sizes="(max-width:767px) 95vw,60vw"/><span aria-hidden="true"></span></div>
+   <p class="architecture-copy" data-reveal>As the first building at the threshold of the world-renowned Palm Jumeirah, AVA at Palm Jumeirah occupies an incomparable position right at the very centre of Dubai. It is ideally placed to afford privileged access to both the calm of the waterfront and the dynamism of this global city.</p>
+   <div class="architecture-cta" data-reveal><Action label="Choose your residence" href="#residences" tone="dark"/></div>
+   <div class="haven-collage" aria-labelledby="haven-title">
+    <div class="haven-bedroom photo"><Photo name="haven-bedroom" alt="A tranquil bedroom opening to the horizon" sizes="75vw"/></div>
+    <div class="haven-city photo"><Photo name="haven-city" alt="Dubai's skyline across the water" sizes="35vw"/></div>
+    <div class="haven-water photo"><Photo name="haven-water" alt="Sunlight across the Gulf" sizes="30vw"/></div>
+    <h3 id="haven-title" class="haven-title display"><span class="mobile-haven">Tranquil<br/>Haven</span><span class="desktop-haven"><img src="/assets/tranquil.svg" alt="Tranquil"/><img src="/assets/haven-word.svg" alt="Haven"/></span></h3>
+   </div>
+  </section>
+  <section class="sky-palace scene" id="sky-palace" aria-labelledby="sky-title">
+   <div class="film-poster photo"><Photo name="video-poster" alt="A panoramic room at the Sky Palace"/><div class="watch-film"><Action label="Watch video" caption="" action="video" tone="dark"/></div></div>
+   <div class="sky-roof photo"><Photo name="roof" alt="The Sky Palace roof terrace overlooking the Dubai skyline"/></div>
+   <h2 class="sky-title display" id="sky-title" data-reveal><span>The Peak</span><span>of Perfection</span></h2>
+   <p class="sky-copy" data-reveal>{skyCopy}</p>
+   <div class="sky-cta" data-reveal><Action label="Enquire about the Sky Palace" action="enquire" context="The Sky Palace"/></div>
+   <div class="sky-above photo"><Photo name="sky-above-2" alt="An overhead view of the Sky Palace private roof terrace" sizes="40vw"/></div>
+   <div class="sky-bedroom photo"><Photo name="sky-bedroom" alt="A light-filled bedroom with a view over the Gulf" sizes="65vw"/></div>
+   <div class="sky-terrace photo"><Photo name="sky-terrace-3" alt="An expansive private terrace at the Sky Palace"/></div>
+  </section>
+  <section class="residences scene" id="residences" aria-labelledby="residences-title">
+   <div class="residence-seam photo" aria-hidden="true"><Photo name="sky-terrace-3" alt=""/></div>
+   <div class="residence-texture" aria-hidden="true"><Photo name="residence-texture" alt=""/></div>
+   <header class="residence-intro"><p class="collection-kicker display" data-reveal>A unique collection of</p><h2 id="residences-title" class="display" data-reveal>17 private<br/>havens</h2><p class="collection-copy" data-reveal>Designed for those with a visionary perspective who enjoy seamless living without boundaries.</p></header>
+   <div class="residence-grid">{residences.map(r=><div class="residence-slot"><ResidenceCard residence={r}/></div>)}</div>
+  </section>
+  <section class="interiors scene" id="interiors" aria-labelledby="interiors-title" data-carousel tabindex="0" role="region" aria-roledescription="carousel" aria-label="AVA interior gallery">
+   <div class="gallery-window"><div class="gallery-track" data-track>{gallery.map((slide,i)=><figure class:list={['gallery-slide',{'is-mirrored':slide.mirror}]} data-slide aria-hidden={i!==0}><Photo name={slide.asset} alt={slide.alt}/></figure>)}</div></div>
+   <h2 class="interior-title display" id="interiors-title">Internationally<br/>acclaimed interior<br/>designers</h2>
+   <p class="gallery-counter" data-counter aria-live="polite" aria-atomic="true">1 / 4</p>
+   <p class="gallery-copy">The design is centred on high art. Creativity and a craftsman's approach create spaces that look stunning and function to highly exacting standards.</p>
+   <div class="gallery-controls"><button type="button" data-prev aria-label="Previous interior image"><span aria-hidden="true">←</span></button><button type="button" data-next aria-label="Next interior image"><span aria-hidden="true">→</span></button></div>
+  </section>
+  <div class="ocean-story">
+   <section class="features scene" id="features" aria-labelledby="features-title">
+    <header><h2 id="features-title" class="display" data-reveal>Features</h2><p>The Sky Palace</p></header>
+    <div class="feature-list">{features.map((feature,i)=><details class="feature" open={i===0}><summary><span class="display">{feature}</span><span class="feature-toggle" aria-hidden="true"></span></summary><div class="feature-content">{i===0?<><div class="feature-photo photo"><Photo name="feature-photo" alt="The Sky Palace's private terrace and its uninterrupted Gulf views" sizes="(max-width:767px) 90vw,48vw"/></div><p>The first living level is above 100m high, beyond One Palm Jumeirah, Dorchester Collection, Dubai, rising up to 120m at the roof terrace level.</p></>:<div class="feature-request"><p>Contact the AVA team for details about this feature.</p><Action label="Enquire about this feature" caption="The Sky Palace" action="enquire" context={`The Sky Palace / ${feature}`} tone="dark"/></div>}</div></details>)}</div>
+   </section>
+   <section class="location scene" id="location" aria-labelledby="location-title">
+    <div class="location-aerial photo"><Photo name="aerial-2" alt="Aerial view of Palm Jumeirah and the coastline" sizes="65vw"/><div class="location-marker" aria-hidden="true"><span class="marker-brand"></span><span class="marker-line"></span><span class="marker-dot"></span></div></div>
+    <div class="location-waterfront photo"><Photo name="waterfront" alt="Dubai's waterfront skyline" sizes="32vw"/></div>
+    <h2 class="location-title display" id="location-title" data-reveal>Your oasis at<br/><span>Palm Jumeirah</span></h2>
+    <p class="location-copy" data-reveal>{locationCopy}</p>
+    <div class="location-cta"><Action label="More about the location" caption="Palm Jumeirah" href="/location/" tone="dark"/></div>
+   </section>
+   <section class="closing scene" aria-labelledby="closing-title">
+    <div class="closing-photo photo"><Photo name="evening" alt="AVA at Palm Jumeirah on the waterfront at dusk"/></div>
+    <h2 class="closing-title display" id="closing-title" data-reveal>Exclusivity<span>at first sight</span></h2>
+    <div class="closing-cta" data-reveal><Action label="Choose your residence" href="#residences" tone="dark"/></div>
+    <div class="partners"><article class="partner partner--omniyat" data-reveal><p class="partner-name">OMNIYAT</p><h3 class="display">Elevating every<br/>detail</h3><p>One of the most visionary real-estate development and service groups in the Gulf Region, OMNIYAT creates living canvases of residential, commercial, hospitality and retail spaces for a one-of-a-kind premium experience.</p></article><article class="partner partner--dorchester" data-reveal><p class="partner-name">Dorchester Collection</p><h3 class="display">A sense of<br/>belonging</h3><p>The true meaning of ‘home’ goes beyond form and function. It is about being welcomed with open arms, appreciated for who you are, and cared for in the ways and at the times when you need it most.</p></article></div>
+    <footer class="footer"><a href="/privacy/">Privacy Policy</a><div class="partner-logos"><div class="ava-footer-logo"><Photo name="brand-partners-2" alt="AVA at Palm Jumeirah" sizes="132px"/></div><span aria-hidden="true"></span><Photo name="brand-partners-1" alt="Dorchester Collection, Dubai" sizes="182px"/></div><p>Copyright © {new Date().getFullYear()}. All rights reserved.</p></footer>
+   </section>
+  </div>
+ </main>
+ <dialog id="video-dialog" class="video-dialog" aria-labelledby="video-heading"><button class="media-close" type="button" data-close aria-label="Close film">×</button><h2 id="video-heading" class="display">The Sky Palace</h2>{film?<><video id="ava-film" controls preload="none" playsinline poster="/assets/video-poster.webp"><source src={film}/></video><div data-video-error hidden><p>The film could not be loaded.</p><button type="button" data-video-retry>Try again</button></div></>:<><div class="video-cover photo"><Photo name="video-poster" alt="Panoramic views from the Sky Palace"/></div><div class="film-unavailable"><p>The film is currently unavailable.</p><Action label="Enquire about the Sky Palace" action="enquire" context="The Sky Palace / Film request" tone="dark"/></div></>}</dialog>
+</BaseLayout>

@@ -1,0 +1,13 @@
+---
+import '../styles/global.css';
+import Enquiry from '../components/Enquiry.astro';
+import Menu from '../components/Menu.astro';
+interface Props {title?:string;description?:string;}
+const {title='AVA at Palm Jumeirah | Inhabit the infinite',description='Explore AVA at Palm Jumeirah, Dorchester Collection, Dubai. Discover the Sky Palace, residences, architecture and waterfront setting.'}=Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+---
+<!doctype html>
+<html lang="en">
+ <head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#0d2b48"/><title>{title}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta property="og:url" content={canonical}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><link rel="preload" href="/fonts/catalina-village.woff2" as="font" type="font/woff2" crossorigin/><link rel="preload" href="/fonts/sf-regular.woff2" as="font" type="font/woff2" crossorigin/><link rel="icon" href="/assets/nav-1.webp" type="image/webp"/></head>
+ <body><a class="skip-link" href="#main">Skip to content</a><slot/><Menu/><Enquiry/><noscript><p class="no-js-message">You can explore every residence without JavaScript. Enquiry, gallery controls and plan zoom require JavaScript.</p></noscript><script>import '../scripts/app';</script></body>
+</html>

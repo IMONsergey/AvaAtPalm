@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Action from '../../components/Action.astro';
+import Photo from '../../components/Photo.astro';
+import PlanDialog from '../../components/PlanDialog.astro';
+import { residences } from '../../data/residences';
+export function getStaticPaths(){return residences.map(residence=>({params:{unit:residence.unit},props:{residence}}));}
+const {residence:r}=Astro.props;
+---
+<BaseLayout title={`Residence ${r.unit} | AVA at Palm Jumeirah`} description={`Explore the ${r.bedrooms} bedroom residence ${r.unit} at AVA at Palm Jumeirah. View the original floor plan and enquire about availability.`}>
+ <div class="inner-page site-width">
+  <div class="inner-header"><Header/></div>
+  <main id="main" class="residence-detail">
+   <a class="back-link text-link" href="/#residences">← Back to residences</a>
+   <p class="unit-label">Unit {r.unit} / AVA at Palm Jumeirah</p>
+   <h1 class="display">{r.bedrooms} bedroom<br/>Residences</h1>
+   <div class="plan-and-details">
+    <div class="plan-preview">
+     <a href={`/assets/${r.plan}.webp`} class="plan-image-link" aria-label={`Open the original floor plan for residence ${r.unit}`}><Photo name={r.plan} alt={`Floor plan of the ${r.bedrooms} bedroom residence ${r.unit}`} sizes="(max-width:767px) 85vw,50vw" eager/></a>
+     <button type="button" class="view-plan text-link" data-plan={`/assets/${r.plan}.webp`} data-plan-title={`Unit ${r.unit} / ${r.bedrooms} bedroom residence`} data-unit={r.unit}>View floor plan <span aria-hidden="true">↗</span></button>
+    </div>
+    <section class="residence-details" aria-label="Residence specifications">
+     <p class="parking">{r.parking} Parking Spaces</p>
+     <dl><div><dt>Internal Area</dt><dd>{r.internal} <span>sq. ft.</span></dd></div><div><dt>External Area</dt><dd>{r.external} <span>sq. ft.</span></dd></div><div class="total"><dt>Total Area</dt><dd>{r.total} <span>sq. ft.</span></dd></div></dl>
+     <p>Contact the team for current availability.</p>
+     <Action label="Enquire about this residence" caption={`Unit ${r.unit}`} action="enquire" context={`Residence ${r.unit} / ${r.bedrooms} bedroom`}/>
+     <div class="orientation-details"><div><Photo name={r.orientation} alt={`Orientation diagram for residence ${r.unit}`} sizes="144px"/><p>Residence orientation</p></div><div><Photo name={r.floor} alt={`Floor position of residence ${r.unit}`} sizes="42px"/><p>Floor position</p></div></div>
+    </section>
+   </div>
+   <div class="detail-bottom"><a class="text-link" href={`/residences/${r.unit==='801'?'1601':'801'}/`}>Explore the {r.unit==='801'?'4':'3'} bedroom residence →</a><a class="text-link" href="/privacy/">Privacy information</a></div>
+  </main>
+ </div>
+ <PlanDialog/>
+</BaseLayout>
+<style>
+ .residence-detail{padding:24px 64px 64px;min-height:calc(100vh - 128px)}.back-link{font-size:14px;line-height:22px;color:var(--navy);text-decoration:none}.unit-label{font-size:14px;line-height:22px;color:var(--navy);margin-top:36px}.residence-detail h1{font-size:76px;line-height:84px;color:var(--navy);margin:32px 0}.plan-and-details{display:grid;grid-template-columns:minmax(0,690fr) minmax(0,558fr);gap:64px}.plan-preview{background:var(--paper);padding:24px;align-self:start}.plan-image-link{display:block}.plan-image-link :global(img){width:100%;height:auto}.view-plan{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:0;background:none;color:var(--navy);font-size:14px;font-weight:500;line-height:22px;margin-top:16px;text-align:left}.residence-details{display:flex;flex-direction:column;gap:24px}.residence-details>p{font-size:16px;line-height:25px}.residence-details .parking{margin-bottom:0}dl{margin:0;display:flex;flex-direction:column;gap:24px;font-family:var(--metric)}dl>div{display:flex;gap:16px;justify-content:space-between;align-items:baseline}dt{font-size:16px;line-height:28px}dd{font-size:18px;line-height:28px;color:var(--navy);margin:0;white-space:nowrap}dd span{font-size:14px}.total{padding-top:16px;border-top:1px solid #cfac9970}.orientation-details{display:flex;gap:40px;margin-top:24px;align-items:end}.orientation-details>div{display:flex;flex-direction:column;gap:16px}.orientation-details :global(img){height:120px;width:auto;max-width:160px;object-fit:contain;object-position:left bottom}.orientation-details p{font-size:12px;line-height:20px;color:#68666a}.detail-bottom{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:80px;border-top:1px solid #cfac9970;padding-top:24px;color:var(--navy);font-size:14px}
+ @media(min-width:768px) and (max-width:1100px){.residence-detail{padding-inline:40px}.plan-and-details{gap:32px}.residence-detail h1{font-size:64px;line-height:70px}.orientation-details{gap:24px}}
+ @media(max-width:767px){.residence-detail{padding:20px 24px 40px}.unit-label{margin-top:32px}.residence-detail h1{font-size:49px;line-height:54px;margin:24px 0 32px}.plan-and-details{display:flex;flex-direction:column;gap:24px}.plan-preview{width:100%;padding:24px}.residence-details{gap:24px}dt{font-size:15px}dd{font-size:16px}dd span{font-size:12px}dl{gap:20px}.orientation-details{margin-top:8px}.orientation-details :global(img){height:90px}.detail-bottom{margin-top:48px;gap:12px}}
+</style>

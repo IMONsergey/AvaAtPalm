@@ -1,0 +1,175 @@
+{
+  "screens": [
+    {
+      "width": 1440,
+      "route": "/",
+      "scroll": 1440,
+      "broken": [],
+      "font": true,
+      "height": 16091
+    },
+    {
+      "width": 1440,
+      "route": "/residences/801/",
+      "scroll": 1440,
+      "broken": [],
+      "font": true,
+      "height": 1384
+    },
+    {
+      "width": 1440,
+      "route": "/residences/1601/",
+      "scroll": 1440,
+      "broken": [],
+      "font": true,
+      "height": 1407
+    },
+    {
+      "width": 1440,
+      "route": "/location/",
+      "scroll": 1440,
+      "broken": [],
+      "font": true,
+      "height": 1173
+    },
+    {
+      "width": 1440,
+      "route": "/privacy/",
+      "scroll": 1440,
+      "broken": [],
+      "font": true,
+      "height": 1577
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "scroll": 390,
+      "broken": [],
+      "font": true,
+      "height": 10591
+    },
+    {
+      "width": 390,
+      "route": "/residences/801/",
+      "scroll": 390,
+      "broken": [],
+      "font": true,
+      "height": 1466
+    },
+    {
+      "width": 390,
+      "route": "/residences/1601/",
+      "scroll": 390,
+      "broken": [],
+      "font": true,
+      "height": 1477
+    },
+    {
+      "width": 390,
+      "route": "/location/",
+      "scroll": 390,
+      "broken": [],
+      "font": true,
+      "height": 1336
+    },
+    {
+      "width": 390,
+      "route": "/privacy/",
+      "scroll": 390,
+      "broken": [],
+      "font": true,
+      "height": 2179
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "scroll": 1024,
+      "broken": [],
+      "font": true,
+      "height": 11968
+    },
+    {
+      "width": 1024,
+      "route": "/residences/801/",
+      "scroll": 1024,
+      "broken": [],
+      "font": true,
+      "height": 1203
+    },
+    {
+      "width": 1024,
+      "route": "/residences/1601/",
+      "scroll": 1024,
+      "broken": [],
+      "font": true,
+      "height": 1205
+    },
+    {
+      "width": 1024,
+      "route": "/location/",
+      "scroll": 1024,
+      "broken": [],
+      "font": true,
+      "height": 1068
+    },
+    {
+      "width": 1024,
+      "route": "/privacy/",
+      "scroll": 1024,
+      "broken": [],
+      "font": true,
+      "height": 1561
+    },
+    {
+      "width": 360,
+      "route": "/",
+      "scroll": 360,
+      "broken": [],
+      "font": true,
+      "height": 10701
+    },
+    {
+      "width": 360,
+      "route": "/residences/801/",
+      "scroll": 360,
+      "broken": [],
+      "font": true,
+      "height": 1439
+    },
+    {
+      "width": 360,
+      "route": "/residences/1601/",
+      "scroll": 360,
+      "broken": [],
+      "font": true,
+      "height": 1449
+    },
+    {
+      "width": 360,
+      "route": "/location/",
+      "scroll": 360,
+      "broken": [],
+      "font": true,
+      "height": 1365
+    },
+    {
+      "width": 360,
+      "route": "/privacy/",
+      "scroll": 360,
+      "broken": [],
+      "font": true,
+      "height": 2329
+    }
+  ],
+  "checks": [
+    "Mobile menu opens, contains keyboard focus, Escape closes, anchor navigation closes",
+    "Gallery next, keyboard previous, and wraparound",
+    "Feature context reaches form; validation marks errors and focuses first field",
+    "503 shows genuine failure without success; retry retains form and submissionId; 201 ok:true reveals success (API intercepted only for QA)",
+    "Plan opens, button/keyboard zoom, keyboard pan, fit reset, Escape close",
+    "Privacy request offers message and own enquiry context",
+    "Normal reveal reaches visible state; changing to reduced motion removes transform and retains content",
+    "Actual touch events pinch the 1601 floor plan to approximately 200%"
+  ],
+  "errors": []
+}

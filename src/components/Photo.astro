@@ -1,0 +1,8 @@
+---
+import assets from '../data/assets.json';
+interface Props { name:string; alt?:string; class?:string; eager?:boolean; sizes?:string; style?:string; }
+const {name,alt='',class:className='',eager=false,sizes='100vw',style}=Astro.props;
+const asset=assets[name as keyof typeof assets];
+if(!asset)throw new Error(`Missing local Figma asset: ${name}`);
+---
+<img class={className} src={asset.src} srcset={asset.variants.map(v=>`${v.src} ${v.width}w`).join(', ')} sizes={sizes} width={asset.width} height={asset.height} alt={alt} loading={eager?'eager':'lazy'} decoding="async" fetchpriority={eager?'high':'auto'} style={style} data-asset={name}/>

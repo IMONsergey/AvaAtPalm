@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Action from '../components/Action.astro';
+---
+<BaseLayout title="Page not found | AVA at Palm Jumeirah" description="Return to AVA at Palm Jumeirah and explore the residences.">
+ <div class="inner-page site-width"><div class="inner-header"><Header/></div><main id="main" class="not-found"><p class="eyebrow">404 / Page not found</p><h1 class="display">Find your way<br/>back to AVA.</h1><p>The page you are looking for could not be found.</p><Action label="Explore AVA" href="/" caption="Palm Jumeirah"/></main></div>
+</BaseLayout>
+<style>.not-found{padding:100px var(--gutter);min-height:calc(100vh - 128px);display:flex;align-items:start;flex-direction:column;gap:32px}.not-found h1{font-size:clamp(48px,7vw,100px);line-height:1.05;color:var(--navy)}.not-found>p:not(.eyebrow){font-size:18px;line-height:1.6}@media(max-width:767px){.not-found{padding-top:64px}}</style>

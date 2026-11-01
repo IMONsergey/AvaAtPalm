@@ -1,0 +1,844 @@
+{
+  "aerial-1": {
+    "src": "/assets/aerial-1.webp",
+    "width": 1024,
+    "height": 326,
+    "originalWidth": 1024,
+    "originalHeight": 326,
+    "sha256": "460e10698ac94f937a40249b1545bd64031cb19ba6a06f4cba2c8ba3a61138c6",
+    "variants": [
+      {
+        "src": "/assets/aerial-1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/aerial-1-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/aerial-1.webp",
+        "width": 1024
+      }
+    ]
+  },
+  "aerial-2": {
+    "src": "/assets/aerial-2.webp",
+    "width": 1024,
+    "height": 681,
+    "originalWidth": 1024,
+    "originalHeight": 681,
+    "sha256": "0b30eae20c12008ca1f992d9fb661edef36685388dd0dd0b113d543fc6bd0aee",
+    "variants": [
+      {
+        "src": "/assets/aerial-2-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/aerial-2-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/aerial-2.webp",
+        "width": 1024
+      }
+    ]
+  },
+  "architecture-cutout-1": {
+    "src": "/assets/architecture-cutout-1.webp",
+    "width": 1006,
+    "height": 1024,
+    "originalWidth": 1006,
+    "originalHeight": 1024,
+    "sha256": "5e710abba8567d5705612bcce9ae811f74e1e4c8dca6ecf45816a82b60f35f9d",
+    "variants": [
+      {
+        "src": "/assets/architecture-cutout-1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/architecture-cutout-1-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/architecture-cutout-1.webp",
+        "width": 1006
+      }
+    ]
+  },
+  "architecture": {
+    "src": "/assets/architecture.webp",
+    "width": 540,
+    "height": 360,
+    "originalWidth": 540,
+    "originalHeight": 360,
+    "sha256": "7b3518b753f71905b7f3a4dc3afa881cc177e277072f0a592d7df3153e6c9f4b",
+    "variants": [
+      {
+        "src": "/assets/architecture-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/architecture.webp",
+        "width": 540
+      }
+    ]
+  },
+  "brand-partners-1": {
+    "src": "/assets/brand-partners-1.webp",
+    "width": 1024,
+    "height": 1024,
+    "originalWidth": 1024,
+    "originalHeight": 1024,
+    "sha256": "862db8340dd9813e8b3490f3b7afc9da23f34fec8f3d6b276bb6180528e4a077",
+    "variants": [
+      {
+        "src": "/assets/brand-partners-1.webp",
+        "width": 1024
+      }
+    ]
+  },
+  "brand-partners-2": {
+    "src": "/assets/brand-partners-2.webp",
+    "width": 423,
+    "height": 237,
+    "originalWidth": 423,
+    "originalHeight": 237,
+    "sha256": "cfa88f374266ba2bf9751f0ebdd9957341cccd90043e6ed2140247a5f5794bbe",
+    "variants": [
+      {
+        "src": "/assets/brand-partners-2.webp",
+        "width": 423
+      }
+    ]
+  },
+  "evening": {
+    "src": "/assets/evening.webp",
+    "width": 1920,
+    "height": 2245,
+    "originalWidth": 3214,
+    "originalHeight": 3758,
+    "sha256": "e077283f28af49d3d81ad7014b59dbe4cc0c0e34457a29166c59edeefec8fdc8",
+    "variants": [
+      {
+        "src": "/assets/evening-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/evening-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/evening-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/evening.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "feature-photo": {
+    "src": "/assets/feature-photo.webp",
+    "width": 1430,
+    "height": 899,
+    "originalWidth": 1430,
+    "originalHeight": 899,
+    "sha256": "1649c42812862f74d2ae40cfd8cbc3d7e13e1e43b3b093b696a3be17909318d5",
+    "variants": [
+      {
+        "src": "/assets/feature-photo-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/feature-photo-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/feature-photo-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/feature-photo.webp",
+        "width": 1430
+      }
+    ]
+  },
+  "haven-city": {
+    "src": "/assets/haven-city.webp",
+    "width": 1920,
+    "height": 1152,
+    "originalWidth": 4096,
+    "originalHeight": 2458,
+    "sha256": "c1095acf22dc44d401ca343c489b94d68a11de37fb6faacfa9dc6538829547f6",
+    "variants": [
+      {
+        "src": "/assets/haven-city-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/haven-city-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/haven-city-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/haven-city.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "haven-water": {
+    "src": "/assets/haven-water.webp",
+    "width": 1024,
+    "height": 576,
+    "originalWidth": 1024,
+    "originalHeight": 576,
+    "sha256": "ed4fb7aeac27481996e5b4dfee82a8fb897b287cb37aed79b57e3372e5f2c581",
+    "variants": [
+      {
+        "src": "/assets/haven-water-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/haven-water-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/haven-water.webp",
+        "width": 1024
+      }
+    ]
+  },
+  "interior-1-3": {
+    "src": "/assets/interior-1-3.webp",
+    "width": 1920,
+    "height": 1080,
+    "originalWidth": 4000,
+    "originalHeight": 2250,
+    "sha256": "680d524bc0977a72b81bb56adb99bfcc824e3b9f864d893ef23b20f30db91937",
+    "variants": [
+      {
+        "src": "/assets/interior-1-3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/interior-1-3-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/interior-1-3-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/interior-1-3.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "interior-1-4": {
+    "src": "/assets/interior-1-4.webp",
+    "width": 1024,
+    "height": 589,
+    "originalWidth": 1024,
+    "originalHeight": 589,
+    "sha256": "6d87750bdbf8990c8b44c66518fc23b3b7ae4ab55ea5ab43c2d074454c3e47fe",
+    "variants": [
+      {
+        "src": "/assets/interior-1-4-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/interior-1-4-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/interior-1-4.webp",
+        "width": 1024
+      }
+    ]
+  },
+  "interior-2": {
+    "src": "/assets/interior-2.webp",
+    "width": 1920,
+    "height": 1080,
+    "originalWidth": 4000,
+    "originalHeight": 2250,
+    "sha256": "a62026929d6e1613aa64824a299efe42539fbb180c54fa323847c15c54abd701",
+    "variants": [
+      {
+        "src": "/assets/interior-2-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/interior-2-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/interior-2-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/interior-2.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "nav-1": {
+    "src": "/assets/nav-1.webp",
+    "width": 158,
+    "height": 126,
+    "originalWidth": 158,
+    "originalHeight": 126,
+    "sha256": "f54c444b151ab127ad88e033becb61e69efb592d83ba553dcf40527bb3b2593c",
+    "variants": [
+      {
+        "src": "/assets/nav-1.webp",
+        "width": 158
+      }
+    ]
+  },
+  "orientation-1601": {
+    "src": "/assets/orientation-1601.webp",
+    "width": 254,
+    "height": 275,
+    "originalWidth": 254,
+    "originalHeight": 275,
+    "sha256": "4f072125ae7db45f95563168f2a3a30cf71ba6060509bba748e604344cdf5368",
+    "variants": [
+      {
+        "src": "/assets/orientation-1601.webp",
+        "width": 254
+      }
+    ]
+  },
+  "orientation-801": {
+    "src": "/assets/orientation-801.webp",
+    "width": 254,
+    "height": 275,
+    "originalWidth": 254,
+    "originalHeight": 275,
+    "sha256": "4f072125ae7db45f95563168f2a3a30cf71ba6060509bba748e604344cdf5368",
+    "variants": [
+      {
+        "src": "/assets/orientation-801.webp",
+        "width": 254
+      }
+    ]
+  },
+  "plan-1601": {
+    "src": "/assets/plan-1601.webp",
+    "width": 844,
+    "height": 789,
+    "originalWidth": 844,
+    "originalHeight": 789,
+    "sha256": "6e8789cd10c2fefe674e57a4dc0832ad5811b0361d2e6d7f833b61e4fe390ef2",
+    "variants": [
+      {
+        "src": "/assets/plan-1601.webp",
+        "width": 844
+      }
+    ]
+  },
+  "plan-801": {
+    "src": "/assets/plan-801.webp",
+    "width": 894,
+    "height": 803,
+    "originalWidth": 894,
+    "originalHeight": 803,
+    "sha256": "5b92631394d3fae3cb4c1ce9e96076ac08030574a31791971ed7529b3827eadc",
+    "variants": [
+      {
+        "src": "/assets/plan-801.webp",
+        "width": 894
+      }
+    ]
+  },
+  "preview-right": {
+    "src": "/assets/preview-right.webp",
+    "width": 414,
+    "height": 558,
+    "originalWidth": 414,
+    "originalHeight": 558,
+    "sha256": "96801a4dba6453087312b1a9ff21c528bd5b2cb651ff06efcb1ecf408412a4ac",
+    "variants": [
+      {
+        "src": "/assets/preview-right.webp",
+        "width": 414
+      }
+    ]
+  },
+  "residence-texture": {
+    "src": "/assets/residence-texture.webp",
+    "width": 1920,
+    "height": 1245,
+    "originalWidth": 3000,
+    "originalHeight": 1946,
+    "sha256": "ddd51d1bdbaad438dc3ee0e84a371715295fbd13040239374b5671300123b13a",
+    "variants": [
+      {
+        "src": "/assets/residence-texture-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/residence-texture-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/residence-texture-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/residence-texture.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "sky-terrace-1": {
+    "src": "/assets/sky-terrace-1.webp",
+    "width": 1920,
+    "height": 1920,
+    "originalWidth": 2000,
+    "originalHeight": 2000,
+    "sha256": "ef9480f43e89fcfd9224045aff106b38dd5fa5fc021eed64a63d66334dc5bfe6",
+    "variants": [
+      {
+        "src": "/assets/sky-terrace-1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/sky-terrace-1-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/sky-terrace-1-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/sky-terrace-1.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "sky-terrace-2": {
+    "src": "/assets/sky-terrace-2.webp",
+    "width": 1920,
+    "height": 1080,
+    "originalWidth": 4000,
+    "originalHeight": 2250,
+    "sha256": "3c13a8ff60f9d0f8e77f3637f771883427f393e8ce6085575072f581196be603",
+    "variants": [
+      {
+        "src": "/assets/sky-terrace-2-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/sky-terrace-2-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/sky-terrace-2-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/sky-terrace-2.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "video-poster": {
+    "src": "/assets/video-poster.webp",
+    "width": 1920,
+    "height": 1080,
+    "originalWidth": 3840,
+    "originalHeight": 2160,
+    "sha256": "703c65387aefa5c5dce3d4d8754fa49e78af7e6ec32c6c88677a40807d3e970b",
+    "variants": [
+      {
+        "src": "/assets/video-poster-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/video-poster-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/video-poster-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/video-poster.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "architecture-cutout-2": {
+    "src": "/assets/architecture-cutout-2.webp",
+    "width": 1694,
+    "height": 1724,
+    "originalWidth": 1694,
+    "originalHeight": 1724,
+    "sha256": "65904359e4263b86c8daf53213c7c4a2e47b99101c7a78614647fca59252d91d",
+    "variants": [
+      {
+        "src": "/assets/architecture-cutout-2-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/architecture-cutout-2-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/architecture-cutout-2-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/architecture-cutout-2.webp",
+        "width": 1694
+      }
+    ]
+  },
+  "floor-1601": {
+    "src": "/assets/floor-1601.webp",
+    "width": 148,
+    "height": 444,
+    "originalWidth": 148,
+    "originalHeight": 444,
+    "sha256": "0df6566ab0c1da3b085a4857db5c56c44cf727589046b65921fdf2df23df14de",
+    "variants": [
+      {
+        "src": "/assets/floor-1601.webp",
+        "width": 148
+      }
+    ]
+  },
+  "floor-801": {
+    "src": "/assets/floor-801.webp",
+    "width": 148,
+    "height": 444,
+    "originalWidth": 148,
+    "originalHeight": 444,
+    "sha256": "0df6566ab0c1da3b085a4857db5c56c44cf727589046b65921fdf2df23df14de",
+    "variants": [
+      {
+        "src": "/assets/floor-801.webp",
+        "width": 148
+      }
+    ]
+  },
+  "haven-bedroom": {
+    "src": "/assets/haven-bedroom.webp",
+    "width": 1680,
+    "height": 1093,
+    "originalWidth": 1680,
+    "originalHeight": 1093,
+    "sha256": "4366c8fd66fb7dff63eaebdc55bdc8e16211de5e31bd38d2b1ceb4e0cca86eee",
+    "variants": [
+      {
+        "src": "/assets/haven-bedroom-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/haven-bedroom-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/haven-bedroom-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/haven-bedroom.webp",
+        "width": 1680
+      }
+    ]
+  },
+  "hero-preview-left-1": {
+    "src": "/assets/hero-preview-left-1.webp",
+    "width": 414,
+    "height": 558,
+    "originalWidth": 414,
+    "originalHeight": 558,
+    "sha256": "e7d199c377ac399f6444a7ca4f1405d679db04c2e6f5c20668e5065a579c3180",
+    "variants": [
+      {
+        "src": "/assets/hero-preview-left-1.webp",
+        "width": 414
+      }
+    ]
+  },
+  "interior-1-1": {
+    "src": "/assets/interior-1-1.webp",
+    "width": 1024,
+    "height": 768,
+    "originalWidth": 1024,
+    "originalHeight": 768,
+    "sha256": "4270520bf852c4a280062227a0e66075ceac6b8223ce0cf4888edd40eded982a",
+    "variants": [
+      {
+        "src": "/assets/interior-1-1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/interior-1-1-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/interior-1-1.webp",
+        "width": 1024
+      }
+    ]
+  },
+  "interior-1-2": {
+    "src": "/assets/interior-1-2.webp",
+    "width": 1920,
+    "height": 1080,
+    "originalWidth": 3840,
+    "originalHeight": 2160,
+    "sha256": "378265ed5102166ddc17799f28bbaa2f2551396adec6ff095ab4c1c3bc0e4231",
+    "variants": [
+      {
+        "src": "/assets/interior-1-2-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/interior-1-2-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/interior-1-2-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/interior-1-2.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "interior-3": {
+    "src": "/assets/interior-3.webp",
+    "width": 1920,
+    "height": 1080,
+    "originalWidth": 4000,
+    "originalHeight": 2250,
+    "sha256": "b1ff0438b12e8a9afe21cdd3f86b50969dd3055fce82454216bf98c5fb071994",
+    "variants": [
+      {
+        "src": "/assets/interior-3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/interior-3-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/interior-3-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/interior-3.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "interior-4": {
+    "src": "/assets/interior-4.webp",
+    "width": 1920,
+    "height": 1080,
+    "originalWidth": 4000,
+    "originalHeight": 2250,
+    "sha256": "f086bea16ef417116434ac11c74311a2b67612fc223f3df52a5ad399ed399051",
+    "variants": [
+      {
+        "src": "/assets/interior-4-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/interior-4-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/interior-4-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/interior-4.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "roof": {
+    "src": "/assets/roof.webp",
+    "width": 1920,
+    "height": 2075,
+    "originalWidth": 3239,
+    "originalHeight": 3501,
+    "sha256": "6477b7b7d9950faaa5a6e0b06a6747836e8aa3b65b7b3a7720323d9dc049a6c8",
+    "variants": [
+      {
+        "src": "/assets/roof-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/roof-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/roof-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/roof.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "sky-above-1": {
+    "src": "/assets/sky-above-1.webp",
+    "width": 1024,
+    "height": 768,
+    "originalWidth": 1024,
+    "originalHeight": 768,
+    "sha256": "4270520bf852c4a280062227a0e66075ceac6b8223ce0cf4888edd40eded982a",
+    "variants": [
+      {
+        "src": "/assets/sky-above-1-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/sky-above-1-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/sky-above-1.webp",
+        "width": 1024
+      }
+    ]
+  },
+  "sky-above-2": {
+    "src": "/assets/sky-above-2.webp",
+    "width": 1920,
+    "height": 1080,
+    "originalWidth": 4000,
+    "originalHeight": 2250,
+    "sha256": "728bd02154d80889824f70e783b846ca7efe36e63ebef5e35f26f2d88046e009",
+    "variants": [
+      {
+        "src": "/assets/sky-above-2-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/sky-above-2-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/sky-above-2-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/sky-above-2.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "sky-bedroom": {
+    "src": "/assets/sky-bedroom.webp",
+    "width": 1680,
+    "height": 1093,
+    "originalWidth": 1680,
+    "originalHeight": 1093,
+    "sha256": "4366c8fd66fb7dff63eaebdc55bdc8e16211de5e31bd38d2b1ceb4e0cca86eee",
+    "variants": [
+      {
+        "src": "/assets/sky-bedroom-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/sky-bedroom-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/sky-bedroom-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/sky-bedroom.webp",
+        "width": 1680
+      }
+    ]
+  },
+  "sky-terrace-3": {
+    "src": "/assets/sky-terrace-3.webp",
+    "width": 1920,
+    "height": 1117,
+    "originalWidth": 2000,
+    "originalHeight": 1164,
+    "sha256": "5d44dda0bbfcf056b155e13aa661c7798ebf0848e92b5a3b046aa41dc9126556",
+    "variants": [
+      {
+        "src": "/assets/sky-terrace-3-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/sky-terrace-3-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/sky-terrace-3-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/sky-terrace-3.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "tower": {
+    "src": "/assets/tower.webp",
+    "width": 1920,
+    "height": 3535,
+    "originalWidth": 2225,
+    "originalHeight": 4096,
+    "sha256": "f247c8868d26948c62e11479e89ada5811b56b5dc10c8fd967407a99597e30bf",
+    "variants": [
+      {
+        "src": "/assets/tower-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/tower-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/tower-1200.webp",
+        "width": 1200
+      },
+      {
+        "src": "/assets/tower.webp",
+        "width": 1920
+      }
+    ]
+  },
+  "waterfront": {
+    "src": "/assets/waterfront.webp",
+    "width": 1024,
+    "height": 506,
+    "originalWidth": 1024,
+    "originalHeight": 506,
+    "sha256": "a42033f2e4a9f054d9675b8148b13b67f5b35b281b72992484d725d0239aced3",
+    "variants": [
+      {
+        "src": "/assets/waterfront-480.webp",
+        "width": 480
+      },
+      {
+        "src": "/assets/waterfront-800.webp",
+        "width": 800
+      },
+      {
+        "src": "/assets/waterfront.webp",
+        "width": 1024
+      }
+    ]
+  }
+}
