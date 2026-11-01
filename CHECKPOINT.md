@@ -43,8 +43,8 @@ are no missing files outside the requested exclusions.
 
 That preparation entry preceded the successful recovery release below. The
 parent task handled transfer, the reviewed shared API, dependency installation
-and release validation. The later motion update has a separate final verification
-and unpublished status at the end of this file.
+and release validation. The later motion update has separate server verification
+and a subsequent confirmed publication entry at the end of this file.
 
 ## Publication verification, 2026-11-01
 
@@ -54,7 +54,7 @@ Recovered original design source and optimized assets preserved. Fresh npm insta
 
 Prepared the current task's patch in `src/scripts/app.ts`, `src/styles/global.css` and `src/components/Header.astro`: responsive/reduced-motion GSAP lifecycle, feature-disclosure geometry refresh, decoded latest-request gallery navigation and robust pointer cancellation, explicit dialog trigger restoration, menu expanded state, initial/resize/load plan geometry, stable modal scroll locking, and reduced-motion-aware dialog entrances. Original visual assets and composition are retained; API/submission payload behavior is unchanged.
 
-`git diff --check` passed in the text snapshot. Final server typecheck/build and the existing Chromium browser suite subsequently passed as recorded below. `docs/MOTION-QA-2026-11-01.md` now distinguishes the completed automated coverage from additional manual scenarios. Production publication of this update remains root-owned.
+`git diff --check` passed in the text snapshot. Final server typecheck/build and the existing Chromium browser suite subsequently passed as recorded below. `docs/MOTION-QA-2026-11-01.md` distinguishes the completed automated coverage from additional manual scenarios. Publication was handed to the release owner and was subsequently confirmed below.
 
 ## Final motion verification and publication status, 2026-11-01
 
@@ -62,6 +62,8 @@ The release owner reported final authorized server job `20261101T124548-54c1d23d
 
 AVA's suite is Chromium-only. At 1440/768/390/320 px it checks home, both residence pages, location and privacy assets/overflow; menu focus, hotspots, gallery controls, features, both original plans, and mocked enquiry validation/retry identity/pending/success behavior. A separate normal-motion flow verifies desktop-to-mobile hero transform cleanup, feature spacing and Location visibility, followed by live reduced-motion cleanup. The load/decode audit correction has passed: both original plan images load and decode at all four tested widths, including the previously reported plan-1601.webp. Exact coverage and generated evidence paths are in `docs/MOTION-QA-2026-11-01.md`.
 
-**Current status: verified on the server, not yet published.** Root owns the final commit/push, deployment and post-deployment verification. The historical publication/API evidence above belongs to the earlier release. The final browser suite intercepts every enquiry and does not repeat production storage verification. No fresh WebKit/Safari, physical-touch/pinch, throttled-network or performance measurement is claimed.
+**Publication confirmed, 2026-11-01:** the release owner confirmed UI commit `0ef0a1f5c50bc1762ad95f41a534ca530e1f9a0f` in READY deployment `dpl_asipfgq2i7pgNPr7CKvv1GheWgZz`. This supersedes the earlier verified-but-unpublished handoff. The authoritative record for final commits, deployments and live acceptance across all five sites is [MOTION-RELEASE-2026-11-01.md](https://github.com/IMONsergey/LuxuryRealty/blob/main/docs/MOTION-RELEASE-2026-11-01.md).
 
-For this final documentation handoff, transfer only `CHECKPOINT.md` and `docs/MOTION-QA-2026-11-01.md`. The historical `docs/browser-qa.json` was not replaced with an invented current report; fresh reports remain in the server job's actual output.
+The historical publication/API evidence above belongs to the earlier release. The listed final server browser suite intercepts every enquiry and does not repeat production storage verification. That run does not establish WebKit/Safari, physical-touch/pinch, throttled-network or performance coverage; any subsequent live acceptance is recorded in the central release report.
+
+The earlier documentation handoff covered only `CHECKPOINT.md` and `docs/MOTION-QA-2026-11-01.md`. The historical `docs/browser-qa.json` was not replaced with an invented current report; the server verification reports remain in the referenced jobs' actual output. This publication-status correction changes documentation only and adds no new test result.
