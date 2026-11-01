@@ -29,7 +29,7 @@ gallery, residence details, and floor-plan viewer remain present.
   pending controls, duplicate prevention, and confirmed success reference.
   All enquiry POSTs are mocked. No real enquiries are sent.
 
-## Validation and handoff
+## Recovery validation and handoff (historical)
 
 Browser QA starts Astro on port 4315, uses the server's shared Playwright at
 `/home/sergey/.local/share/imon-toolkit/node/node_modules/playwright`, and stops
@@ -41,10 +41,27 @@ Screenshots and the JSON report are written under `artifacts/`.
 confirmed that only the two source files above differ from the original; there
 are no missing files outside the requested exclusions.
 
-This checkpoint records source preparation, not a successful build or browser
-run. The parent task owns transfer, substitution of the reviewed shared API,
-dependency installation, build/type checking, browser execution, and deployment.
+That preparation entry preceded the successful recovery release below. The
+parent task handled transfer, the reviewed shared API, dependency installation
+and release validation. The later motion update has a separate final verification
+and unpublished status at the end of this file.
 
 ## Publication verification, 2026-11-01
 
 Recovered original design source and optimized assets preserved. Fresh npm install, production build, type checks, five enquiry API tests, and browser interaction checks passed on the authorized server. Private enquiry storage is configured on the Vercel project. Production HTTP and storage verification is recorded separately after deployment.
+
+## Motion polish verified on server, 2026-11-01
+
+Prepared the current task's patch in `src/scripts/app.ts`, `src/styles/global.css` and `src/components/Header.astro`: responsive/reduced-motion GSAP lifecycle, feature-disclosure geometry refresh, decoded latest-request gallery navigation and robust pointer cancellation, explicit dialog trigger restoration, menu expanded state, initial/resize/load plan geometry, stable modal scroll locking, and reduced-motion-aware dialog entrances. Original visual assets and composition are retained; API/submission payload behavior is unchanged.
+
+`git diff --check` passed in the text snapshot. Final server typecheck/build and the existing Chromium browser suite subsequently passed as recorded below. `docs/MOTION-QA-2026-11-01.md` now distinguishes the completed automated coverage from additional manual scenarios. Production publication of this update remains root-owned.
+
+## Final motion verification and publication status, 2026-11-01
+
+The release owner reported final authorized server job `20261101T124548-54c1d23d28` with exit 0: all ten typecheck/build tasks across the five repositories passed, including AVA. Browser job `20261101T124919-e3044c77a5` also exited 0 with all five existing suites passing, including AVA `scripts/browser-qa.mjs`. All fresh AVA hero screenshots supplied for the final review were visually accepted by root.
+
+AVA's suite is Chromium-only. At 1440/768/390/320 px it checks home, both residence pages, location and privacy assets/overflow; menu focus, hotspots, gallery controls, features, both original plans, and mocked enquiry validation/retry identity/pending/success behavior. A separate normal-motion flow verifies desktop-to-mobile hero transform cleanup, feature spacing and Location visibility, followed by live reduced-motion cleanup. The load/decode audit correction has passed: both original plan images load and decode at all four tested widths, including the previously reported plan-1601.webp. Exact coverage and generated evidence paths are in `docs/MOTION-QA-2026-11-01.md`.
+
+**Current status: verified on the server, not yet published.** Root owns the final commit/push, deployment and post-deployment verification. The historical publication/API evidence above belongs to the earlier release. The final browser suite intercepts every enquiry and does not repeat production storage verification. No fresh WebKit/Safari, physical-touch/pinch, throttled-network or performance measurement is claimed.
+
+For this final documentation handoff, transfer only `CHECKPOINT.md` and `docs/MOTION-QA-2026-11-01.md`. The historical `docs/browser-qa.json` was not replaced with an invented current report; fresh reports remain in the server job's actual output.

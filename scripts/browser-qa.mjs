@@ -58,20 +58,57 @@ process.once('SIGINT', () => { void cleanup().finally(() => process.exit(130)); 
 process.once('SIGTERM', () => { void cleanup().finally(() => process.exit(143)); });
 
 async function auditPage(page, label) {
-  await page.evaluate(async () => {
-    for (const image of document.images) image.loading = 'eager';
-    await Promise.all([...document.images].filter(image => image.getAttribute('src')).map(image => image.decode().catch(() => null)));
+  const result = await page.evaluate(async () => {
     await document.fonts.ready;
+    const images = [...document.images].filter(image => image.getAttribute('src') || image.getAttribute('srcset'));
+    images.forEach(image => { image.loading = 'eager'; });
+    // Let eager loading and responsive candidate selection start before observing readiness.
+    await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    const failures = [];
+    const resourceDeadline = performance.now() + 15000;
+    async function awaitLoad(image) {
+      if (image.complete) return;
+      await new Promise(resolve => {
+        const finish = () => { clearTimeout(timer); image.removeEventListener('load', finish); image.removeEventListener('error', finish); resolve(); };
+        const timer = setTimeout(finish, Math.max(0, resourceDeadline - performance.now()));
+        image.addEventListener('load', finish, { once: true });
+        image.addEventListener('error', finish, { once: true });
+        if (image.complete) finish();
+      });
+    }
+    // Sequential decode avoids forcing every large source into the decoder at once.
+    for (const image of images) {
+      let decodeError = '';
+      for (let attempt = 0; attempt < 2; attempt++) {
+        await awaitLoad(image);
+        const candidate = image.currentSrc || image.src;
+        if (image.complete && image.naturalWidth) {
+          try { await image.decode(); decodeError = ''; }
+          catch (error) { decodeError = String(error); }
+        }
+        if (candidate === (image.currentSrc || image.src)) break;
+      }
+      if (!image.complete || !image.naturalWidth || decodeError) failures.push({
+        src: image.currentSrc || image.getAttribute('src'), complete: image.complete,
+        naturalWidth: image.naturalWidth, decodeError,
+      });
+    }
+    return {
+      width: innerWidth,
+      clientWidth: document.documentElement.clientWidth,
+      scrollWidth: document.documentElement.scrollWidth,
+      bodyScrollWidth: document.body.scrollWidth,
+      imageCount: images.length,
+      brokenImages: failures,
+    };
   });
-  const result = await page.evaluate(() => ({
-    width: innerWidth,
-    scrollWidth: document.documentElement.scrollWidth,
-    imageCount: document.images.length,
-    brokenImages: [...document.images].filter(image => image.getAttribute('src') && !image.naturalWidth).map(image => image.currentSrc || image.getAttribute('src')),
-  }));
-  assert.ok(result.scrollWidth <= result.width + 1, `${label}: horizontal overflow ${result.scrollWidth}px at ${result.width}px`);
-  assert.deepEqual(result.brokenImages, [], `${label}: all images must load`);
+  assert.ok(result.scrollWidth <= result.clientWidth + 1 && result.bodyScrollWidth <= result.clientWidth + 1, `${label}: horizontal overflow ${JSON.stringify(result)}`);
+  assert.deepEqual(result.brokenImages, [], `${label}: all referenced images must finish loading and decode`);
   return { page: label, ...result };
+}
+
+async function galleryCount(page, value) {
+  await page.waitForFunction(value => document.querySelector('[data-carousel] [data-counter]')?.textContent?.trim() === value, value);
 }
 
 async function expectFocus(locator, label) {
@@ -98,6 +135,7 @@ try {
     activePage = page;
     page.setDefaultTimeout(15000);
     const errors = [];
+    const assetFailures = [];
     const requests = [];
     const pages = [];
     let responseMode = 'failure';
@@ -105,6 +143,7 @@ try {
     let requestReached;
     let pendingGate;
     page.on('pageerror', error => errors.push(error.message));
+    page.on('response', response => { if (response.status() >= 400 && /\/(assets|fonts)\//.test(new URL(response.url()).pathname)) assetFailures.push({ url: response.url(), status: response.status() }); });
 
     // Every enquiry in this program is intercepted; no real lead is created.
     await page.route('**/api/enquiry', async route => {
@@ -157,11 +196,14 @@ try {
     const gallery = page.locator('[data-carousel]');
     assert.equal(await gallery.locator('[data-counter]').innerText(), '1 / 4');
     await gallery.locator('[data-next]').click();
+    await galleryCount(page, '2 / 4');
     assert.equal(await gallery.locator('[data-counter]').innerText(), '2 / 4');
     await gallery.focus();
     await page.keyboard.press('ArrowRight');
+    await galleryCount(page, '3 / 4');
     assert.equal(await gallery.locator('[data-counter]').innerText(), '3 / 4');
     await gallery.locator('[data-prev]').click();
+    await galleryCount(page, '2 / 4');
     assert.equal(await gallery.locator('[data-counter]').innerText(), '2 / 4');
     assert.equal(await gallery.locator('[data-slide][aria-hidden="false"]').count(), 1);
 
@@ -285,11 +327,42 @@ try {
       assert.equal(await page.locator('h1').count(), 1);
     }
     assert.deepEqual(errors, [], 'No uncaught JavaScript errors');
-    report.push({ width, pages, menu: width < 768 ? 'pass' : 'desktop navigation', hotspots: 'pass', gallery: 'pass', features: 'pass', plans801And1601: 'pass', validation: 'pass', retryIdentity: 'pass', pendingGuard: 'pass', confirmedReference: 'pass', mockedRequests: requests.length, scriptErrors: errors });
+    assert.deepEqual(assetFailures, [], 'No missing image/font HTTP responses');
+    report.push({ width, pages, menu: width < 768 ? 'pass' : 'desktop navigation', hotspots: 'pass', gallery: 'pass', features: 'pass', plans801And1601: 'pass', validation: 'pass', retryIdentity: 'pass', pendingGuard: 'pass', confirmedReference: 'pass', mockedRequests: requests.length, scriptErrors: errors, assetFailures });
     console.log(`AVA ${width}px: passed`);
     await page.close();
     activePage = null;
   }
+
+  step = 'normal motion: responsive lifecycle and feature disclosure';
+  const motion = await browser.newPage({ viewport: { width: 1440, height: 900 }, reducedMotion: 'no-preference' });
+  activePage = motion;
+  const motionErrors = [];
+  motion.on('pageerror', error => motionErrors.push(error.message));
+  await motion.goto(base, { waitUntil: 'networkidle' });
+  await motion.evaluate(() => document.fonts.ready);
+  await motion.evaluate(() => scrollTo({ top: 500, behavior: 'instant' }));
+  await motion.waitForFunction(() => { const transform = getComputedStyle(document.querySelector('.hero-title')).transform; return transform !== 'none' && new DOMMatrixReadOnly(transform).m42 > 1; });
+  await motion.setViewportSize({ width: 390, height: 844 });
+  await motion.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+  await motion.waitForFunction(() => { const transform = getComputedStyle(document.querySelector('.hero-title')).transform; return transform === 'none' || Math.abs(new DOMMatrixReadOnly(transform).m42) < .5; });
+  assert.equal(await motion.locator('.hero-title').isVisible(), true);
+  assert.equal(await motion.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1), true, 'Desktop transforms must not overflow the mobile composition');
+  const expanded = motion.locator('#features details').filter({ has: motion.locator('summary', { hasText: 'Private garage' }) });
+  await expanded.locator('summary').click();
+  const spacing = await expanded.evaluate(element => ({ open: element.open, bottom: element.getBoundingClientRect().bottom, nextTop: element.nextElementSibling.getBoundingClientRect().top }));
+  assert.ok(spacing.open && spacing.bottom <= spacing.nextTop + 1, `Expanded feature overlaps its successor: ${JSON.stringify(spacing)}`);
+  await motion.locator('.location-title').scrollIntoViewIfNeeded();
+  await motion.waitForFunction(() => Number(getComputedStyle(document.querySelector('.location-title')).opacity) > .98);
+  await motion.screenshot({ path: `${output}/ava-motion-mobile-location.png` });
+  await motion.setViewportSize({ width: 1440, height: 900 });
+  await motion.emulateMedia({ reducedMotion: 'reduce' });
+  await motion.waitForFunction(() => [...document.querySelectorAll('[data-reveal]')].every(element => Number(getComputedStyle(element).opacity) > .98));
+  await motion.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+  await motion.waitForFunction(() => { const transform = getComputedStyle(document.querySelector('.hero-title')).transform; return transform === 'none' || Math.abs(new DOMMatrixReadOnly(transform).m42) < .5; });
+  assert.deepEqual(motionErrors, [], 'Normal-motion resize and preference changes must not throw');
+  report.push({ mode: 'normal-motion', desktopToMobileResize: 'pass', featureDisclosureGeometry: 'pass', revealedLocation: 'pass', liveReducedMotion: 'pass', scriptErrors: motionErrors });
+  await motion.close(); activePage = null;
 
   await writeFile(`${output}/report.json`, JSON.stringify({ ok: true, testedAt: new Date().toISOString(), base, report }, null, 2));
   console.log(JSON.stringify({ ok: true, output, report }, null, 2));

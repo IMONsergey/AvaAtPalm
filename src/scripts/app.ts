@@ -13,18 +13,29 @@ let sending = false;
 let resetIdOnOpen = false;
 let lastAttemptFingerprint = '';
 let request: AbortController | undefined;
+let dialogOrigin: HTMLElement | null = null;
+const menuToggle = document.querySelector<HTMLButtonElement>('[data-action="menu"]');
 
-function openDialog(dialog: HTMLDialogElement | null) {
+function syncDialogState() {
+  document.body.classList.toggle('has-dialog', Boolean(document.querySelector('dialog[open]')));
+  menuToggle?.setAttribute('aria-expanded', String(Boolean(menu?.open)));
+}
+
+function openDialog(dialog: HTMLDialogElement | null, trigger?: HTMLElement) {
   if (!dialog || dialog.open) return;
+  const origin = trigger ?? document.activeElement;
+  // A dialog opened from another dialog returns to the original page control.
+  if (origin instanceof HTMLElement && !origin.closest('dialog[open]')) dialogOrigin = origin;
   document.querySelectorAll<HTMLDialogElement>('dialog[open]').forEach(other => other.close());
   dialog.showModal();
+  syncDialogState();
   const first = dialog.querySelector<HTMLElement>('h2[tabindex="-1"],button[data-close],button');
   first?.focus({ preventScroll: true });
 }
 
-function openEnquiry(context = 'AVA at Palm Jumeirah') {
+function openEnquiry(context = 'AVA at Palm Jumeirah', trigger?: HTMLElement) {
   if (!enquiry || !form) return;
-  if (sending) { openDialog(enquiry); return; }
+  if (sending) { openDialog(enquiry, trigger); return; }
   const contextInput = form.elements.namedItem('context') as HTMLInputElement;
   if (submitted) {
     submissionId = crypto.randomUUID();
@@ -46,16 +57,16 @@ function openEnquiry(context = 'AVA at Palm Jumeirah') {
   const messageField = form.querySelector<HTMLElement>('.field-message');
   if (messageField) messageField.hidden = context !== 'Privacy request';
   if (context !== 'Privacy request') (form.elements.namedItem('message') as HTMLTextAreaElement).value = '';
-  openDialog(enquiry);
+  openDialog(enquiry, trigger);
 }
 
 document.addEventListener('click', event => {
   const target = event.target as HTMLElement;
   const trigger = target.closest<HTMLElement>('[data-action]');
-  if (trigger?.dataset.action === 'menu') openDialog(menu);
-  if (trigger?.dataset.action === 'enquire') openEnquiry(trigger.dataset.context);
-  if (trigger?.dataset.action === 'video') openDialog(document.querySelector('#video-dialog'));
-  if (trigger?.dataset.action === 'location') openDialog(document.querySelector('#location-dialog'));
+  if (trigger?.dataset.action === 'menu') openDialog(menu, trigger);
+  if (trigger?.dataset.action === 'enquire') openEnquiry(trigger.dataset.context, trigger);
+  if (trigger?.dataset.action === 'video') openDialog(document.querySelector('#video-dialog'), trigger);
+  if (trigger?.dataset.action === 'location') openDialog(document.querySelector('#location-dialog'), trigger);
   target.closest('[data-close]')?.closest('dialog')?.close();
   if (target.closest('[data-menu-link]')) menu?.close();
   if (target.closest('.success-link')) enquiry?.close();
@@ -69,6 +80,10 @@ document.querySelectorAll<HTMLDialogElement>('dialog').forEach(dialog => {
   });
   dialog.addEventListener('close', () => {
     dialog.querySelector('video')?.pause();
+    syncDialogState();
+    if (!document.querySelector('dialog[open]') && dialogOrigin?.isConnected) {
+      dialogOrigin.focus({ preventScroll: true });
+    }
   });
 });
 
@@ -170,30 +185,63 @@ form?.addEventListener('submit', async event => {
 
 document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
   const slides = Array.from(carousel.querySelectorAll<HTMLElement>('[data-slide]'));
-  const track = carousel.querySelector<HTMLElement>('[data-track]')!;
+  const track = carousel.querySelector<HTMLElement>('[data-track]');
+  if (!track || slides.length < 2) return;
   const counter = carousel.querySelector<HTMLElement>('[data-counter]');
   let current = 0;
-  let startX = 0;
-  let startY = 0;
-  function show(index: number) {
-    current = (index + slides.length) % slides.length;
-    gsap.to(track, { xPercent: -current * 100, duration: reduced.matches ? 0 : .55, ease: 'power2.inOut', overwrite: true });
-    slides.forEach((slide, i) => slide.setAttribute('aria-hidden', String(i !== current)));
-    if (counter) counter.textContent = `${current + 1} / ${slides.length}`;
+  let displayed = 0;
+  let gesture: { id: number; x: number; y: number } | null = null;
+  let requestId = 0;
+
+  async function show(index: number) {
+    const next = (index + slides.length) % slides.length;
+    current = next;
+    const id = ++requestId;
+    // Keep the previous frame visible until the destination image is decoded.
+    const image = slides[next].querySelector<HTMLImageElement>('img');
+    if (image) {
+      image.loading = 'eager';
+      await image.decode().catch(() => undefined);
+    }
+    if (id !== requestId) return;
+    if (image && !image.naturalWidth) { current = displayed; return; }
+    displayed = next;
+    gsap.to(track, { xPercent: -next * 100, duration: reduced.matches ? 0 : .55, ease: 'power2.inOut', overwrite: true });
+    slides.forEach((slide, i) => {
+      slide.setAttribute('aria-hidden', String(i !== next));
+      slide.inert = i !== next;
+    });
+    if (counter) counter.textContent = `${next + 1} / ${slides.length}`;
   }
-  carousel.querySelector('[data-next]')?.addEventListener('click', () => show(current + 1));
-  carousel.querySelector('[data-prev]')?.addEventListener('click', () => show(current - 1));
+  carousel.querySelector('[data-next]')?.addEventListener('click', () => { void show(current + 1); });
+  carousel.querySelector('[data-prev]')?.addEventListener('click', () => { void show(current - 1); });
   carousel.addEventListener('keydown', event => {
+    if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement || event.target instanceof HTMLSelectElement) return;
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
       event.preventDefault();
-      show(current + (event.key === 'ArrowRight' ? 1 : -1));
+      void show(current + (event.key === 'ArrowRight' ? 1 : -1));
     }
   });
-  track.addEventListener('pointerdown', event => { startX = event.clientX; startY = event.clientY; });
-  track.addEventListener('pointerup', event => {
-    const dx = event.clientX - startX, dy = event.clientY - startY;
-    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) show(current + (dx < 0 ? 1 : -1));
+  track.addEventListener('pointerdown', event => {
+    if (!event.isPrimary || event.button !== 0) return;
+    gesture = { id: event.pointerId, x: event.clientX, y: event.clientY };
+    track.setPointerCapture(event.pointerId);
   });
+  track.addEventListener('pointerup', event => {
+    if (!gesture || gesture.id !== event.pointerId) return;
+    const dx = event.clientX - gesture.x, dy = event.clientY - gesture.y;
+    gesture = null;
+    if (track.hasPointerCapture(event.pointerId)) track.releasePointerCapture(event.pointerId);
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.5) void show(current + (dx < 0 ? 1 : -1));
+  });
+  track.addEventListener('pointercancel', () => { gesture = null; });
+  track.addEventListener('lostpointercapture', () => { gesture = null; });
+  reduced.addEventListener('change', () => {
+    // Changing the OS preference during a transition settles on its decoded frame.
+    gsap.killTweensOf(track);
+    gsap.set(track, { xPercent: -displayed * 100 });
+  });
+  slides.forEach((slide, i) => { slide.inert = i !== 0; });
 });
 
 const planDialog = document.querySelector<HTMLDialogElement>('#plan-dialog');
@@ -223,7 +271,10 @@ if (planDialog) {
     planDialog.querySelector<HTMLElement>('#plan-title')!.textContent = trigger.dataset.planTitle || 'Residence floor plan';
     const download = planDialog.querySelector<HTMLAnchorElement>('[data-plan-download]')!;
     download.href = image.src; download.download = `AVA-${trigger.dataset.unit || 'residence'}-floor-plan.webp`;
-    zoom = 1; x = 0; y = 0; draw(); openDialog(planDialog);
+    pointers.clear(); pinch = null; drag = null;
+    zoom = 1; x = 0; y = 0;
+    openDialog(planDialog, trigger);
+    draw();
   }));
   plus.addEventListener('click', () => change(.3)); minus.addEventListener('click', () => change(-.3));
   planDialog.querySelector('[data-zoom-fit]')?.addEventListener('click', () => { zoom = 1; x = 0; y = 0; draw(); });
@@ -247,6 +298,11 @@ if (planDialog) {
     if(pointers.size===1&&zoom>1){const point=[...pointers.values()][0];drag={x:point.x-x,y:point.y-y};}
   }
   stage.addEventListener('pointerup',endPointer);stage.addEventListener('pointercancel',endPointer);
+  stage.addEventListener('lostpointercapture',endPointer);
+  image.addEventListener('load', () => { if (planDialog.open) draw(); });
+  // Image sizing depends on the visible dialog. Re-clamp after rotation or resize.
+  const planResize = new ResizeObserver(() => { if (planDialog.open) draw(); });
+  planResize.observe(stage);
   planDialog.addEventListener('close',()=>{pointers.clear();pinch=null;drag=null;});
   stage.addEventListener('wheel', event => { if (event.ctrlKey) { event.preventDefault(); change(event.deltaY < 0 ? .1 : -.1); } }, { passive: false });
 }
@@ -256,15 +312,31 @@ video?.addEventListener('error', () => { const error = document.querySelector<HT
 document.querySelector('[data-video-retry]')?.addEventListener('click', () => { video?.load(); const error = document.querySelector<HTMLElement>('[data-video-error]'); if (error) error.hidden = true; });
 
 const media = gsap.matchMedia();
-media.add('(prefers-reduced-motion: no-preference)', () => {
+media.add({ motion: '(prefers-reduced-motion: no-preference)', desktop: '(min-width: 768px)', fine: '(pointer: fine)' }, context => {
+  const { motion, desktop, fine } = context.conditions as Record<string, boolean>;
+  if (!motion) return;
   gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach(element => {
-    gsap.from(element, { y: 24, opacity: 0, duration: 1.1, ease: 'power2.out', scrollTrigger: { trigger: element, start: 'top 92%', once: true } });
+    // Do not replay already read content when a breakpoint changes.
+    if (element.dataset.revealed === 'true' || element.getBoundingClientRect().bottom < 0) return;
+    gsap.from(element, {
+      y: 24, opacity: 0, duration: .85, ease: 'power2.out',
+      scrollTrigger: { trigger: element, start: 'top 92%', once: true, onEnter: () => { element.dataset.revealed = 'true'; } },
+    });
   });
-  if (window.innerWidth >= 768 && document.querySelector('.hero')) {
-    gsap.to('.hero-title', { y: 35, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: '30% top', scrub: 1 } });
-    gsap.utils.toArray<HTMLElement>('[data-depth]').forEach(element => gsap.fromTo(element, { y: 25 }, { y: -25, ease: 'none', scrollTrigger: { trigger: element, start: 'top bottom', end: 'bottom top', scrub: 1.2 } }));
+  if (desktop && fine && document.querySelector('.hero')) {
+    gsap.to('.hero-title', { y: 35, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: '30% top', scrub: .6 } });
+    gsap.utils.toArray<HTMLElement>('[data-depth]').forEach(element => gsap.fromTo(element, { y: 25 }, { y: -25, ease: 'none', scrollTrigger: { trigger: element, start: 'top bottom', end: 'bottom top', scrub: .6 } }));
   }
-  return () => {};
 });
-document.fonts.ready.then(() => ScrollTrigger.refresh());
-window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
+
+// Native details change the geometry below them without a window resize.
+// One deferred refresh coalesces initial font/image completion and disclosure changes.
+let refreshFrame = 0;
+function scheduleRefresh() {
+  if (refreshFrame) return;
+  refreshFrame = requestAnimationFrame(() => { refreshFrame = 0; ScrollTrigger.refresh(); });
+}
+document.querySelectorAll<HTMLDetailsElement>('.feature').forEach(feature => feature.addEventListener('toggle', scheduleRefresh));
+document.fonts.ready.then(scheduleRefresh);
+window.addEventListener('load', scheduleRefresh, { once: true });
+window.addEventListener('pageshow', event => { if (event.persisted) scheduleRefresh(); });
