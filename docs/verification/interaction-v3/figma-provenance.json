@@ -1,0 +1,62 @@
+{
+  "file": "m3N3lJCoutaziEm4nt4CwO",
+  "session": "bcbc9432-ff5d-4e7e-acca-8bd2487dbf82",
+  "nodes": [
+    {
+      "id": "1:1985",
+      "name": "Footer lockup",
+      "size": [
+        325.0009765625,
+        28.090909957885742
+      ],
+      "children": {
+        "1:1986": {
+          "x": 143.625,
+          "y": 0,
+          "width": 181.3759765625,
+          "height": 28.090909957885742
+        },
+        "1:1987": {
+          "x": 156.53125,
+          "y": 0,
+          "height": 25.813269,
+          "width": 1,
+          "color": "white at 0.9"
+        },
+        "1:1988": {
+          "x": 0,
+          "y": 3,
+          "width": 132,
+          "height": 22,
+          "imageTop": "-111.11%",
+          "imageHeight": "329.17%"
+        }
+      }
+    },
+    {
+      "id": "1:1699",
+      "name": "Dorchester partner-card artwork",
+      "size": [
+        315,
+        44
+      ],
+      "asset": "public/assets/brand-dorchester-card.png",
+      "rendering": "Original 1024-square transparent source with authored non-uniform fill, not object-fit contain."
+    },
+    {
+      "id": "1:1704",
+      "name": "OMNIYAT partner-card artwork",
+      "size": [
+        141,
+        37
+      ],
+      "assets": [
+        "public/assets/brand-omniyat-white.png",
+        "public/assets/brand-omniyat-colour.png"
+      ],
+      "rendering": "Original layered transparent assets; source white layer fill and colored layer cover. Source black RGB 0,0,0 and red RGB 201,32,53 retained."
+    }
+  ],
+  "method": "Primary get_design_context and rendered-node screenshots/exports. Runtime uses local original transparent artwork with authored fill transforms. Opaque cream export canvases are references only. No expiring URL is a runtime source.",
+  "comparison": "Canonical native-size browser DOM captures and source exports share the original background; no pixel rescaling or recoloring. Visual shape/color inspection accompanies RGB errors. Neither unequal antialiasing nor low RGB MAE is treated as an automatic whole-site design verdict."
+}

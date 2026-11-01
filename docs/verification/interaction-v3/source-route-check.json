@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "/",
+    "/404.html",
+    "/location/",
+    "/privacy/",
+    "/residences/1601/",
+    "/residences/801/"
+  ],
+  "anchorInstances": 129,
+  "localDestinationIssues": [],
+  "externalLinks": [],
+  "textArrowSourceMatches": [],
+  "scope": "Static route/fragment/file existence and source text-arrow scan. Not a substitute for browser journeys or an external destination availability check."
+}

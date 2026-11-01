@@ -1,0 +1,42 @@
+[
+  {
+    "engine": "chromium",
+    "version": "145.0.7632.6",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "ok": true,
+    "counts": {
+      "video": 0,
+      "watchVideo": 0
+    },
+    "contextText": "The Sky Palace / Film request",
+    "enquiryOpen": true,
+    "filmOpen": false,
+    "focusReturned": true,
+    "fixtureSourceLeaked": false,
+    "blocked": [],
+    "errors": []
+  },
+  {
+    "engine": "webkit",
+    "version": "26.0",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "ok": true,
+    "counts": {
+      "video": 0,
+      "watchVideo": 0
+    },
+    "contextText": "The Sky Palace / Film request",
+    "enquiryOpen": true,
+    "filmOpen": false,
+    "focusReturned": true,
+    "fixtureSourceLeaked": false,
+    "blocked": [],
+    "errors": []
+  }
+]

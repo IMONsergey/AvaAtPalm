@@ -1,0 +1,1680 @@
+{
+  "auditLabel": "2026-11-01 V3",
+  "baseline": "a36d1c6ceb6001cc92171fd61ce4d5a58bcce0f0",
+  "project": "ava",
+  "afterScenariosPerEngine": 13,
+  "afterPasses": 26,
+  "engines": {
+    "chromium": "145.0.7632.6",
+    "webkit": "26.0"
+  },
+  "method": "Isolated local baseline/fixed static builds; real UI input and downloaded bytes; delayed/failed assets injected; every form POST intercepted before network; static server rejects non-GET. Main regression contexts use reduced motion; normal motion is covered separately by the visual probe.",
+  "results": [
+    {
+      "engine": "chromium",
+      "name": "plan-image-and-button-801",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "imageClickURL": "http://127.0.0.1:14342/assets/plan-801.webp",
+        "dialogOpen": false,
+        "buttonOpensSameViewer": true,
+        "focusReturned": true,
+        "screenshots": [
+          "before-chromium-plan-image-801.png"
+        ]
+      },
+      "fixed": {
+        "imageClickURL": "http://127.0.0.1:14343/residences/801/",
+        "dialogOpen": true,
+        "buttonOpensSameViewer": true,
+        "focusReturned": true,
+        "screenshots": [
+          "after-chromium-plan-image-801.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "plan-image-and-button-1601",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "imageClickURL": "http://127.0.0.1:14342/assets/plan-1601.webp",
+        "dialogOpen": false,
+        "buttonOpensSameViewer": true,
+        "focusReturned": true,
+        "screenshots": [
+          "before-chromium-plan-image-1601.png"
+        ]
+      },
+      "fixed": {
+        "imageClickURL": "http://127.0.0.1:14343/residences/1601/",
+        "dialogOpen": true,
+        "buttonOpensSameViewer": true,
+        "focusReturned": true,
+        "screenshots": [
+          "after-chromium-plan-image-1601.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "plan-slow-1601-decoded-download-zoom",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "during": {
+          "title": "Unit 1601 / 4 bedroom residence",
+          "src": "/assets/plan-1601.webp",
+          "currentSrc": "",
+          "naturalWidth": 0,
+          "imageHidden": false,
+          "loadingVisible": false,
+          "zoomDisabled": false,
+          "downloadHref": "http://127.0.0.1:14342/assets/plan-1601.webp"
+        },
+        "zoom": "130%",
+        "fit": "100%",
+        "download": {
+          "suggestedFilename": "AVA-1601-floor-plan.webp",
+          "sha256": "65cb8e101f08b2b7da96500b49aaaa0139138a40b1e7ac162ca5af4815730991",
+          "expectedHash": "65cb8e101f08b2b7da96500b49aaaa0139138a40b1e7ac162ca5af4815730991"
+        },
+        "screenshots": [
+          "before-chromium-plan-1601-pending.png",
+          "before-chromium-plan-1601-ready.png"
+        ]
+      },
+      "fixed": {
+        "during": {
+          "title": "Unit 1601 / 4 bedroom residence",
+          "src": null,
+          "currentSrc": "",
+          "naturalWidth": 0,
+          "imageHidden": true,
+          "loadingVisible": true,
+          "zoomDisabled": true,
+          "downloadHref": null
+        },
+        "zoom": "130%",
+        "fit": "100%",
+        "download": {
+          "suggestedFilename": "AVA-1601-floor-plan.webp",
+          "sha256": "65cb8e101f08b2b7da96500b49aaaa0139138a40b1e7ac162ca5af4815730991",
+          "expectedHash": "65cb8e101f08b2b7da96500b49aaaa0139138a40b1e7ac162ca5af4815730991"
+        },
+        "screenshots": [
+          "after-chromium-plan-1601-pending.png",
+          "after-chromium-plan-1601-ready.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "plan-1601-failure-retry",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "retryVisible": false,
+        "recovered": false,
+        "screenshots": [
+          "before-chromium-plan-1601-error.png"
+        ]
+      },
+      "fixed": {
+        "retryVisible": true,
+        "recovered": true,
+        "screenshots": [
+          "after-chromium-plan-1601-error.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "plan-close-reopen-and-switch-latest-unit",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "PASS",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "current": {
+          "currentSrc": "http://127.0.0.1:14342/assets/plan-801.webp",
+          "width": 894,
+          "hidden": false
+        },
+        "title": "Unit 801 / 3 bedroom residence",
+        "finalTitle": "Unit 1601 / 4 bedroom residence",
+        "unlocked": true,
+        "screenshots": []
+      },
+      "fixed": {
+        "current": {
+          "currentSrc": "http://127.0.0.1:14343/assets/plan-801.webp",
+          "width": 894,
+          "hidden": false
+        },
+        "title": "Unit 801 / 3 bedroom residence",
+        "finalTitle": "Unit 1601 / 4 bedroom residence",
+        "unlocked": true,
+        "screenshots": []
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "enquiry-pending-edit-reopen-error-retry",
+      "viewport": {
+        "width": 390,
+        "height": 600
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "viewport": {
+          "width": 390,
+          "height": 600
+        },
+        "mobile": true,
+        "ok": false,
+        "pendingDisabled": true,
+        "pendingName": "Audit Fixture User",
+        "sentName": "Audit Fixture User",
+        "pendingContext": "Residence 801 / 3 bedroom",
+        "sentContext": "Residence 801 / 3 bedroom",
+        "contextStable": true,
+        "errorView": {
+          "visible": false,
+          "rect": {
+            "top": 583.25,
+            "bottom": 625.25,
+            "left": 48,
+            "right": 342
+          },
+          "clip": {
+            "top": 100,
+            "bottom": 600,
+            "left": 0,
+            "right": 390
+          },
+          "focused": true
+        },
+        "fieldErrorView": {
+          "visible": true,
+          "rect": {
+            "top": 184.46875,
+            "bottom": 228.46875,
+            "left": 48,
+            "right": 342
+          },
+          "clip": {
+            "top": 100,
+            "bottom": 600,
+            "left": 0,
+            "right": 390
+          },
+          "focused": false
+        },
+        "returnedValues": {
+          "context": "Residence 801 / 3 bedroom",
+          "name": "Audit Fixture User",
+          "email": "audit-fixture@example.invalid",
+          "phone": "+971 50 000 0000",
+          "website": "",
+          "consent": true
+        },
+        "retryIdStable": true,
+        "revisedIdChanged": true,
+        "newFormEmpty": true,
+        "mockedRequests": [
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture User",
+            "email": "audit-fixture@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793561053756,
+            "submissionId": "f5d92dbe-2727-488b-8d9a-a767ef7c12a0"
+          },
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture User",
+            "email": "audit-fixture@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793561053756,
+            "submissionId": "f5d92dbe-2727-488b-8d9a-a767ef7c12a0"
+          },
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture Revised",
+            "email": "audit-revised@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793561053756,
+            "submissionId": "03d54afd-0163-4868-8ccc-be2ffddd4f59"
+          }
+        ],
+        "pendingScreenshot": "before-chromium-enquiry-pending-reopened.png",
+        "errorScreenshot": "before-chromium-enquiry-error-after-reopen.png"
+      },
+      "fixed": {
+        "viewport": {
+          "width": 390,
+          "height": 600
+        },
+        "mobile": true,
+        "ok": true,
+        "pendingDisabled": true,
+        "pendingName": "Audit Fixture User",
+        "sentName": "Audit Fixture User",
+        "pendingContext": "Residence 801 / 3 bedroom",
+        "sentContext": "Residence 801 / 3 bedroom",
+        "contextStable": true,
+        "errorView": {
+          "visible": true,
+          "rect": {
+            "top": 558.25,
+            "bottom": 600.25,
+            "left": 48,
+            "right": 342
+          },
+          "clip": {
+            "top": 100,
+            "bottom": 600,
+            "left": 0,
+            "right": 390
+          },
+          "focused": true
+        },
+        "fieldErrorView": {
+          "visible": true,
+          "rect": {
+            "top": 184.46875,
+            "bottom": 228.46875,
+            "left": 48,
+            "right": 342
+          },
+          "clip": {
+            "top": 100,
+            "bottom": 600,
+            "left": 0,
+            "right": 390
+          },
+          "focused": true
+        },
+        "returnedValues": {
+          "context": "Residence 801 / 3 bedroom",
+          "name": "Audit Fixture User",
+          "email": "audit-fixture@example.invalid",
+          "phone": "+971 50 000 0000",
+          "website": "",
+          "consent": true
+        },
+        "retryIdStable": true,
+        "revisedIdChanged": true,
+        "newFormEmpty": true,
+        "mockedRequests": [
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture User",
+            "email": "audit-fixture@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793561507409,
+            "submissionId": "571500c0-b803-49c4-adb5-cb7b24707dda"
+          },
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture User",
+            "email": "audit-fixture@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793561507409,
+            "submissionId": "571500c0-b803-49c4-adb5-cb7b24707dda"
+          },
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture Revised",
+            "email": "audit-revised@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793561507409,
+            "submissionId": "432203fd-6f99-4fa4-b959-0fa9eef915b6"
+          }
+        ],
+        "pendingScreenshot": "after-chromium-enquiry-pending-reopened.png",
+        "errorScreenshot": "after-chromium-enquiry-error-after-reopen.png"
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "configured-film-failure-retry-play-close",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "recovered": false,
+        "fixtureOnly": true,
+        "productionFilmMissing": true,
+        "openedPaused": true,
+        "errorState": {
+          "error": null,
+          "networkState": 3,
+          "readyState": 0,
+          "currentTime": 0,
+          "paused": false
+        },
+        "fallbackVisible": false,
+        "mediaRequests": 1,
+        "playingTime": 0,
+        "pausedOnClose": false,
+        "timeWhileClosed": 0,
+        "resumed": false,
+        "screenshots": [
+          "before-chromium-film-failure.png"
+        ]
+      },
+      "fixed": {
+        "recovered": true,
+        "fixtureOnly": true,
+        "productionFilmMissing": true,
+        "openedPaused": true,
+        "errorState": {
+          "error": 4,
+          "networkState": 3,
+          "readyState": 0,
+          "currentTime": 0,
+          "paused": true
+        },
+        "fallbackVisible": true,
+        "mediaRequests": 2,
+        "playingTime": 0.342049,
+        "pausedOnClose": true,
+        "timeWhileClosed": 0,
+        "resumed": true,
+        "screenshots": [
+          "after-chromium-film-failure.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "configured-film-close-remains-visible-landscape",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "closeView": {
+          "visible": false,
+          "rect": {
+            "top": -71,
+            "bottom": -27,
+            "left": 752.5,
+            "right": 796.5
+          },
+          "clip": {
+            "top": 24,
+            "bottom": 366,
+            "left": 16.5,
+            "right": 812.5
+          },
+          "focused": true
+        },
+        "closed": true,
+        "screenshots": [
+          "before-chromium-film-landscape-scrolled.png"
+        ]
+      },
+      "fixed": {
+        "closeView": {
+          "visible": true,
+          "rect": {
+            "top": 36,
+            "bottom": 80,
+            "left": 752.5,
+            "right": 796.5
+          },
+          "clip": {
+            "top": 24,
+            "bottom": 366,
+            "left": 16.5,
+            "right": 812.5
+          },
+          "focused": true
+        },
+        "closed": true,
+        "screenshots": [
+          "after-chromium-film-landscape-scrolled.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "menus-anchor-history-and-context",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "PASS",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "screenshots": []
+      },
+      "fixed": {
+        "screenshots": []
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "gallery-failure-retry-latest-interiors",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "retryVisible": false,
+        "recovered": {
+          "index": 1,
+          "counter": "2 / 4",
+          "src": "http://127.0.0.1:14342/assets/interior-2.webp",
+          "width": 1671
+        },
+        "failed": {
+          "index": 0,
+          "counter": "1 / 4",
+          "src": "http://127.0.0.1:14342/assets/interior-1-4.webp",
+          "width": 1671
+        },
+        "message": null,
+        "final": {
+          "index": 1,
+          "counter": "2 / 4",
+          "src": "http://127.0.0.1:14342/assets/interior-2.webp",
+          "width": 1671
+        },
+        "screenshots": [
+          "before-chromium-gallery-failure-interiors.png",
+          "before-chromium-gallery-recovered-interiors.png"
+        ]
+      },
+      "fixed": {
+        "retryVisible": true,
+        "recovered": {
+          "index": 1,
+          "counter": "2 / 4",
+          "src": "http://127.0.0.1:14343/assets/interior-2.webp",
+          "width": 1671
+        },
+        "failed": {
+          "index": 0,
+          "counter": "1 / 4",
+          "src": "http://127.0.0.1:14343/assets/interior-1-4.webp",
+          "width": 1671
+        },
+        "statusView": {
+          "visible": true,
+          "rect": {
+            "top": 756,
+            "bottom": 826,
+            "left": 74.984375,
+            "right": 494.984375
+          },
+          "clip": {
+            "top": 24,
+            "bottom": 900,
+            "left": 0,
+            "right": 1425
+          },
+          "focused": false
+        },
+        "retryView": {
+          "visible": true,
+          "rect": {
+            "top": 769,
+            "bottom": 813,
+            "left": 313.984375,
+            "right": 398.984375
+          },
+          "clip": {
+            "top": 24,
+            "bottom": 900,
+            "left": 0,
+            "right": 1425
+          },
+          "focused": false
+        },
+        "message": "The image could not be loaded.",
+        "final": {
+          "index": 1,
+          "counter": "2 / 4",
+          "src": "http://127.0.0.1:14343/assets/interior-2.webp",
+          "width": 1671
+        },
+        "screenshots": [
+          "after-chromium-gallery-failure-interiors.png",
+          "after-chromium-gallery-recovered-interiors.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "brand-geometry-and-action-contrast-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "ratiosCorrect": true,
+        "cardBrandImages": 0,
+        "screenshots": [
+          "before-chromium-footer-1440.png",
+          "before-chromium-partners-1440.png"
+        ],
+        "groupSize": [
+          362,
+          28
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 132,
+            "height": 22
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 132,
+            "height": 72.40625
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 181,
+            "height": 28
+          }
+        ]
+      },
+      "fixed": {
+        "ratiosCorrect": true,
+        "cardBrandImages": 3,
+        "screenshots": [
+          "after-chromium-footer-1440.png",
+          "after-chromium-partners-1440.png"
+        ],
+        "groupSize": [
+          325,
+          28.078125
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 131.984375,
+            "height": 21.984375
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 131.984375,
+            "height": 72.359375
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 181.375,
+            "height": 28.078125
+          }
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "brand-geometry-and-action-contrast-900",
+      "viewport": {
+        "width": 900,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "ratiosCorrect": false,
+        "cardBrandImages": 0,
+        "screenshots": [
+          "before-chromium-footer-900.png",
+          "before-chromium-partners-900.png"
+        ],
+        "groupSize": [
+          291,
+          28
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 102,
+            "height": 22
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 102,
+            "height": 72.40625
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 140,
+            "height": 28
+          }
+        ]
+      },
+      "fixed": {
+        "ratiosCorrect": true,
+        "cardBrandImages": 3,
+        "screenshots": [
+          "after-chromium-footer-900.png",
+          "after-chromium-partners-900.png"
+        ],
+        "groupSize": [
+          250,
+          21.59375
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 101.53125,
+            "height": 16.921875
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 101.53125,
+            "height": 55.6875
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 139.515625,
+            "height": 21.59375
+          }
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "name": "brand-geometry-and-action-contrast-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "ratiosCorrect": false,
+        "cardBrandImages": 0,
+        "screenshots": [
+          "before-chromium-footer-390.png",
+          "before-chromium-partners-390.png"
+        ],
+        "groupSize": [
+          305,
+          26
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 116,
+            "height": 22
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 116,
+            "height": 72.40625
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 164,
+            "height": 25.390625
+          }
+        ]
+      },
+      "fixed": {
+        "ratiosCorrect": true,
+        "cardBrandImages": 3,
+        "screenshots": [
+          "after-chromium-footer-390.png",
+          "after-chromium-partners-390.png"
+        ],
+        "groupSize": [
+          325,
+          28.078125
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 131.984375,
+            "height": 21.984375
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 131.984375,
+            "height": 72.359375
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 181.375,
+            "height": 28.078125
+          }
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "plan-image-and-button-801",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "imageClickURL": "http://127.0.0.1:14342/assets/plan-801.webp",
+        "dialogOpen": false,
+        "buttonOpensSameViewer": true,
+        "focusReturned": true,
+        "screenshots": [
+          "before-webkit-plan-image-801.png"
+        ]
+      },
+      "fixed": {
+        "imageClickURL": "http://127.0.0.1:14343/residences/801/",
+        "dialogOpen": true,
+        "buttonOpensSameViewer": true,
+        "focusReturned": true,
+        "screenshots": [
+          "after-webkit-plan-image-801.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "plan-image-and-button-1601",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "imageClickURL": "http://127.0.0.1:14342/assets/plan-1601.webp",
+        "dialogOpen": false,
+        "buttonOpensSameViewer": true,
+        "focusReturned": true,
+        "screenshots": [
+          "before-webkit-plan-image-1601.png"
+        ]
+      },
+      "fixed": {
+        "imageClickURL": "http://127.0.0.1:14343/residences/1601/",
+        "dialogOpen": true,
+        "buttonOpensSameViewer": true,
+        "focusReturned": true,
+        "screenshots": [
+          "after-webkit-plan-image-1601.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "plan-slow-1601-decoded-download-zoom",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "during": {
+          "title": "Unit 1601 / 4 bedroom residence",
+          "src": "/assets/plan-1601.webp",
+          "currentSrc": "http://127.0.0.1:14342/assets/plan-1601.webp",
+          "naturalWidth": 0,
+          "imageHidden": false,
+          "loadingVisible": false,
+          "zoomDisabled": false,
+          "downloadHref": "http://127.0.0.1:14342/assets/plan-1601.webp"
+        },
+        "zoom": "130%",
+        "fit": "100%",
+        "download": {
+          "suggestedFilename": "AVA-1601-floor-plan.webp",
+          "sha256": "65cb8e101f08b2b7da96500b49aaaa0139138a40b1e7ac162ca5af4815730991",
+          "expectedHash": "65cb8e101f08b2b7da96500b49aaaa0139138a40b1e7ac162ca5af4815730991"
+        },
+        "screenshots": [
+          "before-webkit-plan-1601-pending.png",
+          "before-webkit-plan-1601-ready.png"
+        ]
+      },
+      "fixed": {
+        "during": {
+          "title": "Unit 1601 / 4 bedroom residence",
+          "src": null,
+          "currentSrc": "",
+          "naturalWidth": 0,
+          "imageHidden": true,
+          "loadingVisible": true,
+          "zoomDisabled": true,
+          "downloadHref": null
+        },
+        "zoom": "130%",
+        "fit": "100%",
+        "download": {
+          "suggestedFilename": "AVA-1601-floor-plan.webp",
+          "sha256": "65cb8e101f08b2b7da96500b49aaaa0139138a40b1e7ac162ca5af4815730991",
+          "expectedHash": "65cb8e101f08b2b7da96500b49aaaa0139138a40b1e7ac162ca5af4815730991"
+        },
+        "screenshots": [
+          "after-webkit-plan-1601-pending.png",
+          "after-webkit-plan-1601-ready.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "plan-1601-failure-retry",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "retryVisible": false,
+        "recovered": false,
+        "screenshots": [
+          "before-webkit-plan-1601-error.png"
+        ]
+      },
+      "fixed": {
+        "retryVisible": true,
+        "recovered": true,
+        "screenshots": [
+          "after-webkit-plan-1601-error.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "plan-close-reopen-and-switch-latest-unit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "PASS",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "current": {
+          "currentSrc": "http://127.0.0.1:14342/assets/plan-801.webp",
+          "width": 894,
+          "hidden": false
+        },
+        "title": "Unit 801 / 3 bedroom residence",
+        "finalTitle": "Unit 1601 / 4 bedroom residence",
+        "unlocked": true,
+        "screenshots": []
+      },
+      "fixed": {
+        "current": {
+          "currentSrc": "http://127.0.0.1:14343/assets/plan-801.webp",
+          "width": 894,
+          "hidden": false
+        },
+        "title": "Unit 801 / 3 bedroom residence",
+        "finalTitle": "Unit 1601 / 4 bedroom residence",
+        "unlocked": true,
+        "screenshots": []
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "enquiry-pending-edit-reopen-error-retry",
+      "viewport": {
+        "width": 390,
+        "height": 600
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "viewport": {
+          "width": 390,
+          "height": 600
+        },
+        "mobile": true,
+        "ok": false,
+        "pendingDisabled": true,
+        "pendingName": "Audit Fixture User",
+        "sentName": "Audit Fixture User",
+        "pendingContext": "Residence 801 / 3 bedroom",
+        "sentContext": "Residence 801 / 3 bedroom",
+        "contextStable": true,
+        "errorView": {
+          "visible": false,
+          "rect": {
+            "top": 582,
+            "bottom": 624,
+            "left": 48,
+            "right": 342
+          },
+          "clip": {
+            "top": 100,
+            "bottom": 600,
+            "left": 0,
+            "right": 390
+          },
+          "focused": true
+        },
+        "fieldErrorView": {
+          "visible": true,
+          "rect": {
+            "top": 209,
+            "bottom": 253,
+            "left": 48,
+            "right": 342
+          },
+          "clip": {
+            "top": 100,
+            "bottom": 600,
+            "left": 0,
+            "right": 390
+          },
+          "focused": false
+        },
+        "returnedValues": {
+          "context": "Residence 801 / 3 bedroom",
+          "name": "Audit Fixture User",
+          "email": "audit-fixture@example.invalid",
+          "phone": "+971 50 000 0000",
+          "website": "",
+          "consent": true
+        },
+        "retryIdStable": true,
+        "revisedIdChanged": true,
+        "newFormEmpty": true,
+        "mockedRequests": [
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture User",
+            "email": "audit-fixture@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793560964175,
+            "submissionId": "cd181794-71fd-45fd-ba4d-1900fc2c61e0"
+          },
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture User",
+            "email": "audit-fixture@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793560964175,
+            "submissionId": "cd181794-71fd-45fd-ba4d-1900fc2c61e0"
+          },
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture Revised",
+            "email": "audit-revised@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793560964175,
+            "submissionId": "ed8a922e-8413-4879-997e-51fc4bbc17e5"
+          }
+        ],
+        "pendingScreenshot": "before-webkit-enquiry-pending-reopened.png",
+        "errorScreenshot": "before-webkit-enquiry-error-after-reopen.png"
+      },
+      "fixed": {
+        "viewport": {
+          "width": 390,
+          "height": 600
+        },
+        "mobile": true,
+        "ok": true,
+        "pendingDisabled": true,
+        "pendingName": "Audit Fixture User",
+        "sentName": "Audit Fixture User",
+        "pendingContext": "Residence 801 / 3 bedroom",
+        "sentContext": "Residence 801 / 3 bedroom",
+        "contextStable": true,
+        "errorView": {
+          "visible": true,
+          "rect": {
+            "top": 558,
+            "bottom": 600,
+            "left": 48,
+            "right": 342
+          },
+          "clip": {
+            "top": 100,
+            "bottom": 600,
+            "left": 0,
+            "right": 390
+          },
+          "focused": true
+        },
+        "fieldErrorView": {
+          "visible": true,
+          "rect": {
+            "top": 209,
+            "bottom": 253,
+            "left": 48,
+            "right": 342
+          },
+          "clip": {
+            "top": 100,
+            "bottom": 600,
+            "left": 0,
+            "right": 390
+          },
+          "focused": true
+        },
+        "returnedValues": {
+          "context": "Residence 801 / 3 bedroom",
+          "name": "Audit Fixture User",
+          "email": "audit-fixture@example.invalid",
+          "phone": "+971 50 000 0000",
+          "website": "",
+          "consent": true
+        },
+        "retryIdStable": true,
+        "revisedIdChanged": true,
+        "newFormEmpty": true,
+        "mockedRequests": [
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture User",
+            "email": "audit-fixture@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793562216812,
+            "submissionId": "957d0d64-3266-4155-877d-60f0cc96847d"
+          },
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture User",
+            "email": "audit-fixture@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793562216812,
+            "submissionId": "957d0d64-3266-4155-877d-60f0cc96847d"
+          },
+          {
+            "project": "ava-at-palm",
+            "context": "Residence 801 / 3 bedroom",
+            "name": "Audit Fixture Revised",
+            "email": "audit-revised@example.invalid",
+            "phone": "+971 50 000 0000",
+            "consent": true,
+            "website": "",
+            "message": "",
+            "startedAt": 1793562216812,
+            "submissionId": "7b2f9059-dde5-45d5-84fd-792ef7848167"
+          }
+        ],
+        "pendingScreenshot": "after-webkit-enquiry-pending-reopened.png",
+        "errorScreenshot": "after-webkit-enquiry-error-after-reopen.png"
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "configured-film-failure-retry-play-close",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "recovered": false,
+        "fixtureOnly": true,
+        "productionFilmMissing": true,
+        "openedPaused": true,
+        "errorState": {
+          "error": null,
+          "networkState": 3,
+          "readyState": 0,
+          "currentTime": 0,
+          "paused": false
+        },
+        "fallbackVisible": false,
+        "mediaRequests": 1,
+        "playingTime": 0,
+        "pausedOnClose": false,
+        "timeWhileClosed": 0,
+        "resumed": false,
+        "screenshots": [
+          "before-webkit-film-failure.png"
+        ]
+      },
+      "fixed": {
+        "recovered": true,
+        "fixtureOnly": true,
+        "productionFilmMissing": true,
+        "openedPaused": false,
+        "errorState": {
+          "error": 4,
+          "networkState": 3,
+          "readyState": 0,
+          "currentTime": 0,
+          "paused": false
+        },
+        "fallbackVisible": true,
+        "mediaRequests": 2,
+        "playingTime": 0.302435855,
+        "pausedOnClose": true,
+        "timeWhileClosed": 0,
+        "resumed": true,
+        "screenshots": [
+          "after-webkit-film-failure.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "configured-film-close-remains-visible-landscape",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "closeView": {
+          "visible": false,
+          "rect": {
+            "top": -18,
+            "bottom": 26,
+            "left": 759.984375,
+            "right": 803.984375
+          },
+          "clip": {
+            "top": 24,
+            "bottom": 366,
+            "left": 24,
+            "right": 819.984375
+          },
+          "focused": false
+        },
+        "closed": true,
+        "screenshots": [
+          "before-webkit-film-landscape-scrolled.png"
+        ]
+      },
+      "fixed": {
+        "closeView": {
+          "visible": true,
+          "rect": {
+            "top": 36,
+            "bottom": 80,
+            "left": 759.984375,
+            "right": 803.984375
+          },
+          "clip": {
+            "top": 24,
+            "bottom": 366,
+            "left": 24,
+            "right": 819.984375
+          },
+          "focused": false
+        },
+        "closed": true,
+        "screenshots": [
+          "after-webkit-film-landscape-scrolled.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "menus-anchor-history-and-context",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "PASS",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "screenshots": []
+      },
+      "fixed": {
+        "screenshots": []
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "gallery-failure-retry-latest-interiors",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "retryVisible": false,
+        "recovered": {
+          "index": 1,
+          "counter": "2 / 4",
+          "src": "http://127.0.0.1:14342/assets/interior-2-800.webp",
+          "width": 783
+        },
+        "failed": {
+          "index": 0,
+          "counter": "1 / 4",
+          "src": "http://127.0.0.1:14342/assets/interior-1-4-800.webp",
+          "width": 783
+        },
+        "message": null,
+        "final": {
+          "index": 1,
+          "counter": "2 / 4",
+          "src": "http://127.0.0.1:14342/assets/interior-2-800.webp",
+          "width": 783
+        },
+        "screenshots": [
+          "before-webkit-gallery-failure-interiors.png",
+          "before-webkit-gallery-recovered-interiors.png"
+        ]
+      },
+      "fixed": {
+        "retryVisible": true,
+        "recovered": {
+          "index": 1,
+          "counter": "2 / 4",
+          "src": "http://127.0.0.1:14343/assets/interior-2-800.webp",
+          "width": 783
+        },
+        "failed": {
+          "index": 0,
+          "counter": "1 / 4",
+          "src": "http://127.0.0.1:14343/assets/interior-1-4-800.webp",
+          "width": 783
+        },
+        "statusView": {
+          "visible": true,
+          "rect": {
+            "top": 321.875,
+            "bottom": 387.875,
+            "left": 24,
+            "right": 366
+          },
+          "clip": {
+            "top": 11.875,
+            "bottom": 451.875,
+            "left": 0,
+            "right": 390
+          },
+          "focused": false
+        },
+        "retryView": {
+          "visible": true,
+          "rect": {
+            "top": 332.875,
+            "bottom": 376.875,
+            "left": 226.671875,
+            "right": 303.890625
+          },
+          "clip": {
+            "top": 11.875,
+            "bottom": 451.875,
+            "left": 0,
+            "right": 390
+          },
+          "focused": false
+        },
+        "message": "The image could not be loaded.",
+        "final": {
+          "index": 1,
+          "counter": "2 / 4",
+          "src": "http://127.0.0.1:14343/assets/interior-2-800.webp",
+          "width": 783
+        },
+        "screenshots": [
+          "after-webkit-gallery-failure-interiors.png",
+          "after-webkit-gallery-recovered-interiors.png"
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "brand-geometry-and-action-contrast-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "ratiosCorrect": true,
+        "cardBrandImages": 0,
+        "screenshots": [
+          "before-webkit-footer-1440.png",
+          "before-webkit-partners-1440.png"
+        ],
+        "groupSize": [
+          362,
+          28
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 132,
+            "height": 22
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 132,
+            "height": 72.40625
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 181,
+            "height": 28
+          }
+        ]
+      },
+      "fixed": {
+        "ratiosCorrect": true,
+        "cardBrandImages": 3,
+        "screenshots": [
+          "after-webkit-footer-1440.png",
+          "after-webkit-partners-1440.png"
+        ],
+        "groupSize": [
+          325,
+          28.078125
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 131.984375,
+            "height": 21.984375
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 131.984375,
+            "height": 72.359375
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 181.375,
+            "height": 28.078125
+          }
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "brand-geometry-and-action-contrast-900",
+      "viewport": {
+        "width": 900,
+        "height": 900
+      },
+      "touchContext": false,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "ratiosCorrect": false,
+        "cardBrandImages": 0,
+        "screenshots": [
+          "before-webkit-footer-900.png",
+          "before-webkit-partners-900.png"
+        ],
+        "groupSize": [
+          291,
+          28
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 102,
+            "height": 22
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 102,
+            "height": 72.40625
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 140,
+            "height": 28
+          }
+        ]
+      },
+      "fixed": {
+        "ratiosCorrect": true,
+        "cardBrandImages": 3,
+        "screenshots": [
+          "after-webkit-footer-900.png",
+          "after-webkit-partners-900.png"
+        ],
+        "groupSize": [
+          250,
+          21.59375
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 101.53125,
+            "height": 16.921875
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 101.53125,
+            "height": 55.6875
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 139.515625,
+            "height": 21.59375
+          }
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    },
+    {
+      "engine": "webkit",
+      "name": "brand-geometry-and-action-contrast-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touchContext": true,
+      "baselineOutcome": "BASELINE_DEFECT_OBSERVED",
+      "fixedOutcome": "PASS",
+      "baseline": {
+        "ratiosCorrect": false,
+        "cardBrandImages": 0,
+        "screenshots": [
+          "before-webkit-footer-390.png",
+          "before-webkit-partners-390.png"
+        ],
+        "groupSize": [
+          305,
+          26
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 116,
+            "height": 22
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 116,
+            "height": 72.40625
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 164,
+            "height": 25.390625
+          }
+        ]
+      },
+      "fixed": {
+        "ratiosCorrect": true,
+        "cardBrandImages": 3,
+        "screenshots": [
+          "after-webkit-footer-390.png",
+          "after-webkit-partners-390.png"
+        ],
+        "groupSize": [
+          325,
+          28.078125
+        ],
+        "logoSizes": [
+          {
+            "asset": "AVA crop frame",
+            "width": 131.984375,
+            "height": 21.984375
+          },
+          {
+            "asset": "/assets/brand-partners-2.webp",
+            "width": 131.984375,
+            "height": 72.359375
+          },
+          {
+            "asset": "/assets/brand-partners-1.webp",
+            "width": 181.375,
+            "height": 28.078125
+          }
+        ]
+      },
+      "blockedExternalOrUnmockedRequests": 0,
+      "pageErrors": []
+    }
+  ]
+}

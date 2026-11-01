@@ -1,0 +1,68 @@
+{
+  "method": "Actual browser DOM clones, original production styles/assets, canonical source export canvas and background. No image resize or color correction. Foreground threshold is analytical and does not guarantee visual equivalence by itself. Native rendering/anti-aliasing differs between Figma and Chromium. Visual assessment required.",
+  "results": [
+    {
+      "project": "ava",
+      "node": "footer-lockup",
+      "reference": "figma/footer-lockup-reference.png",
+      "actual": "visual-figma-footer-lockup.png",
+      "size": [
+        325,
+        29
+      ],
+      "background": [
+        250,
+        244,
+        239
+      ],
+      "rgbMAE": 0.24937223695844385,
+      "rgbRMSE": 0.8470471933923017,
+      "foregroundMaskIoU_threshold2": 0.7866766467065869,
+      "actualInkPixels": 1119,
+      "referenceInkPixels": 1268,
+      "exactPixels": 7841
+    },
+    {
+      "project": "ava",
+      "node": "omniyat-card",
+      "reference": "figma/omniyat-card-reference.png",
+      "actual": "visual-figma-omniyat.png",
+      "size": [
+        141,
+        37
+      ],
+      "background": [
+        250,
+        244,
+        239
+      ],
+      "rgbMAE": 3.470704747300492,
+      "rgbRMSE": 11.508067914140852,
+      "foregroundMaskIoU_threshold2": 0.9221508828250401,
+      "actualInkPixels": 1203,
+      "referenceInkPixels": 1192,
+      "exactPixels": 4199
+    },
+    {
+      "project": "ava",
+      "node": "dorchester-card",
+      "reference": "figma/dorchester-card-reference.png",
+      "actual": "visual-figma-dorchester.png",
+      "size": [
+        315,
+        44
+      ],
+      "background": [
+        250,
+        244,
+        239
+      ],
+      "rgbMAE": 0.10038480038480038,
+      "rgbRMSE": 0.46513870657473383,
+      "foregroundMaskIoU_threshold2": 0.8935251798561151,
+      "actualInkPixels": 1263,
+      "referenceInkPixels": 1369,
+      "exactPixels": 12492
+    }
+  ]
+}

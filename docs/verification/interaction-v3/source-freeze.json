@@ -1,0 +1,58 @@
+{
+  "baseline": "a36d1c6ceb6001cc92171fd61ce4d5a58bcce0f0",
+  "workingTreeSourceFrozen": true,
+  "sourceFiles": [
+    {
+      "path": "src/components/PlanDialog.astro",
+      "sha256": "c8c2e9b514cfd94af072dc91c7f977e937d57d28218839316e5989d6e3aa8264"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "sha256": "ff88e84e482e7c2706ed2afe37fa0cf69038758d656ef09e2b0313c47dc92288"
+    },
+    {
+      "path": "src/pages/residences/[unit].astro",
+      "sha256": "ddd9c714d7ca729adedbc3565550f158a776197291a7928abe8b0427dbcb4386"
+    },
+    {
+      "path": "src/scripts/app.ts",
+      "sha256": "a661cec179dae6c0f8731d05b3400aa90a6094f43dd97c270b77af8e6d264bdc"
+    },
+    {
+      "path": "src/styles/home.css",
+      "sha256": "4635830da104d83408acba24be4016832e15f5d79156c99e6ba5a2429c36ea6f"
+    },
+    {
+      "path": "public/assets/brand-dorchester-card.png",
+      "sha256": "878f95ed3628c0dabc4f015148bf75a5b2cb522a138046de20ba7fc53e6e09e5"
+    },
+    {
+      "path": "public/assets/brand-omniyat-colour.png",
+      "sha256": "030a3a69deb2352a042da0829fe877e450eae3c3d9218e934ee46546ebe08292"
+    },
+    {
+      "path": "public/assets/brand-omniyat-white.png",
+      "sha256": "cb0c53efa79e84e70bf4938f15c1c8009968053eed5ce1d11659c15b5187b6cc"
+    }
+  ],
+  "buildFlags": {
+    "configuredFixtureOnly": "PUBLIC_AVA_FILM_URL=/__qa__/film.webm",
+    "finalProduction": "PUBLIC_AVA_FILM_URL empty"
+  },
+  "verificationScope": "Primary fixed journeys plus focused final visual/contrast changes. Atlantis final Header/global.css change is hover-color only, verified by focused baseline/fixed hover measurements and final build.",
+  "logs": [
+    {
+      "path": "artifacts/logic-audit-20261101-v3/typecheck.log",
+      "sha256": "d57dd93b92e4b0041db7e587adad3155ff6187dd8af3902cce43d37f3fb824cf"
+    },
+    {
+      "path": "artifacts/logic-audit-20261101-v3/after-build.log",
+      "sha256": "1b2d5591516d8e340ae8c189cb88fffa5f701b6b06757feaa006dc096b3112cc"
+    },
+    {
+      "path": "artifacts/logic-audit-20261101-v3/production-no-film-build.log",
+      "sha256": "87c9e2a4c1be2ac41d4177c1ebb3f7d8375cad9efd0cf661791fab26e1425ba4"
+    }
+  ],
+  "committedOrPushedByThisTask": false
+}

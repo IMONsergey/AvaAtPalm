@@ -1,0 +1,80 @@
+[
+  {
+    "id": "AVA-V3-01",
+    "finding": "Floor-plan image leaves the application",
+    "repro": "Open /residences/801/ or /residences/1601/ and activate the floor-plan preview.",
+    "baseline": "The preview navigates to the raw WebP, while View floor plan opens a dialog.",
+    "change": "Normal preview activation now uses the same viewer, title and source as the button. Modifier/no-JavaScript original-file fallback is retained.",
+    "journeys": [
+      "plan-image-and-button-801",
+      "plan-image-and-button-1601"
+    ]
+  },
+  {
+    "id": "AVA-V3-02",
+    "finding": "Asynchronous floor-plan readiness is not represented",
+    "repro": "Delay or fail plan-1601.webp, then open, close/reopen, or switch residences.",
+    "baseline": "The dialog can be blank with enabled zoom/download and no loading or retry state. Chromium baseline showed a blank image, not a demonstrated wrong-801 frame.",
+    "change": "A decoded matching source is committed atomically. Loading/error/retry are visible; zoom and download wait for readiness. Tokens cancel stale commits after close or later intent.",
+    "journeys": [
+      "plan-slow-1601-decoded-download-zoom",
+      "plan-1601-failure-retry",
+      "plan-close-reopen-and-switch-latest-unit"
+    ]
+  },
+  {
+    "id": "AVA-V3-03",
+    "finding": "Enquiry error and invalid field can remain out of view",
+    "repro": "At 390×600 submit the intercepted fixture, close/reopen while pending, then return 503 and 422.",
+    "baseline": "The form preserves its values but the error is below the inner scroll viewport; server-invalid email is not reliably focused after disabled controls are restored.",
+    "change": "After pending controls are restored, the active dialog scrolls/focuses its invalid field or error. Retry retains the same request reference for identical input.",
+    "journeys": [
+      "enquiry-pending-edit-reopen-error-retry"
+    ]
+  },
+  {
+    "id": "AVA-V3-04",
+    "finding": "Configured film lacks a usable failure/retry lifecycle",
+    "repro": "Build with a local fixture film URL; fail its request; activate Watch video and native Play; then rotate/scroll the short dialog.",
+    "baseline": "The nested source failure does not expose the custom fallback/retry. In short landscape the dialog close control scrolls out of view.",
+    "change": "Explicit activation starts playback, direct video src reports errors, Retry reloads, Close pauses, and an inner scroller keeps Close visible. Visibility/pagehide also pause in source.",
+    "journeys": [
+      "configured-film-failure-retry-play-close",
+      "configured-film-close-remains-visible-landscape"
+    ]
+  },
+  {
+    "id": "AVA-V3-05",
+    "finding": "Footer lockup proportions diverge from Figma",
+    "repro": "Compare the footer at desktop/tablet/mobile with Figma node 1:1985.",
+    "baseline": "Independent flex widths/heights and spacing distort the intended group and its tablet/mobile proportions.",
+    "change": "The complete 325.001×28.091 authored group now scales together, with its exact internal offsets and AVA crop.",
+    "journeys": [
+      "brand-geometry-and-action-contrast-1440",
+      "brand-geometry-and-action-contrast-900",
+      "brand-geometry-and-action-contrast-390"
+    ]
+  },
+  {
+    "id": "AVA-V3-06",
+    "finding": "Partner cards substitute type for original brand artwork",
+    "repro": "Compare partner cards to Figma nodes 1:1699 and 1:1704.",
+    "baseline": "Text approximations omit the original Dorchester mark and OMNIYAT artwork/color.",
+    "change": "Original transparent Figma layers are restored with the authored fill geometry. No brand artwork was redrawn.",
+    "journeys": [
+      "brand-geometry-and-action-contrast-1440",
+      "brand-geometry-and-action-contrast-900",
+      "brand-geometry-and-action-contrast-390"
+    ]
+  },
+  {
+    "id": "AVA-V3-07",
+    "finding": "Failed gallery navigation gives no explanation or retry",
+    "repro": "Fail the second interior image and activate Next.",
+    "baseline": "The visible first frame and counter remain unchanged, with no visible error/retry, making the button appear dead.",
+    "change": "The good frame is retained, a compact error and Try again appear, and recovery/late image completion respect the latest user intent.",
+    "journeys": [
+      "gallery-failure-retry-latest-interiors"
+    ]
+  }
+]

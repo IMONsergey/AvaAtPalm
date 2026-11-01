@@ -130,7 +130,7 @@ document.addEventListener('click', event => {
   const trigger = target.closest<HTMLElement>('[data-action]');
   if (trigger?.dataset.action === 'menu') openDialog(menu, trigger);
   if (trigger?.dataset.action === 'enquire') openEnquiry(trigger.dataset.context, trigger);
-  if (trigger?.dataset.action === 'video') openDialog(document.querySelector('#video-dialog'), trigger);
+  if (trigger?.dataset.action === 'video') { openDialog(document.querySelector('#video-dialog'), trigger); playFilm(); }
   if (trigger?.dataset.action === 'location') openDialog(document.querySelector('#location-dialog'), trigger);
   target.closest('[data-close]')?.closest('dialog')?.close();
   if (target.closest('[data-menu-link]')) menu?.close();
@@ -144,6 +144,7 @@ document.querySelectorAll<HTMLDialogElement>('dialog').forEach(dialog => {
     if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
   });
   dialog.addEventListener('close', () => {
+    if (dialog.open) return;
     dialog.querySelector('video')?.pause();
     syncDialogState();
     if (!document.querySelector('dialog[open]') && dialogOrigin?.isConnected) {
@@ -167,7 +168,6 @@ function showFormError(message: string) {
   if (!error) return;
   error.textContent = message;
   error.hidden = false;
-  error.focus({ preventScroll: true });
 }
 
 form?.addEventListener('input', event => {
@@ -246,6 +246,7 @@ form?.addEventListener('submit', async event => {
     form.removeAttribute('aria-busy');
     status.textContent = '';
     if (submitted) label.textContent = 'Send enquiry';
+    else if (enquiry.open) (form.querySelector<HTMLElement>('[aria-invalid="true"]') || errorBox).focus();
   }
 });
 
@@ -254,6 +255,9 @@ document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
   const track = carousel.querySelector<HTMLElement>('[data-track]');
   if (!track || slides.length < 2) return;
   const counter = carousel.querySelector<HTMLElement>('[data-counter]');
+  const status = carousel.querySelector<HTMLElement>('[data-gallery-status]')!;
+  const message = carousel.querySelector<HTMLElement>('[data-gallery-message]')!;
+  const retry = carousel.querySelector<HTMLButtonElement>('[data-gallery-retry]')!;
   let current = 0;
   let displayed = 0;
   let gesture: { id: number; x: number; y: number } | null = null;
@@ -263,6 +267,9 @@ document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
     const next = (index + slides.length) % slides.length;
     current = next;
     const id = ++requestId;
+    if (status.contains(document.activeElement)) carousel.focus({ preventScroll: true });
+    status.hidden = true; retry.hidden = true; carousel.setAttribute('aria-busy', 'true');
+    const noticeTimer = window.setTimeout(() => { if (id === requestId) { message.textContent = 'Loading image...'; status.hidden = false; } }, 400);
     // Keep the previous frame visible until the destination image is decoded.
     const originalImage = slides[next].querySelector<HTMLImageElement>('img');
     // Retry a failed source with the same responsive attributes. Keep its replacement
@@ -273,8 +280,11 @@ document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
       image.loading = 'eager';
       await image.decode().catch(() => undefined);
     }
+    window.clearTimeout(noticeTimer);
     if (id !== requestId) return;
-    if (image && !image.naturalWidth) return;
+    carousel.removeAttribute('aria-busy');
+    if (image && !image.naturalWidth) { message.textContent = 'The image could not be loaded.'; status.hidden = false; retry.hidden = false; return; }
+    status.hidden = true;
     if (image && originalImage && image !== originalImage) originalImage.replaceWith(image);
     displayed = next;
     gsap.to(track, { xPercent: -next * 100, duration: reduced.matches ? 0 : .55, ease: 'power2.inOut', overwrite: true });
@@ -286,6 +296,7 @@ document.querySelectorAll<HTMLElement>('[data-carousel]').forEach(carousel => {
   }
   carousel.querySelector('[data-next]')?.addEventListener('click', () => { void show(current + 1); });
   carousel.querySelector('[data-prev]')?.addEventListener('click', () => { void show(current - 1); });
+  retry.addEventListener('click', () => { void show(current); });
   carousel.addEventListener('keydown', event => {
     if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement || event.target instanceof HTMLSelectElement) return;
     if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
@@ -322,7 +333,15 @@ if (planDialog) {
   const value = planDialog.querySelector<HTMLElement>('[data-zoom-value]')!;
   const plus = planDialog.querySelector<HTMLButtonElement>('[data-zoom-in]')!;
   const minus = planDialog.querySelector<HTMLButtonElement>('[data-zoom-out]')!;
+  const fit = planDialog.querySelector<HTMLButtonElement>('[data-zoom-fit]')!;
+  const download = planDialog.querySelector<HTMLAnchorElement>('[data-plan-download]')!;
+  const status = planDialog.querySelector<HTMLElement>('[data-plan-status]')!;
+  const message = planDialog.querySelector<HTMLElement>('[data-plan-message]')!;
+  const retry = planDialog.querySelector<HTMLButtonElement>('[data-plan-retry]')!;
   let zoom = 1, x = 0, y = 0, drag: { x: number; y: number } | null = null;
+  let ready = false, planRequest = 0;
+  let pendingImage: HTMLImageElement | null = null;
+  let selectedPlan: { src: string; title: string; unit: string } | null = null;
   const pointers = new Map<number, { x: number; y: number }>();
   let pinch: { distance: number; zoom: number } | null = null;
   function distance() { const points=[...pointers.values()]; return Math.hypot(points[0].x-points[1].x,points[0].y-points[1].y); }
@@ -332,28 +351,71 @@ if (planDialog) {
     x = Math.max(-limitX, Math.min(limitX, x)); y = Math.max(-limitY, Math.min(limitY, y));
     image.style.transform = `translate(${x}px,${y}px) scale(${zoom})`;
     value.textContent = `${Math.round(zoom * 100)}%`;
-    plus.disabled = zoom >= 3; minus.disabled = zoom <= 1;
+    plus.disabled = !ready || zoom >= 3; minus.disabled = !ready || zoom <= 1;
+    fit.disabled = !ready;
     stage.classList.toggle('is-zoomed', zoom > 1);
   }
-  function change(amount: number) { zoom = Math.min(3, Math.max(1, Math.round((zoom + amount) * 10) / 10)); draw(); }
-  document.querySelectorAll<HTMLElement>('[data-plan]').forEach(trigger => trigger.addEventListener('click', () => {
-    image.src = trigger.dataset.plan!;
-    image.alt = `Floor plan for ${trigger.dataset.planTitle || 'the residence'}`;
-    planDialog.querySelector<HTMLElement>('#plan-title')!.textContent = trigger.dataset.planTitle || 'Residence floor plan';
-    const download = planDialog.querySelector<HTMLAnchorElement>('[data-plan-download]')!;
-    download.href = image.src; download.download = `AVA-${trigger.dataset.unit || 'residence'}-floor-plan.webp`;
+  function change(amount: number) { if (!ready) return; zoom = Math.min(3, Math.max(1, Math.round((zoom + amount) * 10) / 10)); draw(); }
+  async function loadPlan() {
+    const plan = selectedPlan;
+    if (!plan || !planDialog?.open) return;
+    const token = ++planRequest;
+    pendingImage?.removeAttribute('src');
+    ready = false;
+    image.hidden = true; image.removeAttribute('src'); image.alt = '';
+    download.removeAttribute('href'); download.setAttribute('aria-disabled', 'true'); download.tabIndex = -1;
+    stage.setAttribute('aria-busy', 'true');
+    if (document.activeElement === retry) stage.focus({ preventScroll: true });
+    message.textContent = 'Loading floor plan...'; status.hidden = false; retry.hidden = true;
     pointers.clear(); pinch = null; drag = null;
-    zoom = 1; x = 0; y = 0;
+    zoom = 1; x = 0; y = 0; draw();
+    const candidate = new Image(); candidate.decoding = 'async'; pendingImage = candidate;
+    let timeout = 0;
+    try {
+      candidate.src = plan.src;
+      await Promise.race([
+        candidate.decode(),
+        new Promise<never>((_, reject) => { timeout = window.setTimeout(() => reject(new Error('Plan loading timed out.')), 15000); }),
+      ]);
+      if (token !== planRequest || !planDialog.open) return;
+      if (!candidate.naturalWidth) throw new Error('Plan unavailable.');
+      image.src = candidate.src;
+      await image.decode();
+      if (token !== planRequest || !planDialog.open) return;
+      image.alt = `Floor plan for ${plan.title}`; image.hidden = false;
+      download.href = candidate.src; download.download = `AVA-${plan.unit}-floor-plan.webp`;
+      download.removeAttribute('aria-disabled'); download.removeAttribute('tabindex');
+      ready = true; status.hidden = true; draw();
+    } catch {
+      if (token !== planRequest || !planDialog.open) return;
+      candidate.removeAttribute('src');
+      image.hidden = true; image.removeAttribute('src');
+      message.textContent = 'The floor plan could not be loaded. Please try again.';
+      status.hidden = false; retry.hidden = false;
+    } finally {
+      window.clearTimeout(timeout);
+      if (token === planRequest) { pendingImage = null; stage.removeAttribute('aria-busy'); }
+    }
+  }
+  document.querySelectorAll<HTMLElement>('[data-plan]').forEach(trigger => trigger.addEventListener('click', event => {
+    // The preview link keeps its original-file fallback when JavaScript is unavailable.
+    if (event instanceof MouseEvent && (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) return;
+    event.preventDefault();
+    selectedPlan = { src: trigger.dataset.plan!, title: trigger.dataset.planTitle || 'the residence', unit: trigger.dataset.unit || 'residence' };
+    planDialog.querySelector<HTMLElement>('#plan-title')!.textContent = selectedPlan.title;
     openDialog(planDialog, trigger);
-    draw();
+    void loadPlan();
   }));
+  retry.addEventListener('click', () => { void loadPlan(); });
   plus.addEventListener('click', () => change(.3)); minus.addEventListener('click', () => change(-.3));
   planDialog.querySelector('[data-zoom-fit]')?.addEventListener('click', () => { zoom = 1; x = 0; y = 0; draw(); });
   planDialog.addEventListener('keydown', event => {
+    if (!ready) return;
     if (['+', '=', '-', '0'].includes(event.key)) { event.preventDefault(); if (event.key === '0') { zoom = 1; x = 0; y = 0; draw(); } else change(event.key === '-' ? -.3 : .3); }
     if (zoom > 1 && ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key)) { event.preventDefault(); x += event.key === 'ArrowLeft' ? 32 : event.key === 'ArrowRight' ? -32 : 0; y += event.key === 'ArrowUp' ? 32 : event.key === 'ArrowDown' ? -32 : 0; draw(); }
   });
   stage.addEventListener('pointerdown', event => {
+    if (!ready || (event.pointerType === 'mouse' && event.button !== 0)) return;
     pointers.set(event.pointerId,{x:event.clientX,y:event.clientY}); stage.setPointerCapture(event.pointerId);
     if(pointers.size===2){pinch={distance:distance(),zoom};drag=null;}
     else if(zoom>1) drag={x:event.clientX-x,y:event.clientY-y};
@@ -374,13 +436,42 @@ if (planDialog) {
   // Image sizing depends on the visible dialog. Re-clamp after rotation or resize.
   const planResize = new ResizeObserver(() => { if (planDialog.open) draw(); });
   planResize.observe(stage);
-  planDialog.addEventListener('close',()=>{pointers.clear();pinch=null;drag=null;});
-  stage.addEventListener('wheel', event => { if (event.ctrlKey) { event.preventDefault(); change(event.deltaY < 0 ? .1 : -.1); } }, { passive: false });
+  planDialog.addEventListener('close',()=>{
+    if (planDialog.open) return;
+    ++planRequest; ready = false; selectedPlan = null;
+    pendingImage?.removeAttribute('src'); pendingImage = null;
+    image.hidden = true; image.removeAttribute('src');
+    download.removeAttribute('href'); download.setAttribute('aria-disabled', 'true'); download.tabIndex = -1;
+    stage.removeAttribute('aria-busy'); pointers.clear(); pinch = null; drag = null;
+    zoom = 1; x = 0; y = 0; draw();
+  });
+  stage.addEventListener('wheel', event => { if (ready && event.ctrlKey) { event.preventDefault(); change(event.deltaY < 0 ? .1 : -.1); } }, { passive: false });
 }
 
 const video = document.querySelector<HTMLVideoElement>('#ava-film');
-video?.addEventListener('error', () => { const error = document.querySelector<HTMLElement>('[data-video-error]'); if (error) error.hidden = false; });
-document.querySelector('[data-video-retry]')?.addEventListener('click', () => { video?.load(); const error = document.querySelector<HTMLElement>('[data-video-error]'); if (error) error.hidden = true; });
+const videoError = document.querySelector<HTMLElement>('[data-video-error]');
+const videoMessage = document.querySelector<HTMLElement>('[data-video-message]');
+function showVideoError(message = 'The film could not be loaded. Please try again.') {
+  if (videoMessage) videoMessage.textContent = message;
+  if (videoError) videoError.hidden = false;
+}
+function playFilm(reload = false) {
+  if (!video) return;
+  if (videoError) videoError.hidden = true;
+  if (reload) video.load();
+  // Both callers are explicit user actions; opening a film starts its playback.
+  void video.play().catch(error => {
+    if (!document.querySelector<HTMLDialogElement>('#video-dialog')?.open || error?.name === 'AbortError') return;
+    showVideoError(error?.name === 'NotAllowedError'
+      ? 'Playback did not start. Use the play control or try again.'
+      : 'The film could not be loaded. Please try again.');
+  });
+}
+video?.addEventListener('error', () => showVideoError());
+video?.addEventListener('playing', () => { if (videoError) videoError.hidden = true; });
+document.querySelector('[data-video-retry]')?.addEventListener('click', () => playFilm(true));
+document.addEventListener('visibilitychange', () => { if (document.hidden) video?.pause(); });
+window.addEventListener('pagehide', () => video?.pause());
 
 const media = gsap.matchMedia();
 media.add({ motion: '(prefers-reduced-motion: no-preference)', desktop: '(min-width: 768px)', fine: '(pointer: fine)' }, context => {

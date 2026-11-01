@@ -18,7 +18,7 @@ const {residence:r}=Astro.props;
    <h1 class="display">{r.bedrooms} bedroom<br/>Residences</h1>
    <div class="plan-and-details">
     <div class="plan-preview">
-     <a href={`/assets/${r.plan}.webp`} class="plan-image-link" aria-label={`Open the original floor plan for residence ${r.unit}`}><Photo name={r.plan} alt={`Floor plan of the ${r.bedrooms} bedroom residence ${r.unit}`} sizes="(max-width:767px) 85vw,50vw" eager/></a>
+     <a href={`/assets/${r.plan}.webp`} class="plan-image-link" data-plan={`/assets/${r.plan}.webp`} data-plan-title={`Unit ${r.unit} / ${r.bedrooms} bedroom residence`} data-unit={r.unit} aria-haspopup="dialog" aria-controls="plan-dialog" aria-label={`Open the floor plan viewer for residence ${r.unit}`}><Photo name={r.plan} alt={`Floor plan of the ${r.bedrooms} bedroom residence ${r.unit}`} sizes="(max-width:767px) 85vw,50vw" eager/></a>
      <button type="button" class="view-plan text-link" data-plan={`/assets/${r.plan}.webp`} data-plan-title={`Unit ${r.unit} / ${r.bedrooms} bedroom residence`} data-unit={r.unit}>View floor plan <span aria-hidden="true"><Icon name="arrow-up-right" size={14}/></span></button>
     </div>
     <section class="residence-details" aria-label="Residence specifications">

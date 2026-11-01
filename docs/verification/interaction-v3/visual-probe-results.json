@@ -1,0 +1,315 @@
+{
+  "browser": "145.0.7632.6",
+  "date": "2026-11-01T19:47:58.835Z",
+  "method": "One local Chromium context; all non-GET and all external network requests blocked. No form submissions.",
+  "cases": [
+    {
+      "project": "ava",
+      "name": "brand-responsive-900",
+      "ok": true,
+      "header": "visual-header-900.png",
+      "footer": "visual-footer-decoded-900.png",
+      "partners": "visual-partners-900.png",
+      "horizontalOverflow": false
+    },
+    {
+      "project": "ava",
+      "name": "brand-responsive-390",
+      "ok": true,
+      "header": "visual-header-390.png",
+      "footer": "visual-footer-decoded-390.png",
+      "partners": "visual-partners-390.png",
+      "horizontalOverflow": false
+    },
+    {
+      "project": "ava",
+      "name": "brand-responsive-320",
+      "ok": true,
+      "header": "visual-header-320.png",
+      "footer": "visual-footer-decoded-320.png",
+      "partners": "visual-partners-320.png",
+      "horizontalOverflow": false
+    },
+    {
+      "project": "ava",
+      "name": "plan-dialog-action-colors",
+      "ok": true,
+      "labels": [
+        {
+          "label": "Close floor plan",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(22, 33, 54)",
+          "ratio": 16.09287183142803,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 322,
+            "y": 22,
+            "width": 44,
+            "height": 44,
+            "top": 22,
+            "right": 366,
+            "bottom": 66,
+            "left": 322
+          }
+        },
+        {
+          "label": "Fit",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(22, 33, 54)",
+          "ratio": 16.09287183142803,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 24,
+            "y": 724,
+            "width": 44,
+            "height": 44,
+            "top": 724,
+            "right": 68,
+            "bottom": 768,
+            "left": 24
+          }
+        },
+        {
+          "label": "Zoom out",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(22, 33, 54)",
+          "ratio": 16.09287183142803,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 76,
+            "y": 724,
+            "width": 44,
+            "height": 44,
+            "top": 724,
+            "right": 120,
+            "bottom": 768,
+            "left": 76
+          }
+        },
+        {
+          "label": "Zoom in",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(22, 33, 54)",
+          "ratio": 16.09287183142803,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 186,
+            "y": 724,
+            "width": 44,
+            "height": 44,
+            "top": 724,
+            "right": 230,
+            "bottom": 768,
+            "left": 186
+          }
+        },
+        {
+          "label": "Download image",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(22, 33, 54)",
+          "ratio": 16.09287183142803,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 268,
+            "y": 724,
+            "width": 98,
+            "height": 32,
+            "top": 724,
+            "right": 366,
+            "bottom": 756,
+            "left": 268
+          }
+        }
+      ],
+      "screenshot": "visual-plan-dialog-colors-mobile.png"
+    },
+    {
+      "project": "ava",
+      "name": "enquiry-submit-and-close-colors",
+      "ok": true,
+      "close": [
+        {
+          "label": "Close enquiry",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(13, 43, 72)",
+          "ratio": 14.420701979939759,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 322,
+            "y": 30,
+            "width": 44,
+            "height": 44,
+            "top": 30,
+            "right": 366,
+            "bottom": 74,
+            "left": 322
+          }
+        }
+      ],
+      "labels": [
+        {
+          "label": "Send enquiry",
+          "foreground": "rgb(22, 33, 54)",
+          "background": "rgb(250, 246, 244)",
+          "ratio": 14.984330682708922,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 117,
+            "y": 556.75,
+            "width": 93,
+            "height": 19,
+            "top": 556.75,
+            "right": 210,
+            "bottom": 575.75,
+            "left": 117
+          }
+        }
+      ],
+      "screenshot": "visual-enquiry-submit-colors-mobile.png"
+    },
+    {
+      "project": "ava",
+      "name": "normal-motion-decoded-gallery-transition",
+      "ok": true,
+      "mid": {
+        "transform": "matrix(1, 0, 0, 1, -15.1931, 0)",
+        "slides": [
+          {
+            "hidden": false,
+            "ariaHidden": "true",
+            "opacity": "1"
+          },
+          {
+            "hidden": false,
+            "ariaHidden": "false",
+            "opacity": "1"
+          },
+          {
+            "hidden": false,
+            "ariaHidden": "true",
+            "opacity": "1"
+          },
+          {
+            "hidden": false,
+            "ariaHidden": "true",
+            "opacity": "1"
+          }
+        ],
+        "counter": "2 / 4"
+      },
+      "settled": {
+        "index": 1,
+        "decoded": true,
+        "counter": "2 / 4"
+      },
+      "reduced": {
+        "index": 0,
+        "counter": "1 / 4",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      "middle": "visual-gallery-normal-transition-mobile.png",
+      "limitation": "Real transition and preference-switch behavior are exercised; this is not a frame-rate benchmark or a claim about every physical device."
+    },
+    {
+      "project": "ava",
+      "name": "figma-frames-and-footer-colors",
+      "ok": true,
+      "labels": [
+        {
+          "label": "Privacy Policy",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(22, 33, 54)",
+          "ratio": 16.09287183142803,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 75,
+            "y": 837,
+            "width": 76,
+            "height": 18,
+            "top": 837,
+            "right": 151,
+            "bottom": 855,
+            "left": 75
+          }
+        }
+      ],
+      "footer": "visual-footer-decoded-1440.png",
+      "frames": [
+        "visual-figma-footer-lockup.png",
+        "visual-figma-omniyat.png",
+        "visual-figma-dorchester.png"
+      ],
+      "backgroundNote": "Footer link contrast uses the authored navy at the bottom of its gradient; its screenshot is inspected separately."
+    },
+    {
+      "project": "ava",
+      "name": "film-error-action-colors-and-real-tab-visibility",
+      "ok": true,
+      "labels": [
+        {
+          "label": "Close film",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(13, 43, 72)",
+          "ratio": 14.420701979939759,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 330,
+            "y": 12,
+            "width": 44,
+            "height": 44,
+            "top": 12,
+            "right": 374,
+            "bottom": 56,
+            "left": 330
+          }
+        },
+        {
+          "label": "Try again",
+          "foreground": "rgb(22, 33, 54)",
+          "background": "rgb(250, 246, 244)",
+          "ratio": 14.984330682708922,
+          "disabled": false,
+          "opacity": "1",
+          "visibleInViewport": true,
+          "rect": {
+            "x": 24,
+            "y": 407.5625,
+            "width": 108,
+            "height": 46,
+            "top": 407.5625,
+            "right": 132,
+            "bottom": 453.5625,
+            "left": 24
+          }
+        }
+      ],
+      "screenshot": "visual-film-error-colors-mobile.png",
+      "visibility": {
+        "state": "visible",
+        "paused": false
+      },
+      "visibilityVerified": false,
+      "visibilityLimitation": "The headless tab remained visible after a different page became foreground. Actual background pause is not claimed from this probe."
+    }
+  ],
+  "blocked": [],
+  "errors": []
+}
