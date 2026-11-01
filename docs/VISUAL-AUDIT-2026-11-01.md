@@ -33,7 +33,7 @@ Fingerprint проверенного приложения, включая `src/*
 | --- | --- |
 | Финальный typecheck и чистый build | PASS;0 errors,0 warnings,1 прежний unused-import hint в API test |
 | Все маршруты, семь размеров |42 cases,207 viewport captures,0 runtime arrow matches/errors/violations |
-| Значимые UI состояния |54 группы:42 Chromium по семи размерам и12 WebKit390/landscape;174 screenshots |
+| Значимые UI состояния |54 группы:42 Chromium по семи размерам и12 WebKit390/landscape;177 screenshots |
 | Existing `scripts/browser-qa.mjs` на итоговом source |1440/768/390/320 и отдельный normal-motion flow PASS |
 | Gallery decode/error/rapid motion |3 сценария в каждом движке,6/6 PASS |
 | Native Close/reopen/editorial |320/768/844 в обоих движках,12/12 PASS |
